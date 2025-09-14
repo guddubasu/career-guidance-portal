@@ -1,0 +1,71 @@
+/* Base navbar styles */
+.navbar {
+  position: sticky; /* Makes it stick */
+  top: 0;           /* Stick to the top */
+  z-index: 1000;    /* Keep it above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004aad;
+  color: white;
+  padding: 1rem 2rem;
+  /* position: relative; */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-logo a {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Hamburger button */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop links */
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #004aad;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar a {
+    margin: 1rem 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
