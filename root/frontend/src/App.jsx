@@ -12,6 +12,7 @@ import Personality from "./pages/Personality";
 import Institutions from "./pages/Institutions";
 import Scholarships from "./pages/Scholarships";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/institutions" element={<Institutions />} />
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
       <Footer />
       </main>
