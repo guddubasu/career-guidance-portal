@@ -29,6 +29,10 @@ export default function Signup() {
               <input className="form-check-input" type="radio" name="gender" id="others" value="male" />
               <label className="form-check-label" htmlFor="others">Others</label>
             </div>
+            <div className="form-check form-check-inline fs-5">
+              <input className="form-check-input" type="radio" name="gender" id="notsaid" value="male" />
+              <label className="form-check-label" htmlFor="notsaid">Prefer not to say</label>
+            </div>
           </div>
           <label className="form-label fs-5">Date of birth <i className="bi bi-question-circle"></i></label>
           <div className="row g-2 mb-3">
@@ -64,7 +68,7 @@ export default function Signup() {
       </div>
       <label htmlFor="password" className="form-label fs-5">Password</label>
       <input type="password" id="password" className="form-control" aria-describedby="passwordHelpBlock"/>
-      <button type="button" className="btn btn-outline-primary mt-2 px-5 py-2 fs-5">Signup</button>
+      <button type="button" className="btn btn-outline-primary mt-3 px-5 py-2 fs-5 col-8 offset-2 mb-2">Signup</button>
     </form>
   </div>;
 }

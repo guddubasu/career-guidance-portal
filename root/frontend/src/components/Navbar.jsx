@@ -19,6 +19,7 @@ export default function Navbar() {
         <Link to="/institutions" onClick={() => setIsOpen(false)}>Institutions</Link>
         <Link to="/scholarships" onClick={() => setIsOpen(false)}>Scholarships</Link>
         <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>
+        <Link to="/profile" onClick={()=> setIsOpen(false)}>Profile</Link>
       </div>
 
       <button className="navbar-toggle" onClick={toggleMenu}>

@@ -13,6 +13,10 @@ import Institutions from "./pages/Institutions";
 import Scholarships from "./pages/Scholarships";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
+import ProfileDetails from "./pages/ProfileDetails";
+import ResetPassword from "./pages/ResetPassword";
+
 import Footer from "./components/Footer";
 export default function App() {
   return (
@@ -31,6 +35,9 @@ export default function App() {
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/profildetails" element={<ProfileDetails/>}/>
+          <Route path="/resetpassword" element={<ResetPassword/>}/>
         </Routes>
       <Footer />
       </main>
