@@ -44,12 +44,19 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/personality" className="card-link">
+          {/* <Link to="/personality" className="card-link">
             <div className="card">
               <img src={personalityImage} alt="personality" className="card-image" />
               <h3>TAKE THE RIASEC PERSONALITY TEST</h3>
             </div>
+          </Link> */}
+          <Link to="/aptitude" className="card-link">
+            <div className="card">
+              <img src={personalityImage} alt="aptitude" className="card-image" />
+              <h3>TAKE THE APTITUDE TEST</h3>
+            </div>
           </Link>
+          
         </div>
       </section>
       {/* AI Help Section */}

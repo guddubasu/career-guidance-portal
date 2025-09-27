@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Careers from "./pages/Careers";
@@ -8,6 +9,7 @@ import AICareerChat from "./pages/AICareerChat";
 import AIResumeAnalyser from "./pages/AIResumeAnalyser";
 import CareerRoadmap from "./pages/CareerRoadmap";
 import Personality from "./pages/Personality";
+import AptitudeTest from "./pages/AptitudeTest";
 // Placeholder pages
 import Institutions from "./pages/Institutions";
 import Scholarships from "./pages/Scholarships";
@@ -31,6 +33,7 @@ export default function App() {
           <Route path="/ai-resume" element={<AIResumeAnalyser />}/>
           <Route path="/ai-roadmap" element={<CareerRoadmap />} />
           <Route path="/personality" element={<Personality />} />
+          <Route path="/aptitude" element={<AptitudeTest />} />
           <Route path="/institutions" element={<Institutions />} />
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/login" element={<Login />} />
