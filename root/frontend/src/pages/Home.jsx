@@ -37,12 +37,21 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/institutions" className="card-link">
+          {/*<Link to="/institutions" className="card-link">
             <div className="card">
               <img src={careersearchImage} alt="careersearch" className="card-image" />
               <h3>SEE CAREERS BASED ON YOUR INTERESTS</h3>
             </div>
-          </Link>
+          </Link>*/}
+
+          <Link to="/interest-form" className="card-link">
+  <div className="card">
+    <img src={careersearchImage} alt="careersearch" className="card-image" />
+    <h3>SEE CAREERS BASED ON YOUR INTERESTS</h3>
+  </div>
+</Link>
+
+
 
           {/* <Link to="/personality" className="card-link">
             <div className="card">

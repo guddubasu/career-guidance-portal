@@ -10,6 +10,7 @@ import AIResumeAnalyser from "./pages/AIResumeAnalyser";
 import CareerRoadmap from "./pages/CareerRoadmap";
 import Personality from "./pages/Personality";
 import AptitudeTest from "./pages/AptitudeTest";
+import InterestForm from "./pages/InterestForm";
 // Placeholder pages
 import Institutions from "./pages/Institutions";
 import Scholarships from "./pages/Scholarships";
@@ -43,10 +44,12 @@ export default function App() {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/profildetails" element={<ProfileDetails/>}/>
           <Route path="/resetpassword" element={<ResetPassword/>}/>
-          <Route path="/careers" element={<CareersPage />} />
+         <Route path="/careers" element={<CareersPage />} />
+          <Route path="/interest-form" element={<InterestForm />} /> 
+
         </Routes>
       <Footer />
       </main>
-    </div>
-  );
+    </div>
+  );
 }
