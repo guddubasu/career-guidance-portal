@@ -1,23 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+
+// Static career data
+const careerData = {
+  1: {
+    title: "Software Engineer",
+    summary: "Develop software applications and maintain systems.",
+    requiredSubjects: ["Mathematics", "Computer Science", "Physics"],
+  },
+  2: {
+    title: "Data Scientist",
+    summary: "Analyze data and generate insights.",
+    requiredSubjects: ["Mathematics", "Statistics", "Computer Science"],
+  },
+  3: {
+    title: "Mechanical Engineer",
+    summary: "Design and maintain mechanical systems.",
+    requiredSubjects: ["Physics", "Mathematics", "Chemistry"],
+  },
+  4: {
+    title: "Teacher",
+    summary: "Educate students and create lesson plans.",
+    requiredSubjects: ["Education", "Psychology", "English"],
+  },
+  5: {
+    title: "Doctor",
+    summary: "Provide medical care and save lives.",
+    requiredSubjects: ["Biology", "Chemistry", "Physics"],
+  },
+};
 
 export default function CareerDetail() {
   const { id } = useParams();
-  const [career, setCareer] = useState(null);
+  const career = careerData[id];
 
-  useEffect(() => {
-    fetch(`/api/careers/${id}`)
-      .then((res) => res.json())
-      .then(setCareer)
-      .catch(console.error);
-  }, [id]);
-
-  if (!career) return <p>Loading career details...</p>;
+  if (!career) return <p>Career not found.</p>;
 
   return (
-    <div>
+    <div style={{ padding: "2rem", textAlign: "center" }}>
       <h1>{career.title}</h1>
       <p>{career.summary}</p>
+
       {career.requiredSubjects?.length > 0 && (
         <>
           <h3>Required Subjects</h3>
@@ -28,6 +51,10 @@ export default function CareerDetail() {
           </ul>
         </>
       )}
+
+      <Link to="/careers" style={{ marginTop: "2rem", display: "inline-block", color: "#007BFF" }}>
+        ⬅ Back to Careers
+      </Link>
     </div>
   );
 }

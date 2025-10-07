@@ -1,0 +1,68 @@
+
+.careers-page {
+  text-align: center;        
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* centers the swiper horizontally */
+}
+
+/* Swiper container */
+.swiper {
+  width: 100%;
+  max-width: 1200px;        
+  padding-bottom: 2rem;     
+}
+
+/* Each card */
+.career-card {
+  display: block;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+ 
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  height: 350px;
+  transition: 0.2s ease-in-out;
+}
+/* Make only the heading blue */
+.careers-page h1 {
+  color: #007BFF;   /* blue */
+  margin-bottom: 2rem;
+}
+
+/* Card hover effect */
+.career-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .career-card {
+    height: auto; /* allow cards to adjust height on small screens */
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-card {
+    padding: 1rem;
+  }
+}

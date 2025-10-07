@@ -16,6 +16,7 @@ export default function Navbar() {
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/careers" onClick={() => setIsOpen(false)}>Careers</Link>
+        <Link to="/distance-online-learning" onClick={() => setIsOpen(false)}>Distance & Online Learning</Link>
         <Link to="/institutions" onClick={() => setIsOpen(false)}>Institutions</Link>
         <Link to="/scholarships" onClick={() => setIsOpen(false)}>Scholarships</Link>
         <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>

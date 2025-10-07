@@ -18,8 +18,9 @@ import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import ProfileDetails from "./pages/ProfileDetails";
 import ResetPassword from "./pages/ResetPassword";
-
+import CareersPage from "./pages/CareersPage";
 import Footer from "./components/Footer";
+import DistanceOnline from "./pages/DistanceOnline";
 export default function App() {
   return (
     <div>
@@ -27,12 +28,13 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/careers" element={<Careers />} />
+       
           <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/ai-chat" element={<AICareerChat />} />
           <Route path="/ai-resume" element={<AIResumeAnalyser />}/>
           <Route path="/ai-roadmap" element={<CareerRoadmap />} />
           <Route path="/personality" element={<Personality />} />
+          <Route path="/distance-online-learning" element={<DistanceOnline />} />
           <Route path="/aptitude" element={<AptitudeTest />} />
           <Route path="/institutions" element={<Institutions />} />
           <Route path="/scholarships" element={<Scholarships />} />
@@ -41,6 +43,7 @@ export default function App() {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/profildetails" element={<ProfileDetails/>}/>
           <Route path="/resetpassword" element={<ResetPassword/>}/>
+          <Route path="/careers" element={<CareersPage />} />
         </Routes>
       <Footer />
       </main>
