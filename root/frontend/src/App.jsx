@@ -22,6 +22,9 @@ import ResetPassword from "./pages/ResetPassword";
 import CareersPage from "./pages/CareersPage";
 import Footer from "./components/Footer";
 import DistanceOnline from "./pages/DistanceOnline";
+import GovernmentScholarships from "./pages/GovernmentScholarships";
+import PrivateScholarships from "./pages/PrivateScholarships";
+import ShowScholarship from "./pages/ShowScholarship";
 export default function App() {
   return (
     <div>
@@ -46,7 +49,9 @@ export default function App() {
           <Route path="/resetpassword" element={<ResetPassword/>}/>
          <Route path="/careers" element={<CareersPage />} />
           <Route path="/interest-form" element={<InterestForm />} /> 
-
+          <Route path="/gscholarships" element={<GovernmentScholarships />} /> 
+          <Route path="/pscholarships" element={<PrivateScholarships />} /> 
+          <Route path="/showscholarships" element={<ShowScholarship />} /> 
         </Routes>
       <Footer />
       </main>

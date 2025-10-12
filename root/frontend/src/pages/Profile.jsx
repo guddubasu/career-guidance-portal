@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default function Profile(){
     return (
         <div>
-        <h1>All data will be fetched from backend</h1>
         <div className="card row mb-3 border-4 border-primary mb-2 border-opacity-10 col-6 offset-3">
         <div className="card-body text-start">
        <p className="col-12 fs-1" style={{color:"#0c3973ff"}}>Pammy Banerjee</p>
