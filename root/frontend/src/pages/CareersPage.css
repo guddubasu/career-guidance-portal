@@ -37,14 +37,15 @@
 /* Summary hidden by default */
 .card-summary {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  left: 0;
+  right: 0;
+  bottom: 0; /* align to bottom of card content */
+  transform: translateY(100%); /* below button */
   background-color: #fff;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   border: 2px solid;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   z-index: 20;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
@@ -53,9 +54,9 @@
   transition: all 0.3s ease;
 }
 
-/* Show summary on hover */
+/* Show summary on card hover */
 .career-card:hover .card-summary {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
+  transform: translateY(0);
 }

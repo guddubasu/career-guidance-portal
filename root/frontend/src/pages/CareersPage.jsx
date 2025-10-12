@@ -68,6 +68,7 @@ export default function CareersPage() {
                 borderColor: career.baseColor,
                 backgroundColor: getTint(career.baseColor),
               }}
+              onClick={() => navigate(`/careers/${career.id}`)}
             >
               <h3 className="text-xl font-semibold mb-2">{career.title}</h3>
               <p className="text-sm">{career.description}</p>
@@ -76,22 +77,21 @@ export default function CareersPage() {
                 style={{ backgroundColor: career.baseColor }}
               ></span>
 
-              {/* Explore Careers button */}
               <div className="mt-4 text-center">
                 <button
                   className="wb-button px-4 py-2 rounded font-semibold text-white"
                   style={{ backgroundColor: career.baseColor }}
-                  onClick={() => navigate(`/careers/${career.id}`)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/careers/${career.id}`);
+                  }}
                 >
                   Explore Careers
                 </button>
               </div>
 
-              {/* Summary overlay */}
-              <div
-                className="card-summary"
-                style={{ borderColor: career.baseColor }}
-              >
+              {/* Summary under button */}
+              <div className="card-summary" style={{ borderColor: career.baseColor }}>
                 <h4 className="font-bold text-lg mb-2">{career.title}</h4>
                 <p className="text-sm">{career.summary}</p>
               </div>
