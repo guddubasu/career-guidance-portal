@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -9,7 +9,6 @@ import "./CareersPage.css";
 
 export default function CareersPage() {
   const navigate = useNavigate();
-  const [activeCard, setActiveCard] = useState(null);
 
   const careers = [
     { id: 1, title: "BFSI", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
@@ -69,9 +68,7 @@ export default function CareersPage() {
                 borderColor: career.baseColor,
                 backgroundColor: getTint(career.baseColor),
               }}
-              onClick={() => navigate(`/careers/${career.id}`)}
             >
-              {/* Card content */}
               <h3 className="text-xl font-semibold mb-2">{career.title}</h3>
               <p className="text-sm">{career.description}</p>
               <span
@@ -84,25 +81,20 @@ export default function CareersPage() {
                 <button
                   className="wb-button px-4 py-2 rounded font-semibold text-white"
                   style={{ backgroundColor: career.baseColor }}
-                  onClick={(e) => {
-                    e.stopPropagation(); // prevents card navigation
-                    setActiveCard(activeCard === career.id ? null : career.id);
-                  }}
+                  onClick={() => navigate(`/careers/${career.id}`)}
                 >
                   Explore Careers
                 </button>
               </div>
 
               {/* Summary overlay */}
-              {activeCard === career.id && (
-                <div
-                  className="card-summary"
-                  style={{ borderColor: career.baseColor }}
-                >
-                  <h4 className="font-bold text-lg mb-2">{career.title}</h4>
-                  <p className="text-sm">{career.summary}</p>
-                </div>
-              )}
+              <div
+                className="card-summary"
+                style={{ borderColor: career.baseColor }}
+              >
+                <h4 className="font-bold text-lg mb-2">{career.title}</h4>
+                <p className="text-sm">{career.summary}</p>
+              </div>
             </div>
           </SwiperSlide>
         ))}
