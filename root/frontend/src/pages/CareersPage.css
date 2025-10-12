@@ -1,68 +1,51 @@
-
-.careers-page {
-  text-align: center;        
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* centers the swiper horizontally */
-}
-
-/* Swiper container */
-.swiper {
-  width: 100%;
-  max-width: 1200px;        
-  padding-bottom: 2rem;     
-}
-
-/* Each card */
 .career-card {
   display: block;
   padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fff;
- 
+  border-radius: 12px;
   text-align: center;
-  color: inherit;
-  text-decoration: none;
-  height: 350px;
-  transition: 0.2s ease-in-out;
-}
-/* Make only the heading blue */
-.careers-page h1 {
-  color: #007BFF;   /* blue */
-  margin-bottom: 2rem;
+  height: 340px;
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
 }
 
-/* Card hover effect */
-.career-card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-}
-
-/* Back link */
-.back-link {
+.wb-button {
   display: inline-block;
-  margin-top: 2rem;
-  color: #007BFF;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
+  color: #fff;
+  border: 1px solid;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 50;
 }
 
-.back-link:hover {
-  text-decoration: underline;
+.wb-button:hover {
+  background-color: #fff;
+  color: inherit;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .career-card {
-    height: auto; /* allow cards to adjust height on small screens */
-    padding: 1.5rem;
-  }
+.card-summary {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border: 2px solid;
+  border-radius: 10px;
+  width: 90%;
+  z-index: 20;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease forwards;
 }
 
-@media (max-width: 480px) {
-  .career-card {
-    padding: 1rem;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }
