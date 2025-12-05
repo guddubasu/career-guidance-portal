@@ -1,0 +1,31 @@
+
+.cardContainer{
+    display:flex;
+    gap:7rem;
+    justify-content: center;
+    height:50vh;
+    align-items:center;
+}
+.Card{
+    border:2px solid rgba(255, 255, 255, 0.194);
+    padding:2rem;
+    width:30rem;
+    height:10rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border-radius:30px;
+    background-color:#308fdd;
+    color:rgb(255, 255, 255);
+    font-size:2rem;
+    transition: 0.4s;
+}
+.Card:hover{
+    box-shadow: 5px 5px 5px 5px #308fdd58;
+}
+.heading{
+    letter-spacing: 4px;
+    font-weight:500;
+    font-size:3rem;
+    color:#023dba;
+}

@@ -1,0 +1,75 @@
+/* MAIN CONTAINER */
+.landing-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+  padding: 40px 60px;
+  background-color: #f5f7fa;
+}
+
+/* LEFT SECTION */
+.left-section {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.left-section h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.left-section h1 span {
+  color: #003399;
+}
+
+.left-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+  color: #444;
+}
+
+/* BUTTON STYLING */
+.start-btn {
+  padding: 12px 25px;
+  border: 2px solid black;
+  background: white;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-left: 160px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: black;
+  color: white;
+}
+
+/* RIGHT SECTION */
+.right-section {
+  flex: 1;
+}
+
+/* IMAGE GRID */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 230px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
