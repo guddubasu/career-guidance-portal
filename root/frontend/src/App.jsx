@@ -1,6 +1,7 @@
-// App.js
-import React from "react";
+// App.jsx
+import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -27,10 +28,18 @@ import PrivateScholarships from "./pages/PrivateScholarships";
 import ShowScholarship from "./pages/ShowScholarship";
 
 export default function App() {
+
+  
+  const [hasEntered, setHasEntered] = useState(false);
   const location = useLocation();
 
-  // Hide footer only on landing page "/"
+  
   const hideFooter = location.pathname === "/";
+
+ 
+  if (!hasEntered) {
+    return <LandingPage onEnter={() => setHasEntered(true)} />;
+  }
 
   return (
     <div>
@@ -38,24 +47,19 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
 
-          {/* Careers */}
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<CareerDetail />} />
 
-          {/* AI Tools */}
           <Route path="/ai-chat" element={<AICareerChat />} />
           <Route path="/ai-resume" element={<AIResumeAnalyser />} />
           <Route path="/ai-roadmap" element={<CareerRoadmap />} />
 
-          {/* Tests */}
           <Route path="/personality" element={<Personality />} />
           <Route path="/aptitude" element={<AptitudeTest />} />
           <Route path="/interest-form" element={<InterestForm />} />
 
-          {/* Learning & Info */}
           <Route path="/distance-online-learning" element={<DistanceOnline />} />
           <Route path="/institutions" element={<Institutions />} />
           <Route path="/scholarships" element={<Scholarships />} />
@@ -63,19 +67,16 @@ export default function App() {
           <Route path="/pscholarships" element={<PrivateScholarships />} />
           <Route path="/showscholarships" element={<ShowScholarship />} />
 
-          {/* Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profiledetails" element={<ProfileDetails />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
 
-          {/* Fallback */}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
 
-      {/* Footer shown only if NOT on landing page */}
       {!hideFooter && <Footer />}
     </div>
   );
