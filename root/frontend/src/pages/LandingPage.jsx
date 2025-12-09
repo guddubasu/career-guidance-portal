@@ -15,7 +15,7 @@ export default function LandingPage({ onEnter }) {
       <div className="left-section">
         <h1>
           Welcome to,<br />
-          <span>Career Guidance Portal</span>
+          <span>CareerCompass</span>
         </h1>
 
         <p>Find your ideal career with AI-powered tools.</p>
