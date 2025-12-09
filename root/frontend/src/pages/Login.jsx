@@ -62,7 +62,7 @@ export default function Login() {
         </button>
 
         <h4 className="mb-3 col-7 offset-4 fs-5">
-          Forget password? <Link to="/resetpassword">Reset</Link>
+          Forgot password? <Link to="/resetpassword">Reset</Link>
         </h4>
         <h4 className="mb-3 col-7 offset-3 fs-5">
           Don't have an account? <Link to="/signup">Signup</Link>

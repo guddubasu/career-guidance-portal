@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-text">
-          <h1 className="hero-title">Career Compass</h1>
+          <h1 className="hero-title">CareerCompass</h1>
           <p className="hero-subtitle">Navigating life after school</p>
           <p className="hero-description">
             Education, especially quality education, is a privilege and a power. 

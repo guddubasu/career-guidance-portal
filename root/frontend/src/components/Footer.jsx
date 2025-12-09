@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-container">
         {/* Logo / Site Name */}
         <div className="footer-logo">
-          <h2>500 Roads to Success</h2>
+          <h2>CareerCompass</h2>
         </div>
 
         {/* Navigation Links */}
@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} 500 Roads to Success. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} CareerCompass. All rights reserved.</p>
       </div>
     </footer>
   );

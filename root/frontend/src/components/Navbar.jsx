@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-logo">
-        <Link to="/">CareerPortal</Link>
+        <Link to="/">CareerCompass</Link>
       </div>
 
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
