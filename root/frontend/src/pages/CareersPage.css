@@ -1,0 +1,62 @@
+.career-card {
+  display: block;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  height: 340px;
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 0.2s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+}
+
+.wb-button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 50;
+}
+
+.wb-button:hover {
+  background-color: #fff;
+  color: inherit;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* Summary hidden by default */
+.card-summary {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; /* align to bottom of card content */
+  transform: translateY(100%); /* below button */
+  background-color: #fff;
+  padding: 1rem;
+  border: 2px solid;
+  border-radius: 10px;
+  width: 100%;
+  z-index: 20;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Show summary on card hover */
+.career-card:hover .card-summary {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}

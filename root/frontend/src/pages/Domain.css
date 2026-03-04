@@ -1,0 +1,41 @@
+.domain-container {
+  padding: 40px;
+}
+
+.domain-banner {
+  padding: 40px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.domain-banner h1 {
+  font-size: 36px;
+}
+
+.career-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.career-item h3 {
+  margin: 0;
+  color: #1e3a8a;
+}
+
+.explore-btn {
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+}
+
+.explore-btn:hover {
+  color: black;
+}
+
+.back-section {
+  margin-top: 40px;
+}
+
+.back-btn {
+  text-decoration: none;
+}
