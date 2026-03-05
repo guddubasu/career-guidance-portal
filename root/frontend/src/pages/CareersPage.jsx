@@ -11,6 +11,7 @@ export default function CareersPage() {
   const navigate = useNavigate();
 
   const careers = [
+<<<<<<< HEAD
     { id: 1, title: "BFSI", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
     { id: 2, title: "Defence", description: "Serve the nation", baseColor: "#047857", summary: "Defence careers include Army, Navy, Airforce, and related services." },
     { id: 3, title: "Design", description: "Creative Arts & Design", baseColor: "#9333EA", summary: "Graphic, Fashion, Product, and Interior Design opportunities." },
@@ -32,6 +33,29 @@ export default function CareersPage() {
     { id: 19, title: "Social Studies", description: "Sociology & Anthropology", baseColor: "#F59E0B", summary: "Careers in sociology, anthropology, and social research." },
     { id: 20, title: "Sports", description: "Athletics & Coaching", baseColor: "#9333EA", summary: "Athletics, coaching, sports management, and physical education." },
   ];
+=======
+  { id: 1, dataId: 1, title: "BFSI", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
+  { id: 2, dataId: 2, title: "Defence", description: "Serve the nation", baseColor: "#047857", summary: "Defence careers include Army, Navy, Airforce, and related services." },
+  { id: 3, dataId: 3, title: "Healthcare", description: "Health & Wellness", baseColor: "#DC2626", summary: "Medical, therapy, nursing, and wellness careers." },
+  { id: 4, dataId: 5, title: "Education", description: "Teaching & Learning", baseColor: "#F59E0B", summary: "Teaching, Research, and Academic Administration careers." },
+  { id: 5, dataId: 8, title: "Engineering", description: "Technology & Innovation", baseColor: "#DC2626", summary: "Civil, Mechanical, Electrical, and Software Engineering careers." },
+  { id: 6, dataId: 6, title: "Agriculture", description: "Visual & Performing Arts", baseColor: "#9333EA", summary: "Painting, Sculpture, Photography, Theatre, and Performing Arts." },
+  { id: 7, dataId: 7, title: "Hospitality", description: "Travel & Guest Services", baseColor: "#F59E0B", summary: "Hotel management, tourism, and travel careers." },
+  { id: 8, dataId: 8, title: "Engineering", description: "Technology & Innovation", baseColor: "#DC2626", summary: "Civil, Mechanical, Electrical, and Software Engineering careers." },
+  { id: 9, dataId: 9, title: "IT & Computer", description: "Information Technology", baseColor: "#9333EA", summary: "Software, IT services, AI, and IT infrastructure careers." },
+  { id: 10, dataId: 10, title: "Management", description: "Business & Leadership", baseColor: "#F59E0B", summary: "Business administration, leadership, and management careers." },
+  { id: 11, dataId: 11, title: "Railways", description: "Transportation & Services", baseColor: "#1E40AF", summary: "Railway operations, engineering, and management careers." },
+  { id: 12, dataId: 12, title: "Police", description: "Law Enforcement", baseColor: "#DC2626", summary: "Police services, investigations, and public safety careers." },
+  { id: 13, dataId: 13, title: "Civil Services", description: "Administration & Governance", baseColor: "#10B981", summary: "IAS, IFS, and administrative career opportunities." },
+  { id: 14, dataId: 14, title: "Banking", description: "Bank Operations", baseColor: "#1E40AF", summary: "Clerks, Probationary Officers, and bank management careers." },
+  { id: 15, dataId: 15, title: "Research", description: "Scientific Research", baseColor: "#9333EA", summary: "Scientist, Research Assistant, and research careers." },
+  { id: 16, dataId: 16, title: "Sports", description: "Athletics & Coaching", baseColor: "#F59E0B", summary: "Athletics, coaching, sports management, and physical education." },
+  { id: 17, dataId: 17, title: "Design", description: "Creative Arts & Design", baseColor: "#9333EA", summary: "Graphic, Fashion, Product, and Interior Design opportunities." },
+  { id: 18, dataId: 18, title: "Aviation", description: "Air Travel & Services", baseColor: "#10B981", summary: "Pilots, Air Hostess, and aviation operations careers." },
+  { id: 19, dataId: 19, title: "Media", description: "Journalism & Broadcasting", baseColor: "#F59E0B", summary: "Journalism, media, broadcasting, and digital media careers." },
+  { id: 20, dataId: 20, title: "Entrepreneurship", description: "Startup & Business", baseColor: "#9333EA", summary: "Startup Founder, Business Owner, and entrepreneurship careers." },
+];
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
 
   const getTint = (hex) => {
     const opacity = 0.12;
@@ -63,12 +87,20 @@ export default function CareersPage() {
         {careers.map((career) => (
           <SwiperSlide key={career.id}>
             <div
+<<<<<<< HEAD
               className="career-card relative"
+=======
+              className="career-card relative cursor-pointer"
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
               style={{
                 borderColor: career.baseColor,
                 backgroundColor: getTint(career.baseColor),
               }}
+<<<<<<< HEAD
               onClick={() => navigate(`/careers/${career.id}`)}
+=======
+              onClick={() => navigate(`/domain/${career.dataId}`)}
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
             >
               <h3 className="text-xl font-semibold mb-2">{career.title}</h3>
               <p className="text-sm">{career.description}</p>
@@ -83,14 +115,21 @@ export default function CareersPage() {
                   style={{ backgroundColor: career.baseColor }}
                   onClick={(e) => {
                     e.stopPropagation();
+<<<<<<< HEAD
                     navigate(`/careers/${career.id}`);
+=======
+                    navigate(`/domain/${career.dataId}`);
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
                   }}
                 >
                   Explore Careers
                 </button>
               </div>
 
+<<<<<<< HEAD
               {/* Summary under button */}
+=======
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
               <div className="card-summary" style={{ borderColor: career.baseColor }}>
                 <h4 className="font-bold text-lg mb-2">{career.title}</h4>
                 <p className="text-sm">{career.summary}</p>
@@ -101,4 +140,8 @@ export default function CareersPage() {
       </Swiper>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6

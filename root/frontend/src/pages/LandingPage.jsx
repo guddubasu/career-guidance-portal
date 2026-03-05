@@ -5,9 +5,14 @@ import "./LandingPage.css";
 export default function LandingPage({ onEnter }) {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const handleStart = () => {
     if (onEnter) onEnter(); // tells App that landing is finished
     navigate("/home");      // go to home
+=======
+const handleStart = () => {
+    navigate("/home");//changing it to implement authentication
+>>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
   };
 
   return (
