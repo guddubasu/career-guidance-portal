@@ -5,14 +5,12 @@ import "./LandingPage.css";
 export default function LandingPage({ onEnter }) {
   const navigate = useNavigate();
 
-<<<<<<< HEAD
   const handleStart = () => {
-    if (onEnter) onEnter(); // tells App that landing is finished
-    navigate("/home");      // go to home
-=======
-const handleStart = () => {
-    navigate("/home");//changing it to implement authentication
->>>>>>> 178bb3e08ec2f1d7e3aff9be230106ba9777cbd6
+    // Call the onEnter callback if provided (for first-time landing logic)
+    if (onEnter) onEnter();
+
+    // Navigate to home page (you can handle auth here if needed)
+    navigate("/home");
   };
 
   return (
@@ -30,13 +28,12 @@ const handleStart = () => {
         </button>
       </div>
 
-      
       <div className="right-section">
         <div className="image-grid">
-          <img src="/images/img2.jpg" alt="" />
-          <img src="/images/img1.jpg" alt="" />
-          <img src="/images/img3.jpg" alt="" />
-          <img src="/images/img4.jpg" alt="" />
+          <img src="/images/img2.jpg" alt="Career 1" />
+          <img src="/images/img1.jpg" alt="Career 2" />
+          <img src="/images/img3.jpg" alt="Career 3" />
+          <img src="/images/img4.jpg" alt="Career 4" />
         </div>
       </div>
     </div>
