@@ -1,19 +1,26 @@
-import {useContext,useState,useEffect} from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import { Appcontext } from "../context/AppContext";
+import "./SubCareerDetail.css";
+
 export default function SubCareerDetail() {
-  const {backendUrl}=useContext(Appcontext);
-  const[subcareerData,setSubCareerData]=useState([]);
-    useEffect(()=>{
-      axios.get(backendUrl+'/getCareerData')
-      .then(career_data=>setSubCareerData(career_data.data))
-      .catch(err=> console.log(err))
-    },[backendUrl]);
+
+  const { backendUrl } = useContext(Appcontext);
+  const [subcareerData, setSubCareerData] = useState([]);
+
+  useEffect(() => {
+    axios.get(backendUrl + "/getCareerData")
+      .then((career_data) => setSubCareerData(career_data.data))
+      .catch((err) => console.log(err));
+  }, [backendUrl]);
+
   const { id, career } = useParams();
+
   const domain = subcareerData.find(
-  (item) => item.domain_id === Number(id)
-);
+    (item) => item.domain_id === Number(id)
+  );
+
   if (!domain) {
     return <h2 style={{ padding: "40px" }}>Domain Not Found</h2>;
   }
@@ -28,49 +35,121 @@ export default function SubCareerDetail() {
 
   return (
     <div>
+
+      {/* Banner */}
       <div
-        style={{
-          background: domain.themeColor,
-          padding: "50px",
-          color: "white"
-        }}
+        className="subcareer-banner"
+        style={{ background: domain.themeColor }}
       >
         <h1>{careerData.career_name}</h1>
       </div>
 
-      <div style={{ padding: "40px" }}>
-        <h4>Career Description</h4>
-        <p>{careerData.career_description}</p>
-        <h4>Personal Competencies</h4>
-        <p>{careerData.personal_competencies.map((el)=><li>{el}</li>)}</p>
-        <h4>Entry Pathway</h4>
-        <p>{careerData.entry_pathway.map((el)=><li>{el}</li>)}</p>
-        <h4>Where will you study</h4>
-        <p>{careerData.where_will_you_study_description}</p>
-        <h5>Government Institutes</h5>
-        <p>{careerData.government_institutes.map((el)=><li>{el}</li>)}</p>
-        <h5>Private Institutes</h5>
-        <p>{careerData.private_institutes.map((el)=><li>{el}</li>)}</p>
-        <h4>Fees</h4>
-        <p>{careerData.fees}</p>
-        <h4>Scholarships and Loans</h4>
-        <p>static for every page</p>
-        <h4>Where will you work</h4>
-        <p>{careerData.place_of_work}</p>
-        <h4>Where will you work</h4>
-        <h5>Place of work</h5>
-        <p>{careerData.place_of_work}</p>
-        <h5>work environment</h5>
-        <p>{careerData.work_environment}</p>
-        <h4>Expected Growth Path</h4>
-        <p>{careerData. expected_growth_path.map((el)=><li>{el}</li>)}</p>
-        <h4>Expected Income</h4>
-        <p>{careerData.expected_income}</p>
-        <br />
-        <Link to={`/domain/${id}`}>
-          ⬅ Back to {domain.domain_name}
-        </Link>
+      {/* Layout with Sidebar */}
+      <div className="subcareer-layout">
+
+        {/* Sidebar Navigation */}
+        <div className="sidebar">
+          <h3>Quick Navigation</h3>
+          <ul>
+            <li><a href="#description">Career Description</a></li>
+            <li><a href="#competencies">Personal Competencies</a></li>
+            <li><a href="#entry">Entry Pathway</a></li>
+            <li><a href="#study">Where to Study</a></li>
+            <li><a href="#fees">Fees</a></li>
+            <li><a href="#work">Work Environment</a></li>
+            <li><a href="#growth">Expected Growth</a></li>
+            <li><a href="#income">Expected Income</a></li>
+          </ul>
+        </div>
+
+        {/* Main Content */}
+        <div className="subcareer-container">
+
+          <section id="description">
+            <h4 className="section-title">Career Description</h4>
+            <p>{careerData.career_description}</p>
+          </section>
+
+          <section id="competencies">
+            <h4 className="section-title">Personal Competencies</h4>
+            <ul className="subcareer-list">
+              {careerData.personal_competencies.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="entry">
+            <h4 className="section-title">Entry Pathway</h4>
+            <ul className="subcareer-list">
+              {careerData.entry_pathway.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="study">
+            <h4 className="section-title">Where will you study</h4>
+            <p>{careerData.where_will_you_study_description}</p>
+
+            <h5>Government Institutes</h5>
+            <ul className="subcareer-list">
+              {careerData.government_institutes.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ul>
+
+            <h5>Private Institutes</h5>
+            <ul className="subcareer-list">
+              {careerData.private_institutes.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="fees">
+            <h4 className="section-title">Fees</h4>
+            <p>{careerData.fees}</p>
+          </section>
+
+          <section>
+            <h4 className="section-title">Scholarships and Loans</h4>
+            <p>Static for every page</p>
+          </section>
+
+          <section id="work">
+            <h4 className="section-title">Where will you work</h4>
+
+            <h5>Place of Work</h5>
+            <p>{careerData.place_of_work}</p>
+
+            <h5>Work Environment</h5>
+            <p>{careerData.work_environment}</p>
+          </section>
+
+          <section id="growth">
+            <h4 className="section-title">Expected Growth Path</h4>
+            <ul className="subcareer-list">
+              {careerData.expected_growth_path.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="income">
+            <h4 className="section-title">Expected Income</h4>
+            <p>{careerData.expected_income}</p>
+          </section>
+
+          <br />
+
+          <Link className="back-btn" to={`/domain/${id}`}>
+            ⬅ Back to {domain.domain_name}
+          </Link>
+
+        </div>
       </div>
+
     </div>
   );
 }

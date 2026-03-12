@@ -1,0 +1,150 @@
+/* Page background */
+body{
+  background:#f5f7fb;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Banner */
+.subcareer-banner{
+  padding:70px 20px;
+  color:white;
+  text-align:center;
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:1px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Layout with sidebar */
+.subcareer-layout{
+  display:flex;
+  max-width:1200px;
+  margin:40px auto;
+  gap:30px;
+  align-items:flex-start;
+}
+
+/* Sidebar navigation */
+.sidebar{
+  width:250px;
+  background:white;
+  border-radius:10px;
+  padding:20px;
+  position:sticky;
+  top:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.sidebar h3{
+  font-size:18px;
+  margin-bottom:15px;
+  color:#1e40af;
+}
+
+.sidebar ul{
+  list-style:none;
+  padding:0;
+}
+
+.sidebar li{
+  margin-bottom:10px;
+}
+
+.sidebar a{
+  text-decoration:none;
+  color:#374151;
+  font-size:15px;
+  transition:0.2s;
+}
+
+.sidebar a:hover{
+  color:#1e40af;
+  padding-left:4px;
+}
+
+/* Main content container */
+.subcareer-container{
+  flex:1;
+  background:white;
+  border-radius:10px;
+  padding:35px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section cards */
+.subcareer-container section{
+  margin-bottom:35px;
+  padding-bottom:15px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+/* Section titles */
+.section-title{
+  margin-bottom:10px;
+  font-size:22px;
+  font-weight:600;
+  color:#1e3a8a;
+  border-left:5px solid #1e40af;
+  padding-left:10px;
+}
+
+/* Lists */
+.subcareer-list{
+  margin-left:20px;
+  line-height:1.8;
+}
+
+.subcareer-list li{
+  margin-bottom:5px;
+}
+
+/* Paragraph styling */
+.subcareer-container p{
+  line-height:1.7;
+  color:#444;
+}
+
+/* Small headings */
+.subcareer-container h5{
+  margin-top:10px;
+  margin-bottom:5px;
+  color:#374151;
+  font-weight:600;
+}
+
+/* Back button */
+.back-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:10px 18px;
+  background:#1e40af;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#0f2c7a;
+  transform:translateY(-2px);
+}
+
+/* Smooth scroll */
+html{
+  scroll-behavior:smooth;
+}
+
+/* Responsive design */
+@media (max-width:900px){
+
+  .subcareer-layout{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    position:relative;
+  }
+
+}
