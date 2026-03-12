@@ -326,26 +326,77 @@ expected_growth_path:["Assistant Manager","Tour Manager","Senior Manager"]
 },
 {
 domain_id:8,
-domain_name:"Engineering2",
+domain_name:"Vocational",
 themeColor:"#2563EB",
 careers:[
+
 {
-career_id:"electrical-engineer",
-career_name:"Electrical Engineer",
-career_description:"Works with electrical systems and power generation.",
-expected_income:"₹4–11 LPA",
-personal_competencies:["Electrical Knowledge","Problem Solving","Analytical Thinking"],
-entry_pathway:["B.Tech Electrical","Diploma Electrical"],
-where_will_you_study_description:"Engineering colleges provide electrical programs.",
-government_institutes:["IIT Delhi","NIT Surat"],
-private_institutes:["VIT","SRM University"],
-fees:"₹2,00,000 – ₹9,00,000",
-place_of_work:"Power Plants and Industries",
-work_environment:"Office and field work",
-expected_growth_path:["Junior Engineer","Electrical Engineer","Senior Engineer"]
-}
-]
+career_id:"electrician",
+career_name:"Electrician",
+career_description:"Electricians install, repair and maintain electrical wiring, equipment and power systems in homes, offices and industries.",
+expected_income:"₹2–6 LPA",
+personal_competencies:["Technical Skills","Problem Solving","Attention to Safety"],
+entry_pathway:["10th Pass","ITI Electrician Course (2 years)","Apprenticeship Training"],
+where_will_you_study_description:"Vocational training institutes and ITI colleges provide electrician courses.",
+government_institutes:["Government ITI Colleges","National Skill Training Institutes"],
+private_institutes:["Industrial Training Institutes","Skill Development Centers"],
+fees:"₹10,000 – ₹50,000",
+place_of_work:"Construction Sites, Homes, Factories",
+work_environment:"Field and workshop environment",
+expected_growth_path:["Apprentice Electrician","Electrician","Senior Electrician","Electrical Supervisor"]
 },
+
+{
+career_id:"plumber",
+career_name:"Plumber",
+career_description:"Plumbers install and repair water supply lines, drainage systems and plumbing fixtures in buildings.",
+expected_income:"₹2–5 LPA",
+personal_competencies:["Manual Skills","Problem Solving","Attention to Detail"],
+entry_pathway:["10th Pass","ITI Plumbing Course","Apprenticeship"],
+where_will_you_study_description:"ITI institutes provide plumbing vocational courses.",
+government_institutes:["Government ITI Colleges"],
+private_institutes:["Skill Development Centers"],
+fees:"₹8,000 – ₹40,000",
+place_of_work:"Homes, Buildings, Construction Sites",
+work_environment:"Field work and repair jobs",
+expected_growth_path:["Helper","Plumber","Senior Plumber","Contractor"]
+},
+
+{
+career_id:"automobile-technician",
+career_name:"Automobile Technician",
+career_description:"Automobile technicians repair and maintain cars, bikes and other vehicles.",
+expected_income:"₹2–7 LPA",
+personal_competencies:["Mechanical Skills","Problem Solving","Technical Knowledge"],
+entry_pathway:["10th Pass","ITI Motor Mechanic Course","Apprenticeship"],
+where_will_you_study_description:"Automobile vocational courses are offered by ITI institutes.",
+government_institutes:["Government ITI Colleges"],
+private_institutes:["Automobile Training Institutes"],
+fees:"₹10,000 – ₹60,000",
+place_of_work:"Automobile Workshops and Service Centers",
+work_environment:"Workshop environment",
+expected_growth_path:["Mechanic Helper","Automobile Technician","Senior Technician","Workshop Manager"]
+},
+
+{
+career_id:"carpenter",
+career_name:"Carpenter",
+career_description:"Carpenters build and repair wooden structures, furniture and fixtures.",
+expected_income:"₹2–5 LPA",
+personal_competencies:["Manual Skills","Creativity","Precision"],
+entry_pathway:["10th Pass","ITI Carpenter Course"],
+where_will_you_study_description:"ITI institutes provide carpenter vocational training.",
+government_institutes:["Government ITI Colleges"],
+private_institutes:["Private Skill Institutes"],
+fees:"₹8,000 – ₹30,000",
+place_of_work:"Furniture Workshops, Construction Sites",
+work_environment:"Workshop and field work",
+expected_growth_path:["Helper","Carpenter","Senior Carpenter","Furniture Contractor"]
+}
+
+]
+}
+,
 
 {
 domain_id:9,
@@ -569,11 +620,13 @@ expected_growth_path:["Junior Designer","Designer","Senior Designer"]
 ]
 },
 
+
 {
 domain_id:18,
 domain_name:"Aviation",
 themeColor:"#10B981",
 careers:[
+
 {
 career_id:"pilot",
 career_name:"Commercial Pilot",
@@ -588,15 +641,82 @@ fees:"₹20,00,000 – ₹50,00,000",
 place_of_work:"Airlines",
 work_environment:"Air and office",
 expected_growth_path:["Co-Pilot","Captain","Chief Pilot"]
-}
-]
 },
+
+{
+career_id:"air-traffic-controller",
+career_name:"Air Traffic Controller",
+career_description:"Manages aircraft movement in airspace and ensures flight safety.",
+expected_income:"₹8–20 LPA",
+personal_competencies:["Concentration","Decision Making","Communication"],
+entry_pathway:["B.Sc / B.Tech","AAI ATC Exam"],
+where_will_you_study_description:"Training provided by Airports Authority of India.",
+government_institutes:["Civil Aviation Training College"],
+private_institutes:[],
+fees:"Government Training",
+place_of_work:"Airports",
+work_environment:"Control towers and airport operations rooms",
+expected_growth_path:["Junior ATC","Senior ATC","ATC Manager"]
+},
+
+{
+career_id:"aircraft-maintenance-engineer",
+career_name:"Aircraft Maintenance Engineer",
+career_description:"Maintains and repairs aircraft systems to ensure safety.",
+expected_income:"₹6–18 LPA",
+personal_competencies:["Technical Knowledge","Attention to Detail","Problem Solving"],
+entry_pathway:["AME Course","DGCA Certification"],
+where_will_you_study_description:"Aviation institutes provide AME programs.",
+government_institutes:["Indira Gandhi Institute of Aeronautics"],
+private_institutes:["Hindustan Aviation Academy"],
+fees:"₹4,00,000 – ₹12,00,000",
+place_of_work:"Airlines and Maintenance Companies",
+work_environment:"Aircraft hangars and workshops",
+expected_growth_path:["Trainee AME","Licensed Engineer","Chief Engineer"]
+},
+
+{
+career_id:"flight-attendant",
+career_name:"Cabin Crew / Flight Attendant",
+career_description:"Ensures passenger safety and comfort during flights.",
+expected_income:"₹4–12 LPA",
+personal_competencies:["Communication","Customer Service","Personality"],
+entry_pathway:["Cabin Crew Training","Airline Recruitment"],
+where_will_you_study_description:"Aviation hospitality institutes provide training.",
+government_institutes:["Air India Training Academy"],
+private_institutes:["Frankfinn Institute of Air Hostess Training"],
+fees:"₹1,00,000 – ₹3,00,000",
+place_of_work:"Airlines",
+work_environment:"Inside aircraft and airport terminals",
+expected_growth_path:["Cabin Crew","Senior Cabin Crew","Cabin Supervisor"]
+},
+
+{
+career_id:"airport-manager",
+career_name:"Airport Manager",
+career_description:"Manages airport operations, staff and passenger services.",
+expected_income:"₹8–20 LPA",
+personal_competencies:["Leadership","Management","Communication"],
+entry_pathway:["MBA Aviation Management","Airport Operations Training"],
+where_will_you_study_description:"Aviation management institutes.",
+government_institutes:["Rajiv Gandhi National Aviation University"],
+private_institutes:["UPES Dehradun"],
+fees:"₹2,00,000 – ₹8,00,000",
+place_of_work:"Airports",
+work_environment:"Airport offices and operations areas",
+expected_growth_path:["Operations Manager","Airport Manager","Regional Director"]
+}
+
+]
+}
+,
 
 {
 domain_id:19,
 domain_name:"Media",
 themeColor:"#F59E0B",
 careers:[
+
 {
 career_id:"journalist",
 career_name:"Journalist",
@@ -611,7 +731,72 @@ fees:"₹1,00,000 – ₹5,00,000",
 place_of_work:"Media Houses and News Agencies",
 work_environment:"Office and Field",
 expected_growth_path:["Reporter","Senior Reporter","Editor"]
+},
+
+{
+career_id:"news-anchor",
+career_name:"News Anchor",
+career_description:"Presents news programs on television or digital media platforms.",
+expected_income:"₹5–15 LPA",
+personal_competencies:["Public Speaking","Confidence","Communication"],
+entry_pathway:["Journalism Degree","Anchoring Training"],
+where_will_you_study_description:"Media schools provide anchoring and journalism programs.",
+government_institutes:["IIMC Delhi"],
+private_institutes:["AAFT Noida"],
+fees:"₹1,50,000 – ₹4,00,000",
+place_of_work:"TV Channels",
+work_environment:"Television studios",
+expected_growth_path:["Anchor","Senior Anchor","Editorial Head"]
+},
+
+{
+career_id:"video-editor",
+career_name:"Video Editor",
+career_description:"Edits video footage for films, television and digital media.",
+expected_income:"₹3–10 LPA",
+personal_competencies:["Creativity","Video Editing Software","Attention to Detail"],
+entry_pathway:["Film Editing Courses","Media Production Programs"],
+where_will_you_study_description:"Film institutes provide video editing training.",
+government_institutes:["FTII Pune"],
+private_institutes:["Whistling Woods International"],
+fees:"₹1,00,000 – ₹6,00,000",
+place_of_work:"Production Houses",
+work_environment:"Editing studios",
+expected_growth_path:["Assistant Editor","Video Editor","Senior Editor"]
+},
+
+{
+career_id:"content-creator",
+career_name:"Digital Content Creator",
+career_description:"Creates online content for social media platforms and digital channels.",
+expected_income:"₹3–20 LPA depending on popularity",
+personal_competencies:["Creativity","Communication","Social Media Skills"],
+entry_pathway:["Digital Media Courses","Self Learning"],
+where_will_you_study_description:"Media institutes and online platforms.",
+government_institutes:["IIMC Delhi"],
+private_institutes:["UpGrad Digital Marketing Programs"],
+fees:"₹30,000 – ₹2,00,000",
+place_of_work:"Online Platforms",
+work_environment:"Remote and studio environment",
+expected_growth_path:["Creator","Influencer","Brand Collaborator"]
+},
+
+{
+career_id:"film-director",
+career_name:"Film Director",
+career_description:"Directs movies, web series and television productions.",
+expected_income:"₹6–30 LPA depending on projects",
+personal_competencies:["Creativity","Leadership","Storytelling"],
+entry_pathway:["Film Direction Courses","Film School Training"],
+where_will_you_study_description:"Film institutes provide directing courses.",
+government_institutes:["FTII Pune"],
+private_institutes:["Whistling Woods International"],
+fees:"₹3,00,000 – ₹10,00,000",
+place_of_work:"Film Production Houses",
+work_environment:"Film sets and studios",
+expected_growth_path:["Assistant Director","Director","Film Producer"]
 }
+
 ]
 },
 
@@ -620,10 +805,11 @@ domain_id:20,
 domain_name:"Entrepreneurship",
 themeColor:"#9333EA",
 careers:[
+
 {
 career_id:"startup-founder",
 career_name:"Startup Founder",
-career_description:"Creates and manages a new business venture.",
+career_description:"Creates and manages a new business venture and develops innovative products or services.",
 expected_income:"Varies depending on business success",
 personal_competencies:["Leadership","Risk Taking","Innovation"],
 entry_pathway:["Startup Programs","Incubators","MBA Entrepreneurship"],
@@ -634,7 +820,104 @@ fees:"Varies",
 place_of_work:"Own Startup",
 work_environment:"Dynamic startup environment",
 expected_growth_path:["Founder","CEO","Investor"]
+},
+
+{
+career_id:"business-owner",
+career_name:"Small Business Owner",
+career_description:"Starts and manages a small business such as retail shops, services, or manufacturing units.",
+expected_income:"₹3–15 LPA depending on business growth",
+personal_competencies:["Business Planning","Leadership","Financial Management"],
+entry_pathway:["BBA","MBA","Entrepreneurship Training Programs"],
+where_will_you_study_description:"Business schools and entrepreneurship training institutes.",
+government_institutes:["Indian Institute of Management"],
+private_institutes:["NMIMS Business School"],
+fees:"₹1,00,000 – ₹10,00,000",
+place_of_work:"Own Business",
+work_environment:"Office, retail store or business facility",
+expected_growth_path:["Owner","Business Expansion","Multi-Business Entrepreneur"]
+},
+
+{
+career_id:"tech-entrepreneur",
+career_name:"Tech Entrepreneur",
+career_description:"Builds technology-based companies such as software startups, AI products, or digital platforms.",
+expected_income:"₹8–40 LPA depending on startup success",
+personal_competencies:["Innovation","Programming Knowledge","Leadership"],
+entry_pathway:["B.Tech","Startup Incubation Programs","Technology Entrepreneurship Courses"],
+where_will_you_study_description:"Engineering colleges and startup incubators.",
+government_institutes:["IIT Bombay","IIT Delhi"],
+private_institutes:["BITS Pilani"],
+fees:"₹2,00,000 – ₹8,00,000",
+place_of_work:"Tech Startup Companies",
+work_environment:"Startup office and innovation labs",
+expected_growth_path:["Founder","Startup CEO","Tech Investor"]
+},
+
+{
+career_id:"social-entrepreneur",
+career_name:"Social Entrepreneur",
+career_description:"Creates businesses or organizations that solve social problems like education, healthcare or environment.",
+expected_income:"₹4–12 LPA",
+personal_competencies:["Leadership","Problem Solving","Social Awareness"],
+entry_pathway:["Social Entrepreneurship Programs","MBA Social Entrepreneurship"],
+where_will_you_study_description:"Universities and social innovation centers.",
+government_institutes:["TISS Mumbai"],
+private_institutes:["Ashoka University"],
+fees:"₹1,00,000 – ₹6,00,000",
+place_of_work:"NGOs, Social Enterprises",
+work_environment:"Office and community field work",
+expected_growth_path:["Founder","Social Enterprise Leader","Policy Advisor"]
+},
+
+{
+career_id:"ecommerce-entrepreneur",
+career_name:"E-commerce Entrepreneur",
+career_description:"Starts and manages an online business selling products or services through digital platforms.",
+expected_income:"₹3–20 LPA depending on business scale",
+personal_competencies:["Digital Marketing","Business Strategy","Innovation"],
+entry_pathway:["E-commerce Courses","Digital Marketing Training","MBA"],
+where_will_you_study_description:"Business schools and online platforms.",
+government_institutes:["IIM Bangalore"],
+private_institutes:["UpGrad Business Programs"],
+fees:"₹50,000 – ₹5,00,000",
+place_of_work:"Online Business Platforms",
+work_environment:"Remote and office work",
+expected_growth_path:["Online Seller","Brand Owner","E-commerce Business Leader"]
+},
+
+{
+career_id:"franchise-owner",
+career_name:"Franchise Owner",
+career_description:"Operates a business using the brand and system of an established company.",
+expected_income:"₹5–18 LPA depending on franchise performance",
+personal_competencies:["Management Skills","Customer Service","Business Planning"],
+entry_pathway:["Business Training","Franchise Programs"],
+where_will_you_study_description:"Business schools and franchise training institutes.",
+government_institutes:["IIM Indore"],
+private_institutes:["Symbiosis Institute of Business Management"],
+fees:"₹2,00,000 – ₹20,00,000 depending on franchise",
+place_of_work:"Retail outlets or franchise locations",
+work_environment:"Retail or office environment",
+expected_growth_path:["Franchise Owner","Multi-Unit Owner","Regional Franchise Partner"]
+},
+
+{
+career_id:"venture-capitalist",
+career_name:"Venture Capitalist",
+career_description:"Invests money in startups and helps them grow by providing funding and mentorship.",
+expected_income:"₹10–50 LPA depending on investments",
+personal_competencies:["Financial Analysis","Strategic Thinking","Risk Assessment"],
+entry_pathway:["MBA Finance","Investment Banking Experience"],
+where_will_you_study_description:"Business schools and finance institutes.",
+government_institutes:["IIM Ahmedabad"],
+private_institutes:["ISB Hyderabad"],
+fees:"₹5,00,000 – ₹25,00,000",
+place_of_work:"Venture Capital Firms",
+work_environment:"Office and startup meetings",
+expected_growth_path:["Investment Analyst","Partner","Managing Partner"]
 }
+
 ]
 }
 ]
