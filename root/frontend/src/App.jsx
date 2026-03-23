@@ -24,6 +24,7 @@ import InterestForm from "./pages/InterestForm";
 
 import DistanceOnline from "./pages/DistanceOnline";
 import Institutions from "./pages/Institutions";
+import AptitudeResults from "./pages/AptitudeResults";
 
 import Scholarships from "./pages/Scholarships";
 import GovernmentScholarships from "./pages/GovernmentScholarships";
@@ -77,6 +78,10 @@ export default function App() {
           {/* Online learning */}
           <Route path="/distance-online-learning" element={<DistanceOnline />} />
           <Route path="/institutions" element={<Institutions />} />
+          
+          {/* Aptitude test results */}
+          <Route path="/aptitude/results" element={<AptitudeResults />} />
+          <Route path="/aptitude" element={<AptitudeTest />} />
 
           {/* Scholarships */}
           <Route path="/scholarships" element={<Scholarships />} />

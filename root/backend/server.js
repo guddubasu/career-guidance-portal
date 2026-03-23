@@ -1,3 +1,7 @@
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
@@ -7,6 +11,10 @@ import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import userModel from "./models/usermodel.js";
 import domainModel from "./models/domainModel.js";
+import aptitudeRoutes from "./routes/aptitudeRoutes.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const app=express();
 const port=process.env.PORT || 4000;
 const allowedOrigins=['http://localhost:5173'];
@@ -29,7 +37,7 @@ domainModel.find()
 });
 app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
-
+app.use('/api/aptitude',aptitudeRoutes);
 
 
 
