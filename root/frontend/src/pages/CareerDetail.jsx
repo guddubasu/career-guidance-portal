@@ -15,7 +15,7 @@ const careerData = {
     themeColor: "linear-gradient(to right, #6b8e23, #9acd32)"
   },
   3: { 
-    title: "Healthcare", 
+    title: "Healthcare & Medicine  ", 
     summary: "Medical and healthcare professions including doctors, nurses, therapists and healthcare administrators.",
     requiredSubjects: ["Biology", "Chemistry"],
     themeColor: "linear-gradient(to right, #b91c1c, #ef4444)"

@@ -11,43 +11,43 @@ export default function CareersPage() {
   const navigate = useNavigate();
 
   const careers = [
-{ id: 1, dataId: 1, title: "BFSI", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
+{ id: 1, dataId: 1, title: " IT & Software", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
 
-{ id: 2, dataId: 2, title: "Defence", description: "Serve the Nation", baseColor: "#047857", summary: "Defence careers include Army, Navy, Airforce and national security services." },
+{ id: 2, dataId: 2, title: " Core Engineering", description: "Serve the Nation", baseColor: "#047857", summary: "Defence careers include Army, Navy, Airforce and national security services." },
 
-{ id: 3, dataId: 3, title: "Healthcare", description: "Health & Wellness", baseColor: "#DC2626", summary: "Medical, nursing, therapy and healthcare service careers." },
+{ id: 3, dataId: 3, title: " Healthcare & Medicine", description: "Health & Wellness", baseColor: "#DC2626", summary: "Medical, nursing, therapy and healthcare service careers." },
 
-{ id: 4, dataId: 4, title: "Education", description: "Teaching & Learning", baseColor: "#F59E0B", summary: "Teaching, academic research and educational administration careers." },
+{ id: 4, dataId: 4, title: "Commerce, Business & Management", description: "Teaching & Learning", baseColor: "#F59E0B", summary: "Teaching, academic research and educational administration careers." },
 
-{ id: 5, dataId: 5, title: "Engineering", description: "Technology & Innovation", baseColor: "#2563EB", summary: "Civil, Mechanical, Electrical and other engineering careers." },
+{ id: 5, dataId: 5, title: "Law & Legal Services", description: "Technology & Innovation", baseColor: "#2563EB", summary: "Civil, Mechanical, Electrical and other engineering careers." },
 
-{ id: 6, dataId: 6, title: "Agriculture", description: "Farming & Agribusiness", baseColor: "#15803D", summary: "Careers related to agriculture, farming technology and agribusiness." },
+{ id: 6, dataId: 6, title: "Arts, Design & Creative Fields", description: "Farming & Agribusiness", baseColor: "#15803D", summary: "Careers related to agriculture, farming technology and agribusiness." },
 
-{ id: 7, dataId: 7, title: "Hospitality", description: "Travel & Tourism", baseColor: "#F97316", summary: "Hotel management, tourism and hospitality service careers." },
+{ id: 7, dataId: 7, title: " Media, Communication & Entertainment", description: "Travel & Tourism", baseColor: "#F97316", summary: "Hotel management, tourism and hospitality service careers." },
 
-{ id: 8, dataId: 8, title: "Vocational", description: "Power & Electrical Systems", baseColor: "#2563EB", summary: "Careers in electrical systems, power generation and energy." },
+{ id: 8, dataId: 8, title: "Education & Teaching", description: "Power & Electrical Systems", baseColor: "#2563EB", summary: "Careers in electrical systems, power generation and energy." },
 
-{ id: 9, dataId: 9, title: "IT & Computer", description: "Information Technology", baseColor: "#9333EA", summary: "Software development, AI, data science and IT infrastructure careers." },
+{ id: 9, dataId: 9, title: " Government & Public Services", description: "Information Technology", baseColor: "#9333EA", summary: "Software development, AI, data science and IT infrastructure careers." },
 
-{ id: 10, dataId: 10, title: "Management", description: "Business & Leadership", baseColor: "#F59E0B", summary: "Business administration, leadership and management careers." },
+{ id: 10, dataId: 10, title: "Finance & Banking", description: "Business & Leadership", baseColor: "#F59E0B", summary: "Business administration, leadership and management careers." },
 
-{ id: 11, dataId: 11, title: "Railways", description: "Railway Infrastructure", baseColor: "#1E40AF", summary: "Engineering and operational careers in the railway sector." },
+{ id: 11, dataId: 11, title: " Agriculture & Environment", description: "Railway Infrastructure", baseColor: "#1E40AF", summary: "Engineering and operational careers in the railway sector." },
 
-{ id: 12, dataId: 12, title: "Police", description: "Law Enforcement", baseColor: "#DC2626", summary: "Police services and law enforcement careers." },
+{ id: 12, dataId: 12, title: "Travel, Tourism & Hospitality", description: "Law Enforcement", baseColor: "#DC2626", summary: "Police services and law enforcement careers." },
 
-{ id: 13, dataId: 13, title: "Civil Services", description: "Government Administration", baseColor: "#10B981", summary: "Administrative careers such as IAS, IPS and government officers." },
+{ id: 13, dataId: 13, title: "Sports & Fitness", description: "Government Administration", baseColor: "#10B981", summary: "Administrative careers such as IAS, IPS and government officers." },
 
-{ id: 14, dataId: 14, title: "Banking", description: "Bank Operations", baseColor: "#1E40AF", summary: "Bank clerks, officers and banking service careers." },
+{ id: 14, dataId: 14, title: "Skilled Trades & Vocational Careers", description: "Bank Operations", baseColor: "#1E40AF", summary: "Bank clerks, officers and banking service careers." },
 
-{ id: 15, dataId: 15, title: "Research", description: "Scientific Research", baseColor: "#9333EA", summary: "Scientific research, laboratory and innovation careers." },
+{ id: 15, dataId: 15, title: "Psychology & Social Work", description: "Scientific Research", baseColor: "#9333EA", summary: "Scientific research, laboratory and innovation careers." },
 
-{ id: 16, dataId: 16, title: "Sports", description: "Athletics & Coaching", baseColor: "#F59E0B", summary: "Professional sports, coaching and sports management careers." },
+{ id: 16, dataId: 16, title: "Administrative & Support Roles", description: "Athletics & Coaching", baseColor: "#F59E0B", summary: "Professional sports, coaching and sports management careers." },
 
-{ id: 17, dataId: 17, title: "Design", description: "Creative Arts & Design", baseColor: "#9333EA", summary: "Graphic, fashion, product and creative design careers." },
+{ id: 17, dataId: 17, title: " Emerging & Modern Careers", description: "Creative Arts & Design", baseColor: "#9333EA", summary: "Graphic, fashion, product and creative design careers." },
 
-{ id: 18, dataId: 18, title: "Aviation", description: "Airline & Flight Careers", baseColor: "#10B981", summary: "Pilot, aviation management and airline industry careers." },
+{ id: 18, dataId: 18, title: " Entrepreneurship & Freelancing", description: "Airline & Flight Careers", baseColor: "#10B981", summary: "Pilot, aviation management and airline industry careers." },
 
-{ id: 19, dataId: 19, title: "Media", description: "Journalism & Broadcasting", baseColor: "#F59E0B", summary: "Journalism, media production and broadcasting careers." },
+{ id: 19, dataId: 19, title: " Pure Sciences", description: "Journalism & Broadcasting", baseColor: "#F59E0B", summary: "Journalism, media production and broadcasting careers." },
 
 { id: 20, dataId: 20, title: "Entrepreneurship", description: "Startups & Innovation", baseColor: "#9333EA", summary: "Startup founders, innovators and business creators." }
 ];
