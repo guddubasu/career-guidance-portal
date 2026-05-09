@@ -35,6 +35,7 @@ import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 import ChangePassword from './pages/ChangePassword';
 import Profile from "./pages/Profile";
+import CompleteProfile from "./pages/CompleteProfile";
 import VerifyEmail from "./pages/VerifyEmail";
 import ResetPassword from "./pages/ResetPassword";
 
@@ -96,7 +97,7 @@ export default function App() {
           <Route path="/verifyemail" element={<VerifyEmail />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
           <Route path="/changePassword" element={<ChangePassword />} />
-
+          <Route path="/completeProfile" element={<CompleteProfile/>}/>
           {/* Catch-all */}
           <Route path="*" element={<Home />} />
         </Routes>

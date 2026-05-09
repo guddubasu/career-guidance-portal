@@ -79,7 +79,7 @@ export default function Login() {
               type="text"
               className="form-control"
               id="name"
-              placeholder="Pammy Banerjee"
+              placeholder="John Doe"
               required
               onChange={e => setName(e.target.value)}
               value={name}

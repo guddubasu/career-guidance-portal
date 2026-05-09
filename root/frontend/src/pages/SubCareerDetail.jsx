@@ -111,12 +111,6 @@ export default function SubCareerDetail() {
             <h4 className="section-title">Fees</h4>
             <p>{careerData.fees}</p>
           </section>
-
-          <section>
-            <h4 className="section-title">Scholarships and Loans</h4>
-            <p>Static for every page</p>
-          </section>
-
           <section id="work">
             <h4 className="section-title">Where will you work</h4>
 

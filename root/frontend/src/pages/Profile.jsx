@@ -51,6 +51,17 @@ export default function Profile() {
               </button>
             </Link>
           )}
+          {(
+            <Link to="/completeProfile">
+              <button className="btn btn-primary fs-5 mt-4  ms-3 ">
+              {
+      userData?.isProfileCompleted
+      ? "Edit Profile"
+      : "Complete Profile"
+    }
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

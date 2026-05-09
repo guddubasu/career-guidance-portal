@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import './Footer.css';
-
+import { Appcontext } from "../context/AppContext";
 export default function Footer() {
+  const { isLoggedin } = useContext(Appcontext);
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -12,14 +14,13 @@ export default function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <div className="footer-links">
+        {isLoggedin && (<div className="footer-links">
           <Link to="/">Home</Link>
           <Link to="/careers">Careers</Link>
           <Link to="/institutions">Institutions</Link>
           <Link to="/scholarships">Scholarships</Link>
           <Link to="/ai-chat">AI Chat</Link>
-        </div>
-
+        </div>)}
         {/* Social / Optional */}
         <div className="footer-social">
           <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>

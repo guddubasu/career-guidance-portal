@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import heroImage from "../assets/hero.png"; 
 import careerImage from "../assets/career.png";
 import careersearchImage from "../assets/careersearch.png";
 import personalityImage from "../assets/personality.png";
 import { Link } from "react-router-dom";
 import './Home.css';
-
+import { Appcontext } from "../context/AppContext";
 export default function Home() {
+  const { isLoggedin } = useContext(Appcontext);
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -28,7 +29,7 @@ export default function Home() {
       </section>
 
       {/* Cards Section */}
-      <section className="quick-links-section">
+      {isLoggedin &&(<section className="quick-links-section">
         <div className="quick-links-cards">
           <Link to="/careers" className="card-link">
             <div className="card">
@@ -50,9 +51,6 @@ export default function Home() {
     <h3>SEE CAREERS BASED ON YOUR INTERESTS</h3>
   </div>
 </Link>
-
-
-
           {/* <Link to="/personality" className="card-link">
             <div className="card">
               <img src={personalityImage} alt="personality" className="card-image" />
@@ -67,9 +65,8 @@ export default function Home() {
           </Link>
           
         </div>
-      </section>
-      {/* AI Help Section */}
-      <section className="ai-help-section">
+      </section>)}
+      {isLoggedin &&(<section className="ai-help-section">
       <h2 className="ai-help-title">Get Help with AI</h2>
       <div className="ai-cards">
       <Link to="/ai-chat" className="ai-card">
@@ -82,8 +79,7 @@ export default function Home() {
         <h3>Career Roadmap Generator</h3>
       </Link>
   </div>
-</section>
-
+</section>)}
     </div>
   );
 }
