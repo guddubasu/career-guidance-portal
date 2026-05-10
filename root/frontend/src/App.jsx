@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useContext } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { Appcontext } from "./context/AppContext";
@@ -33,38 +32,55 @@ import ShowScholarship from "./pages/ShowScholarship";
 
 import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
-import ChangePassword from './pages/ChangePassword';
+
+import ChangePassword from "./pages/ChangePassword";
 import Profile from "./pages/Profile";
 import CompleteProfile from "./pages/CompleteProfile";
 import VerifyEmail from "./pages/VerifyEmail";
 import ResetPassword from "./pages/ResetPassword";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const location = useLocation();
+
   const isLandingPage = location.pathname === "/";
   const hideFooter = location.pathname === "/";
+
   const { isLoggedin } = useContext(Appcontext);
 
   return (
     <div>
       {!isLandingPage && <Navbar />}
+
       <main>
         <ToastContainer />
-        <Routes>
-          {/* Landing page */}
-          <Route path="/" element={isLoggedin ? <Navigate to="/home" /> : <LandingPage />} />
 
-          {/* Home page */}
+        <Routes>
+          {/* Landing Page */}
+          <Route
+            path="/"
+            element={
+              isLoggedin ? (
+                <Navigate to="/home" />
+              ) : (
+                <LandingPage />
+              )
+            }
+          />
+
+          {/* Home */}
           <Route path="/home" element={<Home />} />
 
           {/* Careers */}
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/domain/:id" element={<Domain />} />
-          <Route path="/career-detail/:id/:career" element={<SubCareerDetail />} />
+          <Route
+            path="/career-detail/:id/:career"
+            element={<SubCareerDetail />}
+          />
 
           {/* AI Features */}
           <Route path="/ai-chat" element={<AICareerChat />} />
@@ -76,28 +92,97 @@ export default function App() {
           <Route path="/aptitude" element={<AptitudeTest />} />
           <Route path="/interest-form" element={<InterestForm />} />
 
-          {/* Online learning */}
-          <Route path="/distance-online-learning" element={<DistanceOnline />} />
-          <Route path="/institutions" element={<Institutions />} />
-          
-          {/* Aptitude test results */}
-          <Route path="/aptitude/results" element={<AptitudeResults />} />
-          <Route path="/aptitude" element={<AptitudeTest />} />
+          {/* New Card Pages */}
+          <Route
+            path="/academic"
+            element={
+              <h1 style={{ padding: "40px" }}>
+                Academic Page
+              </h1>
+            }
+          />
+
+          <Route
+            path="/psychology"
+            element={
+              <h1 style={{ padding: "40px" }}>
+                Psychology Page
+              </h1>
+            }
+          />
+
+          <Route
+            path="/career-awareness"
+            element={
+              <h1 style={{ padding: "40px" }}>
+                Career Awareness Page
+              </h1>
+            }
+          />
+
+          {/* Online Learning */}
+          <Route
+            path="/distance-online-learning"
+            element={<DistanceOnline />}
+          />
+
+          <Route
+            path="/institutions"
+            element={<Institutions />}
+          />
+
+          {/* Aptitude Result */}
+          <Route
+            path="/aptitude/results"
+            element={<AptitudeResults />}
+          />
 
           {/* Scholarships */}
-          <Route path="/scholarships" element={<Scholarships />} />
-          <Route path="/gscholarships" element={<GovernmentScholarships />} />
-          <Route path="/pscholarships" element={<PrivateScholarships />} />
-          <Route path="/showscholarships" element={<ShowScholarship />} />
+          <Route
+            path="/scholarships"
+            element={<Scholarships />}
+          />
+
+          <Route
+            path="/gscholarships"
+            element={<GovernmentScholarships />}
+          />
+
+          <Route
+            path="/pscholarships"
+            element={<PrivateScholarships />}
+          />
+
+          <Route
+            path="/showscholarships"
+            element={<ShowScholarship />}
+          />
 
           {/* Authentication */}
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
+
           <Route path="/profile" element={<Profile />} />
-          <Route path="/verifyemail" element={<VerifyEmail />} />
-          <Route path="/resetpassword" element={<ResetPassword />} />
-          <Route path="/changePassword" element={<ChangePassword />} />
-          <Route path="/completeProfile" element={<CompleteProfile/>}/>
+
+          <Route
+            path="/verifyemail"
+            element={<VerifyEmail />}
+          />
+
+          <Route
+            path="/resetpassword"
+            element={<ResetPassword />}
+          />
+
+          <Route
+            path="/changePassword"
+            element={<ChangePassword />}
+          />
+
+          <Route
+            path="/completeProfile"
+            element={<CompleteProfile />}
+          />
+
           {/* Catch-all */}
           <Route path="*" element={<Home />} />
         </Routes>
