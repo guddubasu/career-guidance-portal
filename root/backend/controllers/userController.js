@@ -1,4 +1,5 @@
 import userModel from "../models/usermodel.js";
+//getting user data(another things are also added)
 export const getUserData=async(req,res)=>{
     try{
         const user=await userModel.findById(req.userId);
