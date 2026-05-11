@@ -1,0 +1,189 @@
+
+
+.career-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f6f8, #e9eef5);
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+}
+
+
+.career-card {
+  width: 100%;
+  max-width: 950px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  height: auto;
+  margin-bottom: 50px;
+}
+
+
+.career-card h2 {
+  text-align: center;
+  color: #ff6b3d;
+  margin-bottom: 10px;
+}
+
+
+.step {
+  text-align: center;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+.progress {
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.bar {
+  height: 100%;
+  background: #ff6b3d;
+  transition: 0.3s ease;
+}
+
+
+.question {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+}
+
+
+.question p {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+
+.btn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #333;
+}
+
+
+.btn input {
+  display: none;
+}
+
+
+.btn:hover {
+  transform: scale(1.03);
+  border-color: #ff6b3d;
+}
+
+
+.btn.yes.active {
+  background: #d4f8e8;
+  border-color: #28c76f;
+  color: #28c76f;
+}
+
+
+.btn.no.active {
+  background: #ffe5e5;
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+
+.nav button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+
+.nav button:first-child {
+  background: #6c757d;
+  color: white;
+}
+
+
+.nav button:not(:first-child) {
+  background: #ff6b3d;
+  color: white;
+}
+
+/* HOVER */
+.nav button:hover:not(:disabled) {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* DISABLED */
+.nav button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* SUCCESS SCREEN */
+.success {
+  text-align: center;
+  padding: 40px;
+}
+
+.success button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #28c76f;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+}
