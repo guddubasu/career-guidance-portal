@@ -4,7 +4,7 @@ import { Appcontext } from "./context/AppContext";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import PsychologicalFactors from "./pages/PsychologicalFactors";
 // Pages
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
@@ -181,6 +181,10 @@ export default function App() {
           <Route
             path="/completeProfile"
             element={<CompleteProfile />}
+          />
+          <Route
+            path="/psychological-factors"
+            element={<PsychologicalFactors />}
           />
 
           {/* Catch-all */}

@@ -18,7 +18,7 @@ export default function CareerCards() {
       subtitle: "Counselling & Wellness",
       color: "#9C27B0",
       icon: "🧠",
-      path: "/psychology",
+      path: "/psychological-factors",
     },
     {
       title: "CAREER AWARENESS",
