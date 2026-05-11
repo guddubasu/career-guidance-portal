@@ -46,14 +46,16 @@ body {
 }
 
 .title-box h2 {
-  font-size: 30px;
+ font-size: 30px;
   margin: 0;
   font-weight: bold;
+  color: #ffffff !important;
 }
 
 .title-box p {
   font-size: 18px;
   margin-top: 10px;
+  color: #ffffff;
 }
 
 /* Explore Button */
