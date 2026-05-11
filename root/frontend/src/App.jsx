@@ -5,6 +5,7 @@ import { Appcontext } from "./context/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PsychologicalFactors from "./pages/PsychologicalFactors";
+import AcademicFactors from "./pages/AcademicFactors";
 // Pages
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
@@ -96,9 +97,7 @@ export default function App() {
           <Route
             path="/academic"
             element={
-              <h1 style={{ padding: "40px" }}>
-                Academic Page
-              </h1>
+              <AcademicFactors/>
             }
           />
 
