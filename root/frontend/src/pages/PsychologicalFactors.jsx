@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./PsychologicalFactors.css";
-
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 export default function PsychologicalFactors() {
-
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
 
   const questions = [
@@ -37,19 +39,50 @@ export default function PsychologicalFactors() {
   };
 
   // Submit Form
-  const handleSubmit = () => {
+ const handleSubmit = async () => {
 
-    // Check all questions answered
-    if (Object.keys(answers).length < questions.length) {
-      alert("Please answer all 4 questions!");
-      return;
-    }
+  if (Object.keys(answers).length < questions.length) {
+    alert("Please answer all questions");
+    return;
+  }
 
-    console.log(answers);
+  try {
 
-    alert("Form Submitted Successfully!");
-  };
+    const psychologicalData = {
 
+      energySource: answers[0],
+      informationProcessing: answers[1],
+      decisionMaking: answers[2],
+      lifestyleApproach: answers[3],
+
+    };
+
+    const response = await axios.post(
+
+      "http://localhost:4000/api/prediction/psychological-factors",
+
+      psychologicalData,
+
+      {
+        withCredentials: true,
+      }
+
+    );
+
+    console.log(response.data);
+
+    toast.success("Psychological Factors Saved");
+    navigate(-1);
+
+  } catch (error) {
+
+    console.log(error);
+
+    toast.error("Something went wrong");
+
+  }
+
+};
   return (
     <div className="psychology-container">
 

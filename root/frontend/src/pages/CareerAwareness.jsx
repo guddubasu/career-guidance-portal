@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./CareerAwareness.css";
-
+import axios from "axios";
+import { toast } from "react-toastify";
 const questions = [
   "I know about at least 5 careers that match my interests.",
   "I understand the skills needed for popular jobs such as AI engineer, doctor, lawyer, designer, etc.",
@@ -54,10 +55,46 @@ function CareerAwarenessQuestions() {
     (v) => v === "yes"
   ).length;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+
+  e.preventDefault();
+ if (Object.keys(answers).length !== questions.length) {
+    toast.error("Please answer all questions");
+    return;
+  }
+
+  try {
+
+   const formattedAnswers = Object.values(answers);
+
+const careerData = {
+  careerAwarenessAnswers: Object.values(answers),
+  careerAwarenessScore: yesCount,
+};
+
+    const response = await axios.post(
+
+      "http://localhost:4000/api/prediction/career-awareness",
+
+      careerData,
+
+      {
+        withCredentials: true,
+      }
+
+    );
     setSubmitted(true);
-  };
+    toast.success("Career Awarness Details Saved Successfully");
+
+  } catch (error) {
+
+    console.log(error);
+
+   toast.error("Something went wrong");
+
+  }
+
+};
 
   return (
     <div className="career-page">

@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 export default function AcademicFactors() {
+  const navigate = useNavigate();
   const [selectedClass, setSelectedClass] = useState("");
   const [stream, setStream] = useState("");
 
@@ -11,7 +14,13 @@ export default function AcademicFactors() {
   const [twelfthSubjects, setTwelfthSubjects] = useState([
     { subject: "", marks: "" },
   ]);
+const [overallPercentage, setOverallPercentage] = useState("");
 
+const [favoriteSubject1, setFavoriteSubject1] = useState("");
+const [favoriteSubject2, setFavoriteSubject2] = useState("");
+const [favoriteSubject3, setFavoriteSubject3] = useState("");
+
+const [leastFavoriteSubject, setLeastFavoriteSubject] =useState("");
   const subjectOptions10 = [
     "Hindi",
     "Bengali",
@@ -69,17 +78,69 @@ export default function AcademicFactors() {
     ],
   };
 
-  const favoriteSubjects = [
-    "Mathematics",
+ const favoriteSubjects10 = [
+  "Mathematics",
+  "Science",
+  "English",
+  "History",
+  "Geography",
+  "Political Science",
+  "Economics",
+  "Computer",
+  "Artificial Intelligence",
+  "Physical Education",
+  "Art",
+];
+
+const favoriteSubjects12 = {
+  science: [
     "Physics",
     "Chemistry",
+    "Mathematics",
     "Biology",
+    "Computer Science",
     "English",
+  ],
+
+  arts: [
     "History",
+    "Political Science",
+    "Geography",
+    "Sociology",
+    "English",
+  ],
+
+  commerce: [
+    "Accountancy",
+    "Business Studies",
+    "Economics",
+    "Mathematics",
+    "English",
+  ],
+
+  mixed: [
+    "Physics",
     "Economics",
     "Computer Science",
-    "Geography",
-  ];
+    "History",
+    "Mathematics",
+    "English",
+  ],
+};
+useEffect(() => {
+
+  setFavoriteSubject1("");
+  setFavoriteSubject2("");
+  setFavoriteSubject3("");
+  setLeastFavoriteSubject("");
+
+}, [selectedClass, stream]);
+const availableFavoriteSubjects =
+  selectedClass === "10"
+    ? favoriteSubjects10
+    : selectedClass === "12" && stream
+    ? favoriteSubjects12[stream]
+    : [];
 
   const handle10thChange = (index, field, value) => {
     const updated = [...tenthSubjects];
@@ -106,7 +167,123 @@ export default function AcademicFactors() {
       { subject: "", marks: "" },
     ]);
   };
+const handleSaveAcademic = async () => {
+ // CLASS VALIDATION
+  if (!selectedClass) {
+    toast.error("Please select class");
+    return;
+  }
 
+  // 10TH VALIDATION
+  if (selectedClass === "10") {
+
+    for (let i = 0; i < tenthSubjects.length; i++) {
+
+      if (!tenthSubjects[i].subject) {
+        toast.error(`Please select subject for row ${i + 1}`);
+        return;
+      }
+
+      if (!tenthSubjects[i].marks) {
+        toast.error(`Please enter marks for row ${i + 1}`);
+        return;
+      }
+
+    }
+
+  }
+
+  // 12TH VALIDATION
+  if (selectedClass === "12") {
+
+    if (!stream) {
+      toast.error("Please select stream");
+      return;
+    }
+
+    for (let i = 0; i < twelfthSubjects.length; i++) {
+
+      if (!twelfthSubjects[i].subject) {
+        toast.error(`Please select 12th subject for row ${i + 1}`);
+        return;
+      }
+
+      if (!twelfthSubjects[i].marks) {
+        toast.error(`Please enter 12th marks for row ${i + 1}`);
+        return;
+      }
+
+    }
+
+  }
+
+  // OVERALL PERCENTAGE
+  if (!overallPercentage) {
+    toast.error("Please enter overall percentage");
+    return;
+  }
+
+  // FAVORITE SUBJECTS
+  if (!favoriteSubject1) {
+    toast.error("Please select favorite subject 1");
+    return;
+  }
+
+  if (!favoriteSubject2) {
+    toast.error("Please select favorite subject 2");
+    return;
+  }
+
+  if (!favoriteSubject3) {
+    toast.error("Please select favorite subject 3");
+    return;
+  }
+
+  // LEAST FAVORITE SUBJECT
+  if (!leastFavoriteSubject) {
+    toast.error("Please select least favorite subject");
+    return;
+  }
+  try {
+
+    const academicData = {
+
+      selectedClass,
+      stream,
+
+      tenthSubjects,
+
+      twelfthSubjects,
+
+      overallPercentage,
+
+      favoriteSubjects: [
+        favoriteSubject1,
+        favoriteSubject2,
+        favoriteSubject3,
+      ],
+
+      leastFavoriteSubject,
+
+    };
+
+    const response = await axios.post(
+      "http://localhost:4000/api/prediction/academic-factors",
+      academicData,
+      {
+        withCredentials: true,
+      }
+    );
+    console.log(response.data);
+   toast.success("Academic Data Saved Successfully");
+   navigate(-1);
+  } catch (error) {
+    console.log(error);
+   toast.error("Something went wrong");
+
+  }
+
+};
   return (
     <div
       className="container py-5"
@@ -329,6 +506,10 @@ export default function AcademicFactors() {
                 type="number"
                 placeholder="Enter Overall Percentage"
                 className="form-control form-control-lg rounded-4 shadow-sm"
+                value={overallPercentage}
+                onChange={(e) =>
+                setOverallPercentage(e.target.value)
+                  }
               />
             </div>
 
@@ -338,30 +519,39 @@ export default function AcademicFactors() {
                 Favorite Subjects (Top 3)
               </div>
 
-              <select className="form-select rounded-4 shadow-sm mb-3">
+              <select className="form-select rounded-4 shadow-sm mb-3" value={favoriteSubject1}
+              onChange={(e) =>
+              setFavoriteSubject1(e.target.value)
+            }>
                 <option>Select Favorite Subject 1</option>
 
-                {favoriteSubjects.map((subject) => (
+                {availableFavoriteSubjects.map((subject) => (
                   <option key={subject}>
                     {subject}
                   </option>
                 ))}
               </select>
 
-              <select className="form-select rounded-4 shadow-sm mb-3">
+              <select className="form-select rounded-4 shadow-sm mb-3" value={favoriteSubject2}
+              onChange={(e) =>
+              setFavoriteSubject2(e.target.value)
+                }>
                 <option>Select Favorite Subject 2</option>
 
-                {favoriteSubjects.map((subject) => (
+                {availableFavoriteSubjects.map((subject) => (
                   <option key={subject}>
                     {subject}
                   </option>
                 ))}
               </select>
 
-              <select className="form-select rounded-4 shadow-sm">
+              <select className="form-select rounded-4 shadow-sm"  value={favoriteSubject3}
+              onChange={(e) =>
+               setFavoriteSubject3(e.target.value)
+                }>
                 <option>Select Favorite Subject 3</option>
 
-                {favoriteSubjects.map((subject) => (
+                {availableFavoriteSubjects.map((subject) => (
                   <option key={subject}>
                     {subject}
                   </option>
@@ -375,12 +565,15 @@ export default function AcademicFactors() {
                 Least Favorite Subject
               </div>
 
-              <select className="form-select rounded-4 shadow-sm">
+              <select className="form-select rounded-4 shadow-sm" value={leastFavoriteSubject}
+              onChange={(e) =>
+              setLeastFavoriteSubject(e.target.value)
+              }>
                 <option>
                   Select Least Favorite Subject
                 </option>
 
-                {favoriteSubjects.map((subject) => (
+                {availableFavoriteSubjects.map((subject) => (
                   <option key={subject}>
                     {subject}
                   </option>
@@ -391,6 +584,7 @@ export default function AcademicFactors() {
             {/* BUTTON */}
             <div className="text-center mt-5">
               <button
+              type="button"
                 className="btn btn-lg px-5 py-3 rounded-pill fw-bold"
                 style={{
                   background:
@@ -399,6 +593,7 @@ export default function AcademicFactors() {
                   border: "none",
                   fontSize: "18px",
                 }}
+                 onClick={handleSaveAcademic}
               >
                 Save Academic Details
               </button>

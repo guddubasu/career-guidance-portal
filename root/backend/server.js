@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import predictionRouter from "./routes/predictionRoutes.js";
 import userModel from "./models/usermodel.js";
 import domainModel from "./models/domainModel.js";
 import aptitudeRoutes from "./routes/aptitudeRoutes.js";
@@ -38,6 +39,7 @@ domainModel.find()
 app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
 app.use('/api/aptitude',aptitudeRoutes);
+app.use("/api/prediction",predictionRouter);
 
 
 
