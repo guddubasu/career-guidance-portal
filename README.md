@@ -52,3 +52,4 @@ bash
 curl -X POST http://localhost:4000/api/aptitude/submit \
   -H "Content-Type: application/json" \
   -d '{"answers": [5,4,3,5,4,3,4,5,4,3,5,4,3,4,5,4,5,3,4,5,3,2,4,5,4]}'
+5.InstitutionPage---->1.first go to backend/initialize_career_DB folder,2.then in terminal run """node initializeCollegeData.js""" command,3.now the institution_page is ready
