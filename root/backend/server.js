@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import collegeRoutes from "./routes/collegeRoutes.js";
 import predictionRouter from "./routes/predictionRoutes.js";
 import userModel from "./models/usermodel.js";
 import domainModel from "./models/domainModel.js";
@@ -40,6 +41,7 @@ app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
 app.use('/api/aptitude',aptitudeRoutes);
 app.use("/api/prediction",predictionRouter);
+app.use("/api/colleges", collegeRoutes);
 
 
 
