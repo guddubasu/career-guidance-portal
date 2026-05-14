@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./CareerRoadmap.css";
-
 export default function CareerRoadmap() {
 
   return (
