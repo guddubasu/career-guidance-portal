@@ -13,7 +13,7 @@ import CareersPage from "./pages/CareersPage";
 import CareerDetail from "./pages/CareerDetail";
 import Domain from "./pages/Domain";
 import SubCareerDetail from "./pages/SubCareerDetail";
-import InstitutionDetails from "./pages/InstitutionDetails";
+
 // AI Features
 import AICareerChat from "./pages/AICareerChat";
 import AIResumeAnalyser from "./pages/AIResumeAnalyser";
@@ -90,7 +90,6 @@ export default function App() {
           <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/domain/:id" element={<Domain />} />
           <Route path="/career-detail/:id/:career" element={<SubCareerDetail />} />
-          <Route path="/institution/:id" element={<InstitutionDetails />}/>
 
           {/* AI */}
           <Route path="/ai-chat" element={<AICareerChat />} />
