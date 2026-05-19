@@ -55,3 +55,59 @@ curl -X POST http://localhost:4000/api/aptitude/submit \
 
    
 5.InstitutionPage---->1.first go to backend/initialize_career_DB folder,2.then in terminal run """node initializeCollegeData.js""" command,3.now the institution_page is ready
+
+
+
+
+
+
+
+
+
+_____________________________AISHIK_________________________________
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run Flask:
+
+```bash
+python app.py
+```
+
+Backend runs at:
+
+```txt
+http://127.0.0.1:5000
+```
+
+---
+
+Move to frontend:
+
+```bash
+cd frontend
+```
+
+Install packages:
+
+```bash
+npm install
+```
+
+Start React:
+
+```bash
+npm run dev
+```
+
+Frontend:
+
+```txt
+http://localhost:5173
+```
+
+---

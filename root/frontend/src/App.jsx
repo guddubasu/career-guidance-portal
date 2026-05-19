@@ -22,6 +22,8 @@ import CareerRoadmap from "./pages/CareerRoadmap";
 // Assessments
 import Personality from "./pages/Personality";
 import AptitudeTest from "./pages/AptitudeTest";
+import CareerAssessment from "./pages/CareerAssessment";
+
 import InterestForm from "./pages/InterestForm";
 import AptitudeResults from "./pages/AptitudeResults";
 
@@ -104,6 +106,7 @@ export default function App() {
 
           {/* FIXED ROUTE */}
           <Route path="/career-awareness" element={<CareerAwarenessQuestions />} />
+          <Route path="/career-assessment" element={<CareerAssessment />} />
 
           <Route path="/academic" element={<AcademicFactors />} />
           <Route path="/psychology" element={<PsychologicalFactors />} />

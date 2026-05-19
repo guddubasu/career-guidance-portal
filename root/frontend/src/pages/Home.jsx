@@ -3,6 +3,7 @@ import heroImage from "../assets/hero.png";
 import careerImage from "../assets/career.png";
 import careersearchImage from "../assets/careersearch.png";
 import personalityImage from "../assets/personality.png";
+import CareerAssessment from "./CareerAssessment";
 import { Link } from "react-router-dom";
 import './Home.css';
 import { Appcontext } from "../context/AppContext";
@@ -45,7 +46,8 @@ export default function Home() {
             </div>
           </Link>*/}
 
-          <Link to="/interest-form" className="card-link">
+          {/* <Link to="/interest-form" className="card-link"> */}
+          <Link to="/career-assessment" className="card-link">
   <div className="card">
     <img src={careersearchImage} alt="careersearch" className="card-image" />
     <h3>SEE CAREERS BASED ON YOUR INTERESTS</h3>
