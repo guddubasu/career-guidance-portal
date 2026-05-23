@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import CareersPage from "./pages/CareersPage";
-import CareerDetail from "./pages/CareerDetail";
+// import CareerDetail from "./pages/CareerDetail";
 import Domain from "./pages/Domain";
 import SubCareerDetail from "./pages/SubCareerDetail";
 
@@ -89,7 +89,7 @@ export default function App() {
 
           {/* CAREERS */}
           <Route path="/careers" element={<CareersPage />} />
-          <Route path="/careers/:id" element={<CareerDetail />} />
+          {/* <Route path="/careers/:id" element={<CareerDetail />} /> */}
           <Route path="/domain/:id" element={<Domain />} />
           <Route path="/career-detail/:id/:career" element={<SubCareerDetail />} />
 
