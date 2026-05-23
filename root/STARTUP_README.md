@@ -28,3 +28,8 @@ npm start
 If packages not installed error:
 run in root folder:-
 npm install concurrently nodemon --save-dev
+
+
+To deactivate venv:-
+run in terminal:-
+deactivate
