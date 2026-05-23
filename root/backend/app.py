@@ -38,7 +38,7 @@ try:
     )
 
     print(
-        "✓ Model loaded successfully"
+        "Model loaded successfully"
     )
 
 except Exception as e:
