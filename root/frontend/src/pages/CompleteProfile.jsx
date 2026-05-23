@@ -51,7 +51,7 @@ const handleSubmit = async (e) => {
       academicSkills:
         academicSkills.map(item => item.value),
     };
-    const response = await axios.post(
+    await axios.post(
       "http://localhost:4000/api/user/complete-profile",
       profileData
     );
