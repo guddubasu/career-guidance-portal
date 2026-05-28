@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def validate_profile(sample_input):
 
     values = np.array(
@@ -13,83 +12,87 @@ def validate_profile(sample_input):
 
     issues = []
 
+    # =====================================================
+    # ALL HIGH
+    # =====================================================
 
     if avg_score > 0.90:
 
         issues.append(
-        "All responses are extremely high."
+            "All responses are extremely high."
         )
 
+    # =====================================================
+    # ALL LOW
+    # =====================================================
 
     if avg_score < 0.10:
 
         issues.append(
-        "All responses are extremely low."
+            "All responses are extremely low."
         )
 
+    # =====================================================
+    # SAME VALUES
+    # =====================================================
 
-    if len(set(values)) == 1:
+    unique_values = len(set(values))
+
+    if unique_values == 1:
 
         issues.append(
-        "All answers are identical."
+            "All answers are exactly the same."
         )
 
+    # =====================================================
+    # LOW VARIATION
+    # =====================================================
 
     if std_dev < 0.08:
 
         issues.append(
-        "Responses are too similar."
+            "Responses are too similar."
         )
 
+    # =====================================================
+    # EXTREME VALUES
+    # =====================================================
 
     extreme_count = np.sum(
-
         (values >= 0.95) |
-
         (values <= 0.05)
-
     )
-
 
     if extreme_count >= 10:
 
         issues.append(
-        "Too many extreme values."
+            "Too many extreme values detected."
         )
 
-
-    # contradictions
+    # =====================================================
+    # CONTRADICTIONS
+    # =====================================================
 
     if (
-
-        sample_input["technology_interest"] > 0.8
-
-        and
-
+        sample_input["technology_interest"] > 0.8 and
         sample_input["logical_reasoning"] < 0.3
-
     ):
 
         issues.append(
-        "Tech high but logic low."
+            "Technology interest is high but logical reasoning is low."
         )
 
+    if (
+        sample_input["arts_creativity"] > 0.8 and
+        sample_input["creativity"] < 0.3
+    ):
 
-    if len(issues)==0:
-
-        return {
-
-            "valid":True,
-
-            "issues":[]
-
-        }
-
+        issues.append(
+            "Arts interest is high but creativity is low."
+        )
 
     return {
 
-        "valid":False,
-
-        "issues":issues
-
+        "valid": len(issues) == 0,
+        "issues": issues
     }

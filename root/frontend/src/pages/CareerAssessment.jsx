@@ -157,107 +157,142 @@ setValues(prev=>({
 
 
 
-const handlePredict =
-async()=>{
+const handlePredict = async () => {
 
-try{
+    try {
 
-setLoading(true);
+        setLoading(true);
 
-setPrediction(null);
+        setPrediction(null);
 
-setValidationErrors([]);
+        setValidationErrors([]);
 
-const response =
-await fetch(
+        const response = await fetch(
 
-"http://127.0.0.1:5000/predict",
+            "http://127.0.0.1:5000/predict",
 
-{
+            {
 
-method:"POST",
+                method: "POST",
 
-headers:{
-"Content-Type":
-"application/json"
-},
+                headers: {
 
-body:
-JSON.stringify(values)
+                    "Content-Type":
+                        "application/json"
+                },
 
-}
+                body:
+                    JSON.stringify(values)
+            }
+        );
 
-);
+        // =====================================
+        // READ RESPONSE JSON FIRST
+        // =====================================
 
+        const data = await response.json();
 
-if(!response.ok){
+        // =====================================
+        // BACKEND ERROR
+        // =====================================
 
-throw new Error(
-"Backend failed"
-);
+        if (!response.ok) {
 
-}
+            // Validation errors
 
+            if (data.validation?.issues) {
 
-const data =
-await response.json();
+                setValidationErrors(
 
+                    data.validation.issues
+                );
 
+            }
 
-if(data.valid===false){
+            // Generic issues
 
-setValidationErrors(
+            else if (data.issues) {
 
-data.issues ||
+                setValidationErrors(
+                    data.issues
+                );
 
-["Profile invalid"]
+            }
 
-);
+            else {
 
-return;
+                setValidationErrors([
 
-}
+                    "Backend request failed."
+                ]);
+            }
 
+            return;
+        }
 
+        // =====================================
+        // VALIDATION FAILED
+        // =====================================
 
-if(
-!data.predicted_domain
-){
+        if (!data.success) {
 
-setValidationErrors([
+            if (data.validation?.issues) {
 
-"Prediction unavailable"
+                setValidationErrors(
 
-]);
+                    data.validation.issues
+                );
 
-return;
+            } else {
 
-}
+                setValidationErrors([
 
+                    "Profile validation failed."
+                ]);
+            }
 
-setPrediction(data);
+            return;
+        }
 
-}
+        // =====================================
+        // PREDICTION CHECK
+        // =====================================
 
-catch(error){
+        if (!data.predicted_domain) {
 
-console.log(error);
+            setValidationErrors([
 
-setValidationErrors([
+                "Prediction unavailable."
+            ]);
 
-"Unable to connect to backend"
+            return;
+        }
 
-]);
+        // =====================================
+        // SUCCESS
+        // =====================================
 
-}
+        setPrediction(data);
 
-finally{
+    }
 
-setLoading(false);
+    catch (error) {
 
-}
+        console.log(error);
 
+        setValidationErrors([
+
+            "Unable to connect to backend."
+        ]);
+    }
+
+    finally {
+
+        setLoading(false);
+    }
 };
+
+
 
 
 
