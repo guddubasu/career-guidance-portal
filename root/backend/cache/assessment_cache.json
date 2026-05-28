@@ -1,210 +1,80 @@
 [
     {
-        "predicted_domain": "Skilled_Trades",
-        "top_matches": [
-            {
-                "domain": "Skilled_Trades",
-                "score": 34.220001220703125
-            },
-            {
-                "domain": "STEM",
-                "score": 33.16999816894531
-            },
-            {
-                "domain": "Agriculture_Environment",
-                "score": 19.84000015258789
-            },
-            {
-                "domain": "Sports_Fitness",
-                "score": 2.5899999141693115
-            },
-            {
-                "domain": "Finance_Banking",
-                "score": 1.9299999475479126
-            }
-        ],
-        "timestamp": "2026-05-28 17:42:01"
-    },
-    {
-        "predicted_domain": "STEM",
-        "top_matches": [
-            {
-                "domain": "STEM",
-                "score": 39.349998474121094
-            },
-            {
-                "domain": "Agriculture_Environment",
-                "score": 16.950000762939453
-            },
-            {
-                "domain": "Skilled_Trades",
-                "score": 15.930000305175781
-            },
-            {
-                "domain": "Education",
-                "score": 10.729999542236328
-            },
-            {
-                "domain": "Government_Public_Service",
-                "score": 7.849999904632568
-            }
-        ],
-        "timestamp": "2026-05-28 17:42:16"
-    },
-    {
-        "predicted_domain": "Education",
-        "top_matches": [
-            {
-                "domain": "Education",
-                "score": 26.15999984741211
-            },
-            {
-                "domain": "STEM",
-                "score": 22.729999542236328
-            },
-            {
-                "domain": "Sports_Fitness",
-                "score": 15.0
-            },
-            {
-                "domain": "Agriculture_Environment",
-                "score": 14.90999984741211
-            },
-            {
-                "domain": "Psychology_Social_Work",
-                "score": 4.409999847412109
-            }
-        ],
-        "timestamp": "2026-05-28 17:43:15"
-    },
-    {
         "predicted_domain": "Arts_Design",
         "top_matches": [
             {
                 "domain": "Arts_Design",
-                "score": 33.619998931884766
+                "score": 41.459999084472656
             },
             {
-                "domain": "Agriculture_Environment",
-                "score": 33.290000915527344
+                "domain": "STEM",
+                "score": 23.719999313354492
             },
             {
                 "domain": "Sports_Fitness",
-                "score": 14.729999542236328
+                "score": 8.460000038146973
+            },
+            {
+                "domain": "Agriculture_Environment",
+                "score": 5.050000190734863
             },
             {
                 "domain": "Education",
-                "score": 8.350000381469727
-            },
-            {
-                "domain": "Healthcare",
-                "score": 1.75
+                "score": 4.210000038146973
             }
         ],
-        "timestamp": "2026-05-28 17:44:58"
+        "timestamp": "2026-05-28 18:51:36"
     },
     {
-        "predicted_domain": "Travel_Hospitality",
+        "predicted_domain": "Sports_Fitness",
         "top_matches": [
             {
-                "domain": "Travel_Hospitality",
-                "score": 42.040000915527344
+                "domain": "Sports_Fitness",
+                "score": 75.91999816894531
             },
             {
-                "domain": "Sports_Fitness",
-                "score": 19.420000076293945
+                "domain": "Arts_Design",
+                "score": 8.949999809265137
+            },
+            {
+                "domain": "Travel_Hospitality",
+                "score": 3.7200000286102295
+            },
+            {
+                "domain": "Media_Entertainment",
+                "score": 3.2899999618530273
             },
             {
                 "domain": "Agriculture_Environment",
-                "score": 17.18000030517578
-            },
-            {
-                "domain": "Healthcare",
-                "score": 6.239999771118164
-            },
+                "score": 2.490000009536743
+            }
+        ],
+        "timestamp": "2026-05-28 18:53:18"
+    },
+    {
+        "predicted_domain": "Skilled_Trades",
+        "top_matches": [
             {
                 "domain": "Skilled_Trades",
-                "score": 5.380000114440918
-            }
-        ],
-        "timestamp": "2026-05-28 18:06:11"
-    },
-    {
-        "predicted_domain": "Sports_Fitness",
-        "top_matches": [
-            {
-                "domain": "Sports_Fitness",
-                "score": 62.310001373291016
-            },
-            {
-                "domain": "Travel_Hospitality",
-                "score": 13.0600004196167
-            },
-            {
-                "domain": "Healthcare",
-                "score": 11.350000381469727
-            },
-            {
-                "domain": "Education",
-                "score": 5.400000095367432
+                "score": 44.029998779296875
             },
             {
                 "domain": "Agriculture_Environment",
-                "score": 3.319999933242798
-            }
-        ],
-        "timestamp": "2026-05-28 18:07:49"
-    },
-    {
-        "predicted_domain": "Sports_Fitness",
-        "top_matches": [
-            {
-                "domain": "Sports_Fitness",
-                "score": 62.310001373291016
-            },
-            {
-                "domain": "Travel_Hospitality",
-                "score": 13.0600004196167
-            },
-            {
-                "domain": "Healthcare",
-                "score": 11.350000381469727
-            },
-            {
-                "domain": "Education",
-                "score": 5.400000095367432
-            },
-            {
-                "domain": "Agriculture_Environment",
-                "score": 3.319999933242798
-            }
-        ],
-        "timestamp": "2026-05-28 18:15:44"
-    },
-    {
-        "predicted_domain": "Education",
-        "top_matches": [
-            {
-                "domain": "Education",
-                "score": 25.81999969482422
-            },
-            {
-                "domain": "Travel_Hospitality",
-                "score": 19.809999465942383
-            },
-            {
-                "domain": "Healthcare",
-                "score": 17.260000228881836
+                "score": 26.3799991607666
             },
             {
                 "domain": "Sports_Fitness",
-                "score": 17.239999771118164
+                "score": 10.220000267028809
             },
             {
-                "domain": "Agriculture_Environment",
-                "score": 9.390000343322754
+                "domain": "Finance_Banking",
+                "score": 2.609999895095825
+            },
+            {
+                "domain": "Media_Entertainment",
+                "score": 2.549999952316284
             }
         ],
-        "timestamp": "2026-05-28 18:25:37"
+        "timestamp": "2026-05-28 18:53:27"
     }
 ]

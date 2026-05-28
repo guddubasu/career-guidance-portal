@@ -366,6 +366,65 @@ function CareerAssessment() {
     }
   };
 
+const handleReset = () => {
+
+    // =========================
+    // REMOVE SAVED DATA
+    // =========================
+
+    localStorage.removeItem(
+        "careerPrediction"
+    );
+
+    localStorage.removeItem(
+        "careerAssessmentValues"
+    );
+
+    // =========================
+    // RESET STATES
+    // =========================
+
+    setPrediction(null);
+
+    setValidationErrors([]);
+
+    const resetValues = {};
+
+    factors.forEach(
+
+        factor => {
+
+            resetValues[factor] = 0.5;
+        }
+    );
+
+    setValues(resetValues);
+
+    // =========================
+    // SAVE RESET VALUES
+    // =========================
+
+    localStorage.setItem(
+
+        "careerAssessmentValues",
+
+        JSON.stringify(resetValues)
+    );
+
+    // =========================
+    // SCROLL TO TOP
+    // =========================
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+    });
+};
+
+
+
   // =====================================
   // UI
   // =====================================
@@ -459,6 +518,17 @@ function CareerAssessment() {
 
         disabled={loading}
       >
+{/* <button
+
+    className="reset-btn"
+
+    onClick={handleReset}
+>
+
+    Start New Assessment
+
+</button> */}
+
 
         {
 
@@ -658,14 +728,24 @@ function CareerAssessment() {
                       </div>
                     ))
               }
+            <button
 
+    className="reset-btn"
+
+    onClick={handleReset}
+>
+
+    Start New Assessment
+
+</button>
             </div>
-
+            
           </div>
         )
       }
-
+        
     </div>
+    
   );
 }
 

@@ -77,3 +77,34 @@
     margin-top:30px;
 
 }
+
+.reset-btn{
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    background: #e63946;
+
+    color: white;
+
+    transition: 0.3s ease;
+}
+
+.reset-btn:hover{
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
