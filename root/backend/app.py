@@ -1,3 +1,5 @@
+import json
+from datetime import datetime
 
 from flask import (
     Flask,
@@ -48,6 +50,81 @@ except Exception as e:
 
     model = None
     encoder = None
+
+# =====================================
+# CACHE SAVE FUNCTION
+# =====================================
+
+def save_to_cache(result_data):
+
+    try:
+
+        cache_file = (
+            "cache/assessment_cache.json"
+        )
+
+        # ================================
+        # LOAD EXISTING CACHE
+        # ================================
+
+        with open(
+            cache_file,
+            "r"
+        ) as file:
+
+            cache_data = json.load(file)
+
+        # ================================
+        # ADD TIMESTAMP
+        # ================================
+
+        result_data["timestamp"] = (
+
+            datetime.now()
+
+            .strftime(
+                "%Y-%m-%d %H:%M:%S"
+            )
+        )
+
+        # ================================
+        # APPEND RESULT
+        # ================================
+
+        cache_data.append(
+            result_data
+        )
+
+        # ================================
+        # KEEP ONLY LAST 50 RESULTS
+        # ================================
+
+        cache_data = cache_data[-50:]
+
+        # ================================
+        # SAVE BACK
+        # ================================
+
+        with open(
+            cache_file,
+            "w"
+        ) as file:
+
+            json.dump(
+
+                cache_data,
+
+                file,
+
+                indent=4
+            )
+
+    except Exception as e:
+
+        print(
+            "Cache Save Error:",
+            e
+        )
 
 # =====================================
 # HEALTH CHECK ROUTE
@@ -208,6 +285,19 @@ def predict():
 
                 "score": score
             })
+
+        # =================================
+        # SAVE TO CACHE
+        # =================================
+
+        save_to_cache({
+
+            "predicted_domain":
+                predicted_domain,
+
+            "top_matches":
+                top_matches
+        })
 
         # =================================
         # SUCCESS RESPONSE
