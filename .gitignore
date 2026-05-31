@@ -4,4 +4,6 @@ __pycache__/
 
 # Virtual environment
 venv/
-root/backend/venv/
+
+# Backend cache
+root/backend/cache/
