@@ -1,79 +1,262 @@
 // src/data.js - 25 Questions for CareerCompass (5 pages × 5 questions)
 export const questions = [
-  // 🏗️ PAGE 1 (Q1-5): Realistic + Investigative (Hands-on + Analytical)
-  { id: 1, text: "Inspect a roof for leaks or repair an air conditioning system", category: "R" },
-  { id: 2, text: "Use precision machines or install kitchen cabinets", category: "R" },
-  { id: 3, text: "Analyze the structure of molecules", category: "I" },
-  { id: 4, text: "Do scientific experiments or research", category: "I" },
-  { id: 5, text: "Study earthquakes or nuclear energy properties", category: "I" },
+{
+id: 1,
+question: "Your ideal work environment is one where:",
+options: [
+"Quiet focused spaces",
+"Strategy rooms and boardrooms",
+"Care-centered facilities",
+"Open creative studios",
+"Hands-on technical workspaces",
+"Team collaboration hubs"
+]
+},
 
-  // 🎨 PAGE 2 (Q6-10): Artistic + Social (Creative + Helping)
-  { id: 6, text: "Design a magazine cover or greeting card", category: "A" },
-  { id: 7, text: "Paint a portrait or write a poem", category: "A" },
-  { id: 8, text: "Teach social skills to children", category: "S" },
-  { id: 9, text: "Help disabled people with daily routines", category: "S" },
-  { id: 10, text: "Counsel people with depression", category: "S" },
+{
+id: 2,
+question: "When solving problems, you prefer to:",
+options: [
+"Take things apart to find the source of the problem",
+"Look at the numbers and track down patterns",
+"Talk to people to understand what they need",
+"Draw out or map different possible solutions",
+"Start small and test each piece of the solution",
+"Gather feedback to find the best approach"
+]
+},
 
-  // 💼 PAGE 3 (Q11-15): Enterprising + Conventional (Leadership + Organized)
-  { id: 11, text: "Negotiate business partnerships", category: "E" },
-  { id: 12, text: "Lead a business team or start a company", category: "E" },
-  { id: 13, text: "Track monthly expenses for a company", category: "C" },
-  { id: 14, text: "Review financial records or use spreadsheets", category: "C" },
-  { id: 15, text: "Calculate construction project costs", category: "C" },
+{
+id: 3,
+question: "You're most energized when:",
+options: [
+"Working through complex code",
+"Optimizing business performance",
+"Improving patient outcomes",
+"Exploring design concepts",
+"Building working solutions",
+"Shaping market trends"
+]
+},
 
-  // 🧠 PAGE 4 (Q16-20): Big Five - Openness + Conscientiousness + Extraversion
-  { id: 16, text: "I have a vivid imagination and value art", category: "O" },
-  { id: 17, text: "I am always prepared and organized", category: "C_BF" },
-  { id: 18, text: "I am talkative and the life of the party", category: "E_BF" },
-  { id: 19, text: "I am interested in abstract ideas", category: "O" },
-  { id: 20, text: "I get chores done right away", category: "C_BF" },
+{
+id: 4,
+question: "In team settings, you naturally:",
+options: [
+"Find system weaknesses",
+"Guide team priorities",
+"Foster collaboration",
+"Drive creative vision",
+"Design solutions",
+"Craft compelling stories"
+]
+},
 
-  // ❤️ PAGE 5 (Q21-25): Big Five - Agreeableness + Neuroticism + Stability
-  { id: 21, text: "I treat everyone with kindness", category: "A_BF" },
-  { id: 22, text: "I often feel anxious or moody (reverse scored)", category: "N", reverse: true },
-  { id: 23, text: "I stop to help other people", category: "A_BF" },
-  { id: 24, text: "I often worry about what could go wrong (reverse)", category: "N", reverse: true },
-  { id: 25, text: "I am skilled in handling social situations", category: "E_BF" }
+{
+id: 5,
+question: "You excel at handling:",
+options: [
+"Complex technical puzzles",
+"Making key decisions",
+"People's wellbeing needs",
+"Pushing creative limits",
+"Developing systems and structures",
+"Analyzing trend shifts and changes"
+]
+},
+
+{
+id: 6,
+question: "Your strongest natural abilities are:",
+options: [
+"Mathematical and logical thinking",
+"Strategic planning and analysis",
+"Understanding people's needs",
+"Visual and creative expression",
+"Technical problem-solving",
+"Communication and persuasion"
+]
+},
+
+{
+id: 7,
+question: "When analyzing information, you excel at:",
+options: [
+"Finding patterns in data",
+"Connecting market signals and ROI potential",
+"Recognizing care patterns",
+"Visualizing user flows",
+"Detecting technical issues",
+"Understanding consumer behavior signals"
+]
+},
+
+{
+id: 8,
+question: "Your approach to learning new skills is:",
+options: [
+"Deep technical immersion",
+"Business scenario analysis",
+"Through practice scenarios",
+"By experimenting creatively",
+"Through technical documentation",
+"Industry trend research"
+]
+},
+
+{
+id: 9,
+question: "In challenging situations, you typically:",
+options: [
+"Troubleshoot systematically",
+"Assess risks and opportunities",
+"Focus on people's wellbeing",
+"Try different approaches",
+"Build step-by-step solutions",
+"Find consensus and alignment"
+]
+},
+
+{
+id: 10,
+question: "Your problem-solving strength is:",
+options: [
+"Test hypotheses and isolate issues",
+"Model scenarios and calculate risks",
+"Balance patient and staff needs",
+"Push boundaries and explore edges",
+"Design systems and scale processes",
+"Study behaviors and drive actions"
+]
+},
+
+{
+id: 11,
+question: "You most enjoy learning about:",
+options: [
+"How things work",
+"What drives success",
+"Ways to improve wellbeing",
+"New creative techniques",
+"Building better solutions",
+"Why people make choices"
+]
+},
+
+{
+id: 12,
+question: "When reading for work, you prefer:",
+options: [
+"Code documentation and developer guides",
+"Financial reports and industry news",
+"Patient care studies and protocols",
+"Design portfolios and style guides",
+"System specifications and manuals",
+"Consumer data and market research"
+]
+},
+
+{
+id: 13,
+question: "You're most likely to take courses in:",
+options: [
+"Software development and code languages",
+"Financial modeling and business administration",
+"Clinical management",
+"User experience and design thinking",
+"Structure design and systems architecture",
+"Campaign design and digital strategy"
+]
+},
+
+{
+id: 14,
+question: "Your internet browsing often includes:",
+options: [
+"Code libraries and dev forums",
+"Investment trends",
+"Healthcare discoveries and research",
+"Creative inspiration galleries",
+"New technologies and inventions",
+"Marketing trends and social data"
+]
+},
+
+{
+id: 15,
+question: "In work discussions, you focus on:",
+options: [
+"System improvements and efficiencies",
+"Business opportunities and strategies",
+"Patient experience and outcomes",
+"Creative concepts and solutions",
+"Project challenges and approaches",
+"Audience engagement and impact"
+]
+},
+
+{
+id: 16,
+question: "You feel most accomplished when:",
+options: [
+"Cracking tough code",
+"Exceeding growth targets",
+"Advancing patient care",
+"Creating something unique",
+"Building functional solutions",
+"Driving decisions"
+]
+},
+
+{
+id: 17,
+question: "Your work motivation comes from:",
+options: [
+"Solving complex problems",
+"Achieving ambitious goals",
+"Making people's lives better",
+"Creative freedom",
+"System innovation",
+"Market impact"
+]
+},
+
+{
+id: 18,
+question: "You value work that:",
+options: [
+"Pushes technical boundaries",
+"Drives organizational change",
+"Strengthens community health",
+"Redefines possible",
+"Creates solid foundations",
+"Shapes outcomes"
+]
+},
+
+{
+id: 19,
+question: "Your ideal project would involve:",
+options: [
+"Building innovative systems",
+"Scaling successful ventures",
+"Transforming patient experience",
+"Designing breakthrough concepts",
+"Crafting pivotal solutions",
+"Shaping popular narratives"
+]
+},
+
+{
+id: 20,
+question: "Success to you means:",
+options: [
+"Finding elegant solutions",
+"Delivering measurable results",
+"Improving quality of life",
+"Making lasting impact",
+"Building something that lasts",
+"Moving people to action"
+]
+}
 ];
-
-// ✅ YOUR EXACT 20 CAREERS (dataId matches perfectly)
-export const careers = [
-  { id: 1, dataId: 1, title: "BFSI", description: "Banking, Finance & Insurance", baseColor: "#1E40AF", summary: "Explore careers in Banking, Finance, and Insurance sectors." },
-  { id: 2, dataId: 2, title: "Defence", description: "Serve the Nation", baseColor: "#047857", summary: "Defence careers include Army, Navy, Airforce and national security services." },
-  { id: 3, dataId: 3, title: "Healthcare", description: "Health & Wellness", baseColor: "#DC2626", summary: "Medical, nursing, therapy and healthcare service careers." },
-  { id: 4, dataId: 4, title: "Education", description: "Teaching & Learning", baseColor: "#F59E0B", summary: "Teaching, academic research and educational administration careers." },
-  { id: 5, dataId: 5, title: "Engineering", description: "Technology & Innovation", baseColor: "#2563EB", summary: "Civil, Mechanical, Electrical and other engineering careers." },
-  { id: 6, dataId: 6, title: "Agriculture", description: "Farming & Agribusiness", baseColor: "#15803D", summary: "Careers related to agriculture, farming technology and agribusiness." },
-  { id: 7, dataId: 7, title: "Hospitality", description: "Travel & Tourism", baseColor: "#F97316", summary: "Hotel management, tourism and hospitality service careers." },
-  { id: 8, dataId: 8, title: "Vocational", description: "Power & Electrical Systems", baseColor: "#2563EB", summary: "Careers in electrical systems, power generation and energy." },
-  { id: 9, dataId: 9, title: "IT & Computer", description: "Information Technology", baseColor: "#9333EA", summary: "Software development, AI, data science and IT infrastructure careers." },
-  { id: 10, dataId: 10, title: "Management", description: "Business & Leadership", baseColor: "#F59E0B", summary: "Business administration, leadership and management careers." },
-  { id: 11, dataId: 11, title: "Railways", description: "Railway Infrastructure", baseColor: "#1E40AF", summary: "Engineering and operational careers in the railway sector." },
-  { id: 12, dataId: 12, title: "Police", description: "Law Enforcement", baseColor: "#DC2626", summary: "Police services and law enforcement careers." },
-  { id: 13, dataId: 13, title: "Civil Services", description: "Government Administration", baseColor: "#10B981", summary: "Administrative careers such as IAS, IPS and government officers." },
-  { id: 14, dataId: 14, title: "Banking", description: "Bank Operations", baseColor: "#1E40AF", summary: "Bank clerks, officers and banking service careers." },
-  { id: 15, dataId: 15, title: "Research", description: "Scientific Research", baseColor: "#9333EA", summary: "Scientific research, laboratory and innovation careers." },
-  { id: 16, dataId: 16, title: "Sports", description: "Athletics & Coaching", baseColor: "#F59E0B", summary: "Professional sports, coaching and sports management careers." },
-  { id: 17, dataId: 17, title: "Design", description: "Creative Arts & Design", baseColor: "#9333EA", summary: "Graphic, fashion, product and creative design careers." },
-  { id: 18, dataId: 18, title: "Aviation", description: "Airline & Flight Careers", baseColor: "#10B981", summary: "Pilot, aviation management and airline industry careers." },
-  { id: 19, dataId: 19, title: "Media", description: "Journalism & Broadcasting", baseColor: "#F59E0B", summary: "Journalism, media production and broadcasting careers." },
-  { id: 20, dataId: 20, title: "Entrepreneurship", description: "Startups & Innovation", baseColor: "#9333EA", summary: "Startup founders, innovators and business creators." }
-];
-
-// 🎯 Backend Scoring: Category → Your 20 Careers Mapping
-export const careerMapping = {
-  // Holland Code Mapping (12 questions)
-  R: [5, 8, 11, 18, 2],      // Engineering, Vocational, Railways, Aviation, Defence
-  I: [9, 15],                // IT/Computer, Research
-  A: [17, 19],               // Design, Media
-  S: [3, 4, 16],             // Healthcare, Education, Sports
-  E: [10, 13, 20],           // Management, Civil Services, Entrepreneurship
-  C: [1, 14],                // BFSI, Banking
-
-  // Big Five Mapping (13 questions)
-  O: [9, 17, 15],            // Openness → IT, Design, Research
-  C_BF: [1, 10, 14],         // Conscientious → BFSI, Management, Banking
-  E_BF: [10, 13, 20],        // Extraversion → Management, Civil Services, Entrepreneurship
-  A_BF: [3, 4],              // Agreeableness → Healthcare, Education
-  N: [5, 12]                 // Low Neuroticism → Engineering, Police (stable)
-};

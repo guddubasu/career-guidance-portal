@@ -1,138 +1,180 @@
 /* AptitudeTest.css */
 
 .test-container {
-  max-width: 850px;
+  max-width: 900px;
   margin: 40px auto;
-  padding: 20px 25px;
-  background: #ffffff;
+  padding: 25px;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
+.test-container h1 {
   text-align: center;
-  margin-bottom: 25px;
-  font-weight: 600;
-  color: #2a2a2a;
+  margin-bottom: 20px;
 }
 
-/* Question range text */
 .question-range {
   text-align: right;
-  font-size: 0.9rem;
-  color: #7a8c7f;
-  margin-bottom: 15px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-/* Navigation buttons */
 .navigation-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
 
-.navigation-buttons button {
-  padding: 10px 25px;
-  font-size: 0.95rem;
-  font-weight: 500;
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  font-weight: 600;
 }
 
-.navigation-buttons button:disabled {
-  background-color: #ddd;
-  color: #999;
+.btn-primary {
+  background: #e63946;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d62839;
+}
+
+.btn-secondary {
+  background: #e5e5e5;
+}
+
+.btn-secondary:disabled,
+.btn-primary:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Back button style */
-.navigation-buttons button:first-child {
-  background-color: #f2f2f2;
-  color: #555;
-}
+/* Question Card */
 
-.navigation-buttons button:first-child:hover:not(:disabled) {
-  background-color: #e0e0e0;
-}
-
-/* Next/Submit button style */
-.navigation-buttons button:last-child {
-  background-color: #e63946; /* AG Creative Thinkers red */
-  color: #fff;
-}
-
-.navigation-buttons button:last-child:hover:not(:disabled) {
-  background-color: #d62839;
-}
-
-/* Optional: Progress bar container */
-.progress-container {
-  height: 10px;
-  width: 100%;
-  background: #eee;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-/* This assumes your ProgressBar component renders the filled part as a child */
-.progress-container .progress-fill {
-  height: 100%;
-  background-color: #e63946;
-  transition: width 0.3s ease-in-out;
-  border-radius: 5px;
-}
-
-/* QuestionCard integration */
-/* If QuestionCard uses .question-card and .scale classes from previous step */
 .question-card {
   margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid #ececec;
+  border-radius: 10px;
 }
 
 .question-text {
-  font-weight: 500;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  color: #2a2a2a;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-.scale {
+/* Options */
+
+.options {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.scale-label {
-  font-size: 0.85rem;
-  color: #7a8c7f;
-  min-width: 50px;
-  text-align: center;
-}
-
-.scale-option {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.circle {
-  width: 22px;
-  height: 22px;
-  border: 2px solid #7a8c7f;
-  border-radius: 50%;
-  display: inline-block;
+.option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: white;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition: 0.2s;
 }
 
-input[type="radio"]:checked + .circle {
-  background-color: #e63946; /* AG Creative Thinkers red */
+.option-btn:hover {
+  background: #f8f8f8;
+}
+
+.option-btn.selected {
+  background: #e63946;
+  color: white;
   border-color: #e63946;
+}
+
+
+/* ================= RESULTS CONTAINERS (FIXED INVISIBLE TEXT & LAYOUT ONLY) ================= */
+
+.results-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+}
+
+/* Stacks results cards neatly one after another vertically */
+.career-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Modern visible text cards */
+.career-card {
+  padding: 25px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  color: #0f172a; /* Deep dark color solves the white text glitch */
+}
+
+/* High-visibility dark text titles */
+.career-card h2,
+.career-card h3 {
+  font-size: 1.4rem;
+  color: #0f172a; 
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Readable written description styles */
+.career-card p {
+  color: #475569;
+  font-size: 0.975rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Labels or inline tags inside the card text blocks */
+.career-card span {
+  color: #334155;
+  font-weight: 600;
+}
+
+
+/* ================= UNTOUCHED ORIGINAL DOMAIN SCORE STYLE ================= */
+
+.score-item {
+  margin-bottom: 10px;
+}
+
+.score-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: #e63946;
+}
+
+/* Gives a clean pointing pointer hand when hovering over the results cards */
+.clickable-result-card {
+  cursor: pointer !important;
+  user-select: none;
+}
+
+/* Subtle micro-interaction lift when hovered */
+.clickable-result-card:hover {
+  border-color: #e63946; /* Glows red to match your brand accent */
+  transform: translateY(-3px);
 }

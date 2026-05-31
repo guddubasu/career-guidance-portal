@@ -1,29 +1,38 @@
 import mongoose from 'mongoose';
 
 const aptitudeSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', sparse: true },
-  hollandScores: {
-    R: { type: Number, default: 0 }, // Realistic
-    I: { type: Number, default: 0 }, // Investigative
-    A: { type: Number, default: 0 }, // Artistic
-    S: { type: Number, default: 0 }, // Social
-    E: { type: Number, default: 0 }, // Enterprising
-    C: { type: Number, default: 0 }  // Conventional
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    sparse: true
   },
-  bigFiveScores: {
-    O: { type: Number, default: 0 }, // Openness
-    C: { type: Number, default: 0 }, // Conscientiousness
-    E: { type: Number, default: 0 }, // Extraversion
-    A: { type: Number, default: 0 }, // Agreeableness
-    N: { type: Number, default: 0 }  // Neuroticism
+
+  scores: {
+    TC: { type: Number, default: 0 }, // Technical
+    BM: { type: Number, default: 0 }, // Business
+    HS: { type: Number, default: 0 }, // Healthcare
+    CD: { type: Number, default: 0 }, // Creative
+    ED: { type: Number, default: 0 }, // Engineering
+    MC: { type: Number, default: 0 }  // Marketing
   },
-  topCareers: [{
-    careerId: Number,
-    title: String,
-    matchScore: Number
-  }],
-  hollandCode: String, // e.g. "RIA"
-  completedAt: { type: Date, default: Date.now }
+
+  recommendations: [
+    {
+      domain: String,
+      score: Number
+    }
+  ],
+
+  summary: {
+    type: String,
+    default:
+      'Your scores indicate a mixed domain profile, which can be valuable for hybrid roles.'
+  },
+
+  completedAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 export default mongoose.model('AptitudeResult', aptitudeSchema);

@@ -1,91 +1,135 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './AptitudeResults.css'; // Create CSS below
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./AptitudeResults.css";
 
 const AptitudeResults = () => {
-  const { state } = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
 
-  // Redirect if no data
+  const state = location.state;
+
   React.useEffect(() => {
-    if (!state?.recommendations) {
-      navigate('/aptitude');
+    if (!state) {
+      navigate("/aptitude");
     }
   }, [state, navigate]);
 
-  if (!state) return <div className="loading">Analyzing your results...</div>;
+  if (!state) {
+    return <div className="loading">Loading results...</div>;
+  }
 
-  const { hollandCode, recommendations, hollandScores } = state;
+  const {
+    scores = {},
+    recommendations = [],
+    summary = "",
+  } = state;
+
+  // Optimized 18-Domain Redirect Mapper
+  const handleCardClick = (title) => {
+    const name = title.toLowerCase();
+
+    // 18-Domain Route Dictionary Map
+    const domainMap = {
+      "it & software": "1",
+      "core engineering": "2",
+      "healthcare": "3",
+      "commerce & business management": "4",
+      "law & legal services": "5",
+      "arts & design": "6",
+      "media & communication": "7",
+      "education & teaching": "8",
+      "government services": "9",
+      "finance & banking": "10",
+      "agriculture & environment": "11",
+      "travel & tourism": "12",
+      "sports & fitness": "13",
+      "psychology & social work": "14",
+      "administrative support": "15",
+      "emerging modern careers": "16",
+      "pure sciences": "17",
+      "entrepreneurship": "18"
+    };
+
+    // Find a matching key within the incoming string title
+    const matchedKey = Object.keys(domainMap).find(key => name.includes(key));
+    const domainId = matchedKey ? domainMap[matchedKey] : null;
+
+    if (domainId) {
+      navigate(`/domain/${domainId}`);
+    } else {
+      console.warn(`No explicit ID mapped for domain: "${title}". Redirecting to overview.`);
+      navigate("/careers");
+    }
+  }; // <--- THIS CLOSES THE handleCardClick FUNCTION CORRECTLY
 
   return (
     <div className="results-container">
-      {/* 🎯 HEADER */}
-      <div className="results-header">
-        <h1>🎉 Your Career Results!</h1>
-        <div className="holland-badge">
-          <span className="holland-code">{hollandCode}</span>
-          <p>Your Personality Type</p>
-        </div>
+      <h1>🎯 Your Career Discovery Results</h1>
+
+      {/* Summary */}
+      <div className="summary-card">
+        <h2>Career Summary</h2>
+        <p>{summary}</p>
       </div>
 
-      {/* 🔥 TOP 5 CAREERS */}
+      {/* Scores */}
       <div className="results-section">
-        <h2>Top Career Matches</h2>
-        <div className="careers-grid">
+        <h2>Your Domain Scores</h2>
+
+        {Object.entries(scores).map(([domain, score]) => (
+          <div key={domain} className="score-item">
+            <div className="score-header">
+              <span>{domain}</span>
+              <span>{score}/50</span>
+            </div>
+
+            <div className="score-bar">
+              <div
+                className="score-fill"
+                style={{
+                  width: `${(score / 50) * 100}%`,
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Career Recommendations */}
+      <div className="results-section">
+        <h2>🏆 Best Career Matches</h2>
+
+        <div className="career-grid">
           {recommendations.map((career, index) => (
             <div 
-              key={career.id} 
-              className="career-card"
-              style={{ 
-                '--career-color': career.baseColor,
-                background: `linear-gradient(135deg, var(--career-color)20, transparent)`
-              }}
+              key={index} 
+              className="career-card clickable-result-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => handleCardClick(career.title)}
+              onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(career.title); }}
             >
-              <div className="career-rank">#{index + 1}</div>
-              <div className="career-header">
-                <h3>{career.title}</h3>
-                <div className="match-badge">
-                  {career.matchScore}% Match
-                </div>
-              </div>
+              <h3>
+                #{index + 1} {career.title}
+              </h3>
+
               <p>{career.summary}</p>
-              <div className="career-actions">
-                <button className="explore-btn">Explore Jobs</button>
+
+              <div className="match-score">
+                Match Score: {career.matchScore}%
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 📊 SCORES */}
-      <div className="results-section">
-        <h3>Your Personality Scores</h3>
-        <div className="scores-bar">
-          {Object.entries(hollandScores).map(([trait, score]) => (
-            <div key={trait} className="score-item">
-              <span>{trait}</span>
-              <div className="score-bar">
-                <div 
-                  className="score-fill" 
-                  style={{ width: `${(score / 25) * 100}%` }}
-                />
-              </div>
-              <span>{score}/25</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 🔄 ACTIONS */}
+      {/* Actions */}
       <div className="results-actions">
-        <button 
-          className="btn-primary retake-btn"
-          onClick={() => navigate('/aptitude')}
+        <button
+          className="btn-primary"
+          onClick={() => navigate("/aptitude")}
         >
-          🔄 Retake Test
-        </button>
-        <button className="btn-secondary share-btn">
-          📱 Share Results
+          🔄 Retake Quiz
         </button>
       </div>
     </div>
