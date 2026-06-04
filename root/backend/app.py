@@ -16,13 +16,27 @@ from validation.profile_validation import (
     validate_profile
 )
 
+import os
+from dotenv import load_dotenv
+from groq import Groq
+from career_roadmap.backend.prompt import ROADMAP_PROMPT_MARKDOWN
+
 # =====================================
 # APP
 # =====================================
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(
+    app,
+    origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+    ],
+    supports_credentials=True
+)
+
+load_dotenv()
 
 # =====================================
 # LOAD MODEL
@@ -520,6 +534,78 @@ def predict():
 
         }), 500
 
+#=========================
+# career roadmap backend
+#=========================
+@app.route("/roadmap-generate", methods=["POST"])
+def generate_roadmap():
+    try:
+        roadmap_input = request.json
+
+        if not roadmap_input:
+            return jsonify({
+                "success": False,
+                "issues": ["No roadmap input received."]
+            }), 400
+
+        required_fields = [
+            "current_role",
+            "skills",
+            "target_role",
+            "time_commitment"
+        ]
+
+        missing_fields = [
+            field for field in required_fields
+            if not roadmap_input.get(field)
+        ]
+
+        if missing_fields:
+            return jsonify({
+                "success": False,
+                "issues": [
+                    f"Missing required field: {field}"
+                    for field in missing_fields
+                ]
+            }), 400
+
+        if not os.getenv("GROQ_API_KEY"):
+            return jsonify({
+                "success": False,
+                "issues": ["GROQ_API_KEY is missing in backend .env file."]
+            }), 500
+
+        roadmap_client = Groq(
+            api_key=os.getenv("GROQ_API_KEY")
+        )
+
+        prompt = ROADMAP_PROMPT_MARKDOWN.format(**roadmap_input)
+
+        chat_completion = roadmap_client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            model="llama-3.3-70b-versatile"
+        )
+
+        roadmap = chat_completion.choices[0].message.content
+
+        return jsonify({
+            "success": True,
+            "roadmap": roadmap
+        })
+
+    except Exception as e:
+        print("Roadmap Generation Error:", e)
+
+        return jsonify({
+            "success": False,
+            "issues": [str(e)]
+        }), 500
+    
 # =====================================
 # START SERVER
 # =====================================
