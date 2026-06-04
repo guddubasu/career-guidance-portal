@@ -3,7 +3,6 @@
   margin: auto;
   padding: 40px;
 }
-
 .assessment-container h1 {
   text-align: center;
   margin-bottom: 40px;
@@ -270,6 +269,11 @@
   transform: translateY(-2px);
   opacity: 0.92;
 }
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
 .prediction-box {
   margin-top: 40px;
 }
@@ -282,4 +286,20 @@
 
 .match-card .domain-title {
   font-size: 28px;
+}
+.quiz-info {
+  margin: 10px 0 20px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-matches-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 20px 0;
+  color: #1e293b;
 }

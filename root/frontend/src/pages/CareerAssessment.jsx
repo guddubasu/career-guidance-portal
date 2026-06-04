@@ -404,12 +404,10 @@ function CareerAssessment() {
       {prediction && (
         <div className="prediction-box">
           <h2>🎯 Predicted Domain</h2>
-
-          <h3 className="main-prediction">
-            {prediction?.predicted_domain?.replaceAll("_", " ")}
-          </h3>
-
-          <h4>Top Matches</h4>
+          <p className="quiz-info">
+          Explore career opportunities in each recommended domain. Take the domain-specific quiz to discover the top 3 career paths that best match your interests, strengths, and personality.
+          </p>
+          <h4 className="top-matches-heading">Top Matches</h4>
 
           <div className="match-list">
             {prediction?.top_matches?.map((item, index) => {
@@ -477,24 +475,45 @@ function CareerAssessment() {
                       </span>
                     </div>
 
-                    <button
-                      className="explore-btn"
-                      onClick={() => {
-                        const normalizedDomain = item.domain
-                          ?.trim()
-                          ?.replaceAll(" ", "_");
+                    <div className="button-group">
 
-                        const id = domainMap[normalizedDomain];
+  <button
+    className="explore-btn"
+    onClick={() => {
+      const normalizedDomain = item.domain
+        ?.trim()
+        ?.replaceAll(" ", "_");
 
-                        if (id) {
-                          navigate(`/domain/${id}`);
-                        } else {
-                          alert(`No route mapped for ${item.domain}`);
-                        }
-                      }}
-                    >
-                      View Careers →
-                    </button>
+      const id = domainMap[normalizedDomain];
+
+      if (id) {
+        navigate(`/domain/${id}`);
+      } else {
+        alert(`No route mapped for ${item.domain}`);
+      }
+    }}
+  >
+    View Careers →
+  </button>
+
+  <button
+    className="explore-btn"
+    onClick={() => {
+      const normalizedDomain = item.domain
+        ?.trim()
+        ?.replaceAll(" ", "_");
+
+      const id = domainMap[normalizedDomain];
+
+      if (id) {
+        navigate(`/quiz/${id}`);
+      }
+    }}
+  >
+    Take Quiz
+  </button>
+
+</div>
                   </div>
                 </div>
               );

@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import CareersPage from "./pages/CareersPage";
+import QuizPage from "./pages/QuizePage";
 // import CareerDetail from "./pages/CareerDetail";
 import Domain from "./pages/Domain";
 import SubCareerDetail from "./pages/SubCareerDetail";
@@ -119,7 +120,8 @@ export default function App() {
           <Route path="/gscholarships" element={<GovernmentScholarships />} />
           <Route path="/pscholarships" element={<PrivateScholarships />} />
           <Route path="/showscholarships" element={<ShowScholarship />} />
-
+          {/*QUIZE ROUTE */}
+          <Route path="/quiz/:id" element={<QuizPage />} />
           {/* CATCH ALL */}
           <Route path="*" element={<Home />} />
 
