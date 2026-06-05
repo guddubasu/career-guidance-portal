@@ -28,7 +28,6 @@ const AptitudeResults = () => {
   const handleCardClick = (title) => {
     const name = title.toLowerCase();
 
-    // 18-Domain Route Dictionary Map
     const domainMap = {
       "it & software": "1",
       "core engineering": "2",
@@ -47,21 +46,32 @@ const AptitudeResults = () => {
       "administrative support": "15",
       "emerging modern careers": "16",
       "pure sciences": "17",
-      "entrepreneurship": "18"
+      "entrepreneurship": "18",
     };
 
-    // First try: Direct sub-string match
-    let matchedKey = Object.keys(domainMap).find(key => name.includes(key));
+    let matchedKey = Object.keys(domainMap).find((key) =>
+      name.includes(key)
+    );
 
-    // Second try: Smart Fallback checking individual keywords for mismatched API variations
     if (!matchedKey) {
-      if (name.includes("media") || name.includes("communication")) matchedKey = "media & communication";
-      else if (name.includes("arts") || name.includes("design")) matchedKey = "arts & design";
-      else if (name.includes("engineering")) matchedKey = "core engineering";
-      else if (name.includes("law") || name.includes("legal")) matchedKey = "law & legal services";
-      else if (name.includes("software") || name.includes("it")) matchedKey = "it & software";
-      else if (name.includes("business") || name.includes("management") || name.includes("commerce")) matchedKey = "commerce & business management";
-      else if (name.includes("finance") || name.includes("banking")) matchedKey = "finance & banking";
+      if (name.includes("media") || name.includes("communication"))
+        matchedKey = "media & communication";
+      else if (name.includes("arts") || name.includes("design"))
+        matchedKey = "arts & design";
+      else if (name.includes("engineering"))
+        matchedKey = "core engineering";
+      else if (name.includes("law") || name.includes("legal"))
+        matchedKey = "law & legal services";
+      else if (name.includes("software") || name.includes("it"))
+        matchedKey = "it & software";
+      else if (
+        name.includes("business") ||
+        name.includes("management") ||
+        name.includes("commerce")
+      )
+        matchedKey = "commerce & business management";
+      else if (name.includes("finance") || name.includes("banking"))
+        matchedKey = "finance & banking";
     }
 
     const domainId = matchedKey ? domainMap[matchedKey] : null;
@@ -69,7 +79,9 @@ const AptitudeResults = () => {
     if (domainId) {
       navigate(`/domain/${domainId}`);
     } else {
-      console.warn(`No explicit ID mapped for domain: "${title}". Redirecting to overview.`);
+      console.warn(
+        `No explicit ID mapped for domain: "${title}". Redirecting to overview.`
+      );
       navigate("/careers");
     }
   };
@@ -113,13 +125,15 @@ const AptitudeResults = () => {
 
         <div className="career-grid">
           {recommendations.map((career, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="career-card clickable-result-card"
               role="button"
               tabIndex={0}
               onClick={() => handleCardClick(career.title)}
-              onKeyDown={(e) => { if (e.key === 'Enter') handleCardClick(career.title); }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleCardClick(career.title);
+              }}
             >
               <h3>
                 #{index + 1} {career.title}
@@ -135,13 +149,20 @@ const AptitudeResults = () => {
         </div>
       </div>
 
-      {/* Actions */}
+      {/* Action Buttons */}
       <div className="results-actions">
         <button
           className="btn-primary"
           onClick={() => navigate("/aptitude")}
         >
           🔄 Retake Quiz
+        </button>
+
+        <button
+          className="btn-secondary"
+          onClick={() => navigate("/")}
+        >
+          🏠 Back to Home
         </button>
       </div>
     </div>
