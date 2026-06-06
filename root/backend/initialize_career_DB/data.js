@@ -1,7 +1,7 @@
 const career_data = [
 {
 domain_id:1,
-domain_name:"IT & Software",
+domain_name:"STEM",
 themeColor:"#1E40AF",
 careers:[
 
@@ -169,16 +169,7 @@ careers:[
     place_of_work: "Tech Companies, Startups",
     work_environment: "Remote/Office",
     expected_growth_path: ["Blockchain Developer", "Senior Developer", "Blockchain Architect"]
-  }
-]
-},
-
-{
-domain_id:2,
-domain_name:"Core Engineering",
-themeColor:"#047857",
-careers:[
-
+  },
   {
     career_id: "mechanical_engineer",
     career_name: "Mechanical Engineer",
@@ -298,12 +289,101 @@ careers:[
     place_of_work: "Manufacturing, Automation Industry",
     work_environment: "Lab/Factory",
     expected_growth_path: ["Junior Engineer", "Mechatronics Engineer", "Senior Engineer"]
+  },
+  {
+    career_id: "physicist",
+    career_name: "Physicist",
+    career_description: "Studies the fundamental laws of nature, matter, and energy.",
+    expected_income: "₹5–20 LPA",
+    personal_competencies: ["Analytical Thinking", "Mathematics", "Research Skills"],
+    entry_pathway: ["B.Sc Physics", "M.Sc/PhD"],
+    where_will_you_study_description: "Universities and research institutes offer physics programs.",
+    government_institutes: ["IISc", "IITs"],
+    private_institutes: ["BITS Pilani"],
+    fees: "₹1,00,000 – ₹10,00,000",
+    place_of_work: "Research Labs, Universities",
+    work_environment: "Lab/Academic",
+    expected_growth_path: ["Researcher", "Scientist", "Senior Scientist"]
+  },
+  {
+    career_id: "chemist",
+    career_name: "Chemist",
+    career_description: "Studies substances, their properties, and chemical reactions.",
+    expected_income: "₹4–15 LPA",
+    personal_competencies: ["Analytical Skills", "Lab Skills", "Attention to Detail"],
+    entry_pathway: ["B.Sc Chemistry", "M.Sc/PhD"],
+    where_will_you_study_description: "Universities offer chemistry programs.",
+    government_institutes: ["IISc", "IITs"],
+    private_institutes: ["BITS Pilani"],
+    fees: "₹1,00,000 – ₹10,00,000",
+    place_of_work: "Labs, Industries",
+    work_environment: "Lab",
+    expected_growth_path: ["Chemist", "Senior Chemist", "Research Scientist"]
+  },
+  {
+    career_id: "biologist",
+    career_name: "Biologist",
+    career_description: "Studies living organisms and their interactions with the environment.",
+    expected_income: "₹4–12 LPA",
+    personal_competencies: ["Observation", "Research Skills", "Analytical Thinking"],
+    entry_pathway: ["B.Sc Biology", "M.Sc/PhD"],
+    where_will_you_study_description: "Universities and research institutes.",
+    government_institutes: ["IISc", "DU"],
+    private_institutes: ["Amity University"],
+    fees: "₹1,00,000 – ₹8,00,000",
+    place_of_work: "Labs, Research Centers",
+    work_environment: "Lab/Field",
+    expected_growth_path: ["Researcher", "Biologist", "Senior Scientist"]
+  },
+  {
+    career_id: "mathematician",
+    career_name: "Mathematician",
+    career_description: "Studies mathematical theories and applies them to solve real-world problems.",
+    expected_income: "₹5–18 LPA",
+    personal_competencies: ["Logical Thinking", "Problem Solving", "Mathematics"],
+    entry_pathway: ["B.Sc Mathematics", "M.Sc/PhD"],
+    where_will_you_study_description: "Universities offer mathematics programs.",
+    government_institutes: ["ISI Kolkata", "IITs"],
+    private_institutes: ["BITS Pilani"],
+    fees: "₹1,00,000 – ₹10,00,000",
+    place_of_work: "Research Institutes, Academia",
+    work_environment: "Academic",
+    expected_growth_path: ["Researcher", "Mathematician", "Professor"]
+  },
+  {
+    career_id: "statistician",
+    career_name: "Statistician",
+    career_description: "Analyzes data using statistical methods to support decision-making.",
+    expected_income: "₹5–20 LPA",
+    personal_competencies: ["Data Analysis", "Mathematics", "Analytical Thinking"],
+    entry_pathway: ["B.Sc Statistics", "M.Sc"],
+    where_will_you_study_description: "Universities and institutes offer statistics programs.",
+    government_institutes: ["ISI Kolkata"],
+    private_institutes: ["Amity University"],
+    fees: "₹1,00,000 – ₹8,00,000",
+    place_of_work: "Corporates, Research Organizations",
+    work_environment: "Office",
+    expected_growth_path: ["Analyst", "Statistician", "Senior Analyst"]
+  },
+  {
+    career_id: "research_scientist",
+    career_name: "Research Scientist",
+    career_description: "Conducts advanced research in various scientific fields.",
+    expected_income: "₹6–25 LPA",
+    personal_competencies: ["Research Skills", "Critical Thinking", "Innovation"],
+    entry_pathway: ["B.Sc", "M.Sc/PhD"],
+    where_will_you_study_description: "Research institutes and universities.",
+    government_institutes: ["CSIR Labs", "IISc"],
+    private_institutes: ["Private R&D Labs"],
+    fees: "₹1,00,000 – ₹10,00,000",
+    place_of_work: "Research Labs, Universities",
+    work_environment: "Lab/Academic",
+    expected_growth_path: ["Junior Scientist", "Scientist", "Senior Scientist"]
   }
 ]
 },
-
 {
-domain_id:3,
+domain_id:2,
 domain_name:"Healthcare & Medicine",
 themeColor:"#DC2626",
 careers:
@@ -492,7 +572,7 @@ careers:
 },
 
 {
-domain_id:4,
+domain_id:3,
 domain_name:"Commerce, Business & Management",
 themeColor:"#F59E0B",
 careers:[
@@ -651,7 +731,7 @@ careers:[
 },
 
 {
-domain_id:5,
+domain_id:4,
 domain_name:"Law & Legal Services",
 themeColor:"#2563EB",
 careers:[
@@ -749,7 +829,7 @@ careers:[
 },
 
 {
-domain_id:6,
+domain_id:5,
 domain_name:"Arts, Design & Creative Fields",
 themeColor:"#15803D",
 careers:[
@@ -907,7 +987,7 @@ careers:[
 },
 
 {
-domain_id:7,
+domain_id:6,
 domain_name:" Media, Communication & Entertainment",
 themeColor:"#F97316",
 careers:[
@@ -1049,7 +1129,7 @@ careers:[
 ]
 },
 {
-domain_id:8,
+domain_id:7,
 domain_name:"Education & Teaching",
 themeColor:"#2563EB",
 careers:[
@@ -1148,7 +1228,7 @@ careers:[
 ,
 
 {
-domain_id:9,
+domain_id:8,
 domain_name:" Government & Public Services",
 themeColor:"#9333EA",
 careers:[
@@ -1246,7 +1326,7 @@ careers:[
 },
 
 {
-domain_id:10,
+domain_id:9,
 domain_name:"Finance & Banking",
 themeColor:"#F59E0B",
 careers:[
@@ -1344,7 +1424,7 @@ careers:[
 },
 
 {
-domain_id:11,
+domain_id:10,
 domain_name:" Agriculture & Environment",
 themeColor:"#1E40AF",
 careers:[
@@ -1442,7 +1522,7 @@ careers:[
 },
 
 {
-domain_id:12,
+domain_id:11,
 domain_name:"Travel, Tourism & Hospitality",
 themeColor:"#DC2626",
 careers:[
@@ -1555,7 +1635,7 @@ careers:[
 },
 
 {
-domain_id:13,
+domain_id:12,
 domain_name:"Sports & Fitness",
 themeColor:"#10B981",
 careers:[
@@ -1653,7 +1733,7 @@ careers:[
 },
 
 {
-domain_id:14,
+domain_id:13,
 domain_name:"Skilled Trades & Vocational Careers",
 themeColor:"#1E40AF",
 careers:[
@@ -1766,7 +1846,7 @@ careers:[
 },
 
 {
-domain_id:15,
+domain_id:14,
 domain_name:"Psychology & Social Work",
 themeColor:"#9333EA",
 careers:[
@@ -1849,7 +1929,7 @@ careers:[
 },
 
 {
-domain_id:16,
+domain_id:15,
 domain_name:"Administrative & Support Roles",
 themeColor:"#F59E0B",
 careers:[
@@ -1917,7 +1997,7 @@ careers:[
 },
 
 {
-domain_id:17,
+domain_id:16,
 domain_name:"Emerging & Modern Careers ",
 themeColor:"#9333EA",
 careers:[
@@ -2121,7 +2201,7 @@ careers:[
 
 
 {
-domain_id:18,
+domain_id:17,
 domain_name:" Entrepreneurship & Freelancing",
 themeColor:"#10B981",
 careers:[
@@ -2184,116 +2264,8 @@ careers:[
     place_of_work: "Social Media Platforms",
     work_environment: "Remote",
     expected_growth_path: ["Content Creator", "Influencer", "Business Owner"]
-  }
-]
-}
-,
-
-{
-domain_id:19,
-domain_name:" Pure Sciences",
-themeColor:"#F59E0B",
-careers:[
-  {
-    career_id: "physicist",
-    career_name: "Physicist",
-    career_description: "Studies the fundamental laws of nature, matter, and energy.",
-    expected_income: "₹5–20 LPA",
-    personal_competencies: ["Analytical Thinking", "Mathematics", "Research Skills"],
-    entry_pathway: ["B.Sc Physics", "M.Sc/PhD"],
-    where_will_you_study_description: "Universities and research institutes offer physics programs.",
-    government_institutes: ["IISc", "IITs"],
-    private_institutes: ["BITS Pilani"],
-    fees: "₹1,00,000 – ₹10,00,000",
-    place_of_work: "Research Labs, Universities",
-    work_environment: "Lab/Academic",
-    expected_growth_path: ["Researcher", "Scientist", "Senior Scientist"]
   },
   {
-    career_id: "chemist",
-    career_name: "Chemist",
-    career_description: "Studies substances, their properties, and chemical reactions.",
-    expected_income: "₹4–15 LPA",
-    personal_competencies: ["Analytical Skills", "Lab Skills", "Attention to Detail"],
-    entry_pathway: ["B.Sc Chemistry", "M.Sc/PhD"],
-    where_will_you_study_description: "Universities offer chemistry programs.",
-    government_institutes: ["IISc", "IITs"],
-    private_institutes: ["BITS Pilani"],
-    fees: "₹1,00,000 – ₹10,00,000",
-    place_of_work: "Labs, Industries",
-    work_environment: "Lab",
-    expected_growth_path: ["Chemist", "Senior Chemist", "Research Scientist"]
-  },
-  {
-    career_id: "biologist",
-    career_name: "Biologist",
-    career_description: "Studies living organisms and their interactions with the environment.",
-    expected_income: "₹4–12 LPA",
-    personal_competencies: ["Observation", "Research Skills", "Analytical Thinking"],
-    entry_pathway: ["B.Sc Biology", "M.Sc/PhD"],
-    where_will_you_study_description: "Universities and research institutes.",
-    government_institutes: ["IISc", "DU"],
-    private_institutes: ["Amity University"],
-    fees: "₹1,00,000 – ₹8,00,000",
-    place_of_work: "Labs, Research Centers",
-    work_environment: "Lab/Field",
-    expected_growth_path: ["Researcher", "Biologist", "Senior Scientist"]
-  },
-  {
-    career_id: "mathematician",
-    career_name: "Mathematician",
-    career_description: "Studies mathematical theories and applies them to solve real-world problems.",
-    expected_income: "₹5–18 LPA",
-    personal_competencies: ["Logical Thinking", "Problem Solving", "Mathematics"],
-    entry_pathway: ["B.Sc Mathematics", "M.Sc/PhD"],
-    where_will_you_study_description: "Universities offer mathematics programs.",
-    government_institutes: ["ISI Kolkata", "IITs"],
-    private_institutes: ["BITS Pilani"],
-    fees: "₹1,00,000 – ₹10,00,000",
-    place_of_work: "Research Institutes, Academia",
-    work_environment: "Academic",
-    expected_growth_path: ["Researcher", "Mathematician", "Professor"]
-  },
-  {
-    career_id: "statistician",
-    career_name: "Statistician",
-    career_description: "Analyzes data using statistical methods to support decision-making.",
-    expected_income: "₹5–20 LPA",
-    personal_competencies: ["Data Analysis", "Mathematics", "Analytical Thinking"],
-    entry_pathway: ["B.Sc Statistics", "M.Sc"],
-    where_will_you_study_description: "Universities and institutes offer statistics programs.",
-    government_institutes: ["ISI Kolkata"],
-    private_institutes: ["Amity University"],
-    fees: "₹1,00,000 – ₹8,00,000",
-    place_of_work: "Corporates, Research Organizations",
-    work_environment: "Office",
-    expected_growth_path: ["Analyst", "Statistician", "Senior Analyst"]
-  },
-  {
-    career_id: "research_scientist",
-    career_name: "Research Scientist",
-    career_description: "Conducts advanced research in various scientific fields.",
-    expected_income: "₹6–25 LPA",
-    personal_competencies: ["Research Skills", "Critical Thinking", "Innovation"],
-    entry_pathway: ["B.Sc", "M.Sc/PhD"],
-    where_will_you_study_description: "Research institutes and universities.",
-    government_institutes: ["CSIR Labs", "IISc"],
-    private_institutes: ["Private R&D Labs"],
-    fees: "₹1,00,000 – ₹10,00,000",
-    place_of_work: "Research Labs, Universities",
-    work_environment: "Lab/Academic",
-    expected_growth_path: ["Junior Scientist", "Scientist", "Senior Scientist"]
-  }
-]
-},
-
-{
-domain_id:20,
-domain_name:"Entrepreneurship",
-themeColor:"#9333EA",
-careers:[
-
-{
 career_id:"startup-founder",
 career_name:"Startup Founder",
 career_description:"Creates and manages a new business venture and develops innovative products or services.",
@@ -2404,7 +2376,6 @@ place_of_work:"Venture Capital Firms",
 work_environment:"Office and startup meetings",
 expected_growth_path:["Investment Analyst","Partner","Managing Partner"]
 }
-
 ]
 }
 ]

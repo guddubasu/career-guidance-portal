@@ -77,57 +77,54 @@ const factorQuestions = {
 // =====================================
 
 const domainMap = {
-  IT_Software: 1,
+  STEM: 1,
+  Healthcare_Medicine: 2,
+  Healthcare: 2,
 
-  Core_Engineering: 2,
+  Commerce_Business_Management: 3,
+  Commerce_Business: 3,
 
-  Healthcare_Medicine: 3,
-  Healthcare: 3,
+  Law_Legal_Services: 4,
+  Law: 4,
 
-  Commerce_Business_Management: 4,
-  Commerce_Business: 4,
+  Arts_Design: 5,
+  Arts_Design_Creative_Fields: 5,
 
-  Law_Legal_Services: 5,
-  Law: 5,
+  Media_Entertainment: 6,
+  Media_Communication_Entertainment: 6,
 
-  Arts_Design: 6,
-  Arts_Design_Creative_Fields: 6,
+  Education: 7,
+  Education_Teaching: 7,
 
-  Media_Entertainment: 7,
-  Media_Communication_Entertainment: 7,
+  Government_Public_Services: 8,
+  Government_Public_Service: 8,
 
-  Education: 8,
-  Education_Teaching: 8,
+  Finance_Banking: 9,
 
-  Government_Public_Services: 9,
-  Government_Public_Service: 9,
+  Agriculture_Environment: 10,
 
-  Finance_Banking: 10,
+  Travel_Tourism_Hospitality: 11,
+  Travel_Hospitality: 11,
 
-  Agriculture_Environment: 11,
+  Sports_Fitness: 12,
 
-  Travel_Tourism_Hospitality: 12,
-  Travel_Hospitality: 12,
+  Skilled_Trades: 13,
+  Skilled_Trades_Vocational_Careers: 13,
 
-  Sports_Fitness: 13,
+  Psychology_Social_Work: 14,
 
-  Skilled_Trades: 14,
-  Skilled_Trades_Vocational_Careers: 14,
+  Administrative_Support: 15,
+  Administrative_Support_Roles: 15,
 
-  Psychology_Social_Work: 15,
+  Emerging_Modern_Careers: 16,
+  Emerging_Careers: 16,
 
-  Administrative_Support: 16,
-  Administrative_Support_Roles: 16,
+  Entrepreneurship_Freelancing: 17,
 
-  Emerging_Modern_Careers: 17,
-  Emerging_Careers: 17,
+  Pure_Sciences: 1,
+  STEM: 1,
 
-  Entrepreneurship_Freelancing: 18,
-
-  Pure_Sciences: 19,
-  STEM: 19,
-
-  Entrepreneurship: 20,
+  Entrepreneurship: 17,
 };
 
 // =====================================

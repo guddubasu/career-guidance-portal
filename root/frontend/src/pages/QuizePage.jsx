@@ -10,9 +10,9 @@ function QuizPage() {
 const { id } = useParams();
 const navigate = useNavigate();
 const questionMap = {
-"19": STEM,
-"3": healthcareQuestions,
-"4": businessQuestions,
+"1": STEM,
+"2": healthcareQuestions,
+"3": businessQuestions,
 };
 
 const questions = questionMap[id] || [];
@@ -51,7 +51,7 @@ let careers = [];
 // STEM DOMAIN
 // ==========================
 
-if (id === "19") {
+if (id === "1") {
 
   if (aCount >= bCount && aCount >= cCount) {
 
@@ -85,7 +85,7 @@ if (id === "19") {
 // HEALTHCARE DOMAIN
 // ==========================
 
-else if (id === "3") {
+else if (id === "2") {
 
   if (aCount >= bCount && aCount >= cCount) {
 
@@ -119,7 +119,7 @@ else if (id === "3") {
 // BUSINESS DOMAIN
 // ==========================
 
-else if (id === "4") {
+else if (id === "3") {
 
   if (aCount >= bCount && aCount >= cCount) {
 

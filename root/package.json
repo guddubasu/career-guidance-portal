@@ -11,11 +11,12 @@
     "seed-colleges": "cd backend && node initialize_career_DB/initializeCollegeData.js"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0",
+    "concurrently": "^9.2.1",
     "nodemon": "^3.0.0"
   },
   "dependencies": {
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "vite": "^8.0.16"
   }
 }

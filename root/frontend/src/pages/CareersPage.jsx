@@ -19,26 +19,26 @@ export default function CareersPage() {
     {
       id: 1,
       dataId: 1,
-      title: "IT & Software",
-      description: "Technology & Innovation",
+      title: "STEM",
+      description: "STEM (Science, Technology, Engineering & Mathematics)",
       baseColor: "#1E40AF",
       summary:
-        "Careers in software development, AI, cybersecurity, data science, and IT infrastructure."
+        "Careers in software, core engineering, scientific research, mathematics, technology, and innovation."
     },
+
+    // {
+    //   id: 2,
+    //   dataId: 2,
+    //   title: "Core Engineering",
+    //   description: "Engineering & Manufacturing",
+    //   baseColor: "#047857",
+    //   summary:
+    //     "Mechanical, Civil, Electrical, Chemical and industrial engineering careers."
+    // },
 
     {
       id: 2,
       dataId: 2,
-      title: "Core Engineering",
-      description: "Engineering & Manufacturing",
-      baseColor: "#047857",
-      summary:
-        "Mechanical, Civil, Electrical, Chemical and industrial engineering careers."
-    },
-
-    {
-      id: 3,
-      dataId: 3,
       title: "Healthcare & Medicine",
       description: "Health & Wellness",
       baseColor: "#DC2626",
@@ -47,8 +47,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 4,
-      dataId: 4,
+      id: 3,
+      dataId: 3,
       title: "Commerce, Business & Management",
       description: "Business & Leadership",
       baseColor: "#F59E0B",
@@ -57,8 +57,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 5,
-      dataId: 5,
+      id: 4,
+      dataId: 4,
       title: "Law & Legal Services",
       description: "Justice & Legal Systems",
       baseColor: "#2563EB",
@@ -67,8 +67,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 6,
-      dataId: 6,
+      id: 5,
+      dataId: 5,
       title: "Arts, Design & Creative Fields",
       description: "Creativity & Design",
       baseColor: "#15803D",
@@ -77,8 +77,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 7,
-      dataId: 7,
+      id: 6,
+      dataId: 6,
       title: "Media, Communication & Entertainment",
       description: "Journalism & Entertainment",
       baseColor: "#F97316",
@@ -87,8 +87,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 8,
-      dataId: 8,
+      id: 7,
+      dataId: 7,
       title: "Education & Teaching",
       description: "Teaching & Learning",
       baseColor: "#2563EB",
@@ -97,8 +97,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 9,
-      dataId: 9,
+      id: 8,
+      dataId: 8,
       title: "Government & Public Services",
       description: "Public Administration",
       baseColor: "#9333EA",
@@ -107,8 +107,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 10,
-      dataId: 10,
+      id: 9,
+      dataId: 9,
       title: "Finance & Banking",
       description: "Finance & Investment",
       baseColor: "#F59E0B",
@@ -117,8 +117,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 11,
-      dataId: 11,
+      id: 10,
+      dataId: 10,
       title: "Agriculture & Environment",
       description: "Farming & Sustainability",
       baseColor: "#1E40AF",
@@ -127,8 +127,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 12,
-      dataId: 12,
+      id: 11,
+      dataId: 11,
       title: "Travel, Tourism & Hospitality",
       description: "Hospitality & Tourism",
       baseColor: "#DC2626",
@@ -137,8 +137,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 13,
-      dataId: 13,
+      id: 12,
+      dataId: 12,
       title: "Sports & Fitness",
       description: "Athletics & Wellness",
       baseColor: "#10B981",
@@ -147,8 +147,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 14,
-      dataId: 14,
+      id: 13,
+      dataId: 13,
       title: "Skilled Trades & Vocational Careers",
       description: "Technical & Practical Skills",
       baseColor: "#1E40AF",
@@ -157,8 +157,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 15,
-      dataId: 15,
+      id: 14,
+      dataId: 14,
       title: "Psychology & Social Work",
       description: "Mental Health & Society",
       baseColor: "#9333EA",
@@ -167,8 +167,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 16,
-      dataId: 16,
+      id: 15,
+      dataId: 15,
       title: "Administrative & Support Roles",
       description: "Operations & Administration",
       baseColor: "#F59E0B",
@@ -177,8 +177,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 17,
-      dataId: 17,
+      id: 16,
+      dataId: 16,
       title: "Emerging & Modern Careers",
       description: "Future Technologies",
       baseColor: "#9333EA",
@@ -187,8 +187,8 @@ export default function CareersPage() {
     },
 
     {
-      id: 18,
-      dataId: 18,
+      id: 17,
+      dataId: 17,
       title: "Entrepreneurship & Freelancing",
       description: "Self-Employment & Startups",
       baseColor: "#10B981",
@@ -196,25 +196,25 @@ export default function CareersPage() {
         "Startup founders, freelancers, consultants and independent business careers."
     },
 
-    {
-      id: 19,
-      dataId: 19,
-      title: "Pure Sciences",
-      description: "Research & Discovery",
-      baseColor: "#F59E0B",
-      summary:
-        "Physics, Chemistry, Biology and scientific research careers."
-    },
+    // {
+    //   id: 19,
+    //   dataId: 19,
+    //   title: "Pure Sciences",
+    //   description: "Research & Discovery",
+    //   baseColor: "#F59E0B",
+    //   summary:
+    //     "Physics, Chemistry, Biology and scientific research careers."
+    // },
 
-    {
-      id: 20,
-      dataId: 20,
-      title: "Entrepreneurship",
-      description: "Business Creation & Innovation",
-      baseColor: "#9333EA",
-      summary:
-        "Building startups, launching businesses and creating innovative ventures."
-    }
+    // {
+    //   id: 20,
+    //   dataId: 20,
+    //   title: "Entrepreneurship",
+    //   description: "Business Creation & Innovation",
+    //   baseColor: "#9333EA",
+    //   summary:
+    //     "Building startups, launching businesses and creating innovative ventures."
+    // }
 
   ];
 
