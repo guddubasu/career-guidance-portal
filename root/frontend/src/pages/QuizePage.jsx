@@ -12,7 +12,7 @@ import mediaQuestions from "../Data/QuizQuestions/mediaQuestions";
 import emergingModernCareersQuestions from "../Data/QuizQuestions/Emerging & Modern Careers";
 import entrepreneurshipFreelancingQuestions from "../Data/QuizQuestions/Entrepreneurship & Freelancing";
 
-// New Domain Imports (Adjust paths as per your project structure)
+
 import financeQuestions from "../Data/QuizQuestions/financeQuestions";
 import agricultureQuestions from "../Data/QuizQuestions/agricultureQuestions";
 import travelQuestions from "../Data/QuizQuestions/travelQuestions";
@@ -61,7 +61,7 @@ function QuizPage() {
     let bCount = 0;
     let cCount = 0;
 
-    // Build a deterministic answers array following the questions order
+    
     const answersByIndex = questions.map((q) =>
       Object.prototype.hasOwnProperty.call(answers, q.id) ? answers[q.id] : null
     );
