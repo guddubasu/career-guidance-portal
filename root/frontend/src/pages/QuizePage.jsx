@@ -11,13 +11,14 @@ import lawQuestions from "../Data/QuizQuestions/lawQuestions";
 import mediaQuestions from "../Data/QuizQuestions/mediaQuestions";
 import emergingModernCareersQuestions from "../Data/QuizQuestions/Emerging & Modern Careers";
 import entrepreneurshipFreelancingQuestions from "../Data/QuizQuestions/Entrepreneurship & Freelancing";
-
-
+import governmentQuestions from "../Data/QuizQuestions/governmentQuestions";
 import financeQuestions from "../Data/QuizQuestions/financeQuestions";
 import agricultureQuestions from "../Data/QuizQuestions/agricultureQuestions";
 import travelQuestions from "../Data/QuizQuestions/travelQuestions";
 import sportsQuestions from "../Data/QuizQuestions/sportsQuestions";
-
+import skilledTradesQuestions from "../Data/QuizQuestions/skilledTradesQuestions";
+import psychologyQuestions from "../Data/QuizQuestions/psychologyQuestions";
+import administrativeQuestions from "../Data/QuizQuestions/administrativeQuestions";
 function QuizPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -25,14 +26,18 @@ function QuizPage() {
     "1": STEM,
     "2": healthcareQuestions,
     "3": businessQuestions,
-    "5": lawQuestions,
-    "6": artsQuestions,
-    "7": mediaQuestions,
-    "8": educationQuestions,
+    "4": lawQuestions,
+    "5": artsQuestions,
+    "6": mediaQuestions,
+    "7": educationQuestions,
+    "8": governmentQuestions,
     "9": financeQuestions,       
     "10": agricultureQuestions,  
     "11": travelQuestions,       
-    "12": sportsQuestions,    
+    "12": sportsQuestions,
+    "13": skilledTradesQuestions,
+    "14": psychologyQuestions,
+    "15": administrativeQuestions,
     "16": emergingModernCareersQuestions,
     "17": entrepreneurshipFreelancingQuestions,
   };
@@ -78,14 +83,41 @@ function QuizPage() {
     // STEM DOMAIN
     // ==========================
     if (id === "1") {
-      if (aCount >= bCount && aCount >= cCount) {
-        careers = ["Software Engineer", "AI Engineer", "Machine Learning Engineer"];
-      } else if (bCount >= aCount && bCount >= cCount) {
-        careers = ["Mechanical Engineer", "Civil Engineer", "Electrical Engineer"];
-      } else {
-        careers = ["Research Scientist", "Data Scientist", "Academic Researcher"];
-      }
-    }
+
+  // SOFTWARE / IT
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Software Developer",
+      "AI/ML Engineer",
+      "Cybersecurity Analyst"
+    ];
+
+  }
+
+  // ENGINEERING
+  else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Mechanical Engineer",
+      "Robotics Engineer",
+      "Aerospace Engineer"
+    ];
+
+  }
+
+  // SCIENCE & RESEARCH
+  else {
+
+    careers = [
+      "Research Scientist",
+      "Physicist",
+      "Statistician"
+    ];
+
+  }
+
+}
 
     // ==========================
     // HEALTHCARE DOMAIN
@@ -112,7 +144,134 @@ function QuizPage() {
         careers = ["Business Analyst", "Operations Manager", "Entrepreneur"];
       }
     }
+    //=======================================
+    //government and public service domain-id -8
+    //=======================================
+    else if (id === "8") {
 
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Civil Servant (IAS, IPS)",
+      "Diplomat",
+      "Public Administrator"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Police Officer",
+      "Army/Navy/Air Force Officer",
+      "Civil Servant (IPS)"
+    ];
+
+  } else {
+
+    careers = [
+      "Tax Officer",
+      "Public Administrator",
+      "Civil Servant (IAS)"
+    ];
+
+  }
+
+}
+//===================================
+//skill trades and vocational careers-id 13
+//===================================
+else if (id === "13") {
+
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Electrician",
+      "Technician",
+      "Plumber"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Mechanic",
+      "Welder",
+      "Technician"
+    ];
+
+  } else {
+
+    careers = [
+      "Carpenter",
+      "Construction Worker",
+      "Plumber"
+    ];
+
+  }
+
+}
+//========================
+//Psychology and social work--id 14
+//========================
+else if (id === "14") {
+
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Counselor",
+      "Therapist",
+      "Clinical Psychologist"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Clinical Psychologist",
+      "Therapist",
+      "Counselor"
+    ];
+
+  } else {
+
+    careers = [
+      "Social Worker",
+      "NGO Worker",
+      "Counselor"
+    ];
+
+  }
+
+}
+// ==========================
+    // Administrative & Support Roles -id-15
+    // ==========================
+    else if (id === "15") {
+
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Office Administrator",
+      "Executive Assistant",
+      "Customer Support Executive"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Executive Assistant",
+      "Office Administrator",
+      "Customer Support Executive"
+    ];
+
+  } else {
+
+    careers = [
+      "Data Entry Operator",
+      "Customer Support Executive",
+      "Office Administrator"
+    ];
+
+  }
+
+}
     // ==========================
     // FINANCE DOMAIN (ID: 9)
     // ==========================
@@ -191,7 +350,7 @@ function QuizPage() {
       }
     }
 
-    else if (id === "5") {
+    else if (id === "4") {
       const careerScores = {
         "Lawyer/Advocate": 0,
         Judge: 0,
@@ -235,7 +394,7 @@ function QuizPage() {
       careers = recommendations5.slice(0, 3).map((r) => r[0]);
     }
 
-    else if (id === "6") {
+    else if (id === "5") {
       const careerScores = {
         "Graphic Designer": 0,
         "UI/UX Designer": 0,
@@ -314,7 +473,7 @@ function QuizPage() {
       careers = recommendations6.slice(0, 3).map((r) => r[0]);
     }
 
-    else if (id === "7") {
+    else if (id === "6") {
       const careerScores = {
         Journalist: 0,
         "News Anchor": 0,
@@ -405,7 +564,7 @@ function QuizPage() {
       careers = recommendations7.slice(0, 3).map((r) => r[0]);
     }
 
-    else if (id === "8") {
+    else if (id === "7") {
       const careerScores = {
         "School Teacher": 0,
         "Professor/Lecturer": 0,

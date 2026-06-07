@@ -29,6 +29,15 @@ export default function InstitutionsPage() {
   const handleSearch = async () => {
 
     try {
+ if (!state) {
+    alert("Please select a state");
+    return;
+  }
+
+  if (!type) {
+    alert("Please select an institution type");
+    return;
+  }
 
       setLoading(true);
 
@@ -234,10 +243,11 @@ const handleCompareColleges = () => {
             <div className="col-lg-4">
 
               <label className="fw-semibold mb-2 text-secondary">
-                State
+                State <span className="text-danger">*</span>
               </label>
 
               <select
+              required
                 className="form-select form-select-lg rounded-4 shadow-sm border-0"
                 style={{
                   background: "#f8fafc",
@@ -296,10 +306,11 @@ const handleCompareColleges = () => {
             <div className="col-lg-4">
 
               <label className="fw-semibold mb-2 text-secondary">
-                Institution Type
+                Institution Type <span className="text-danger">*</span>
               </label>
 
               <select
+              required
                 className="form-select form-select-lg rounded-4 shadow-sm border-0"
                 style={{
                   background: "#f8fafc",
@@ -330,6 +341,7 @@ const handleCompareColleges = () => {
 
   {/* SEARCH BUTTON */}
   <button
+   disabled={!state || !type}
     className="btn px-5 py-3 rounded-pill fw-bold"
     style={{
       background:
@@ -389,7 +401,7 @@ const handleCompareColleges = () => {
     <div className="col-lg-5">
 
       <label className="fw-semibold mb-2 text-secondary">
-        First College Name
+        First College Name <span className="text-danger">*</span>
       </label>
 
       <input
@@ -427,7 +439,7 @@ const handleCompareColleges = () => {
     <div className="col-lg-5">
 
       <label className="fw-semibold mb-2 text-secondary">
-        Second College Name
+        Second College Name <span className="text-danger">*</span>
       </label>
 
       <input

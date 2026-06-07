@@ -1,51 +1,121 @@
 const STEM = [
-  {
+   {
     id: 1,
-    question: "What type of problems do you enjoy solving the most?",
+    question: "Which type of problem do you enjoy solving most?",
     options: [
-      "Building software, apps, and intelligent systems",
-      "Designing machines, structures, and physical systems",
-      "Investigating scientific questions and discovering new knowledge"
+      "Software, apps, and digital systems",
+      "Machines, structures, and physical systems",
+      "Scientific discoveries and research"
     ]
   },
 
   {
     id: 2,
-    question: "Which activity sounds most exciting to you?",
+    question: "Which subject do you enjoy the most?",
     options: [
-      "Developing AI models or software applications",
-      "Working on engineering projects and prototypes",
-      "Conducting experiments and research"
+      "Computer Science",
+      "Physics and Engineering Drawing",
+      "Physics/Chemistry/Biology"
     ]
   },
 
   {
     id: 3,
-    question: "Which skill best describes you?",
+    question: "What kind of projects excite you?",
     options: [
-      "Programming and logical thinking",
-      "Hands-on problem solving and technical design",
-      "Analysis, observation, and research"
+      "Building websites or apps",
+      "Building robots or machines",
+      "Conducting experiments"
     ]
   },
 
   {
     id: 4,
-    question: "What kind of work environment do you prefer?",
+    question: "Where would you prefer to work?",
     options: [
-      "Software companies and technology startups",
-      "Engineering labs, factories, or project sites",
-      "Research laboratories and academic institutions"
+      "Tech company",
+      "Manufacturing plant or engineering firm",
+      "Research laboratory"
     ]
   },
 
   {
     id: 5,
-    question: "What would you most like to create?",
+    question: "What sounds most interesting?",
     options: [
-      "An AI system or software product",
-      "A machine, structure, or engineering solution",
-      "A scientific discovery or innovation"
+      "Artificial Intelligence",
+      "Automation and Robotics",
+      "Scientific Research"
+    ]
+  },
+
+  {
+    id: 6,
+    question: "How do you prefer creating impact?",
+    options: [
+      "Through software products",
+      "Through physical inventions",
+      "Through scientific discoveries"
+    ]
+  },
+
+  {
+    id: 7,
+    question: "Which skill describes you best?",
+    options: [
+      "Programming",
+      "Designing and building systems",
+      "Research and analysis"
+    ]
+  },
+
+  {
+    id: 8,
+    question: "Which work environment do you prefer?",
+    options: [
+      "Laptop and digital workspace",
+      "Workshop, factory, or field",
+      "Laboratory or research center"
+    ]
+  },
+
+  {
+    id: 9,
+    question: "Which future technology interests you most?",
+    options: [
+      "AI and Machine Learning",
+      "Smart Robotics",
+      "Space and Scientific Exploration"
+    ]
+  },
+
+  {
+    id: 10,
+    question: "What motivates you most?",
+    options: [
+      "Creating software used by millions",
+      "Building machines and infrastructure",
+      "Discovering new knowledge"
+    ]
+  },
+
+  {
+    id: 11,
+    question: "What would you rather learn deeply?",
+    options: [
+      "Programming languages",
+      "Mechanical/Electrical systems",
+      "Advanced science concepts"
+    ]
+  },
+
+  {
+    id: 12,
+    question: "Which career sounds most exciting?",
+    options: [
+      "AI Engineer",
+      "Robotics Engineer",
+      "Research Scientist"
     ]
   }
 ];
