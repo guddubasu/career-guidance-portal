@@ -12,6 +12,12 @@ import mediaQuestions from "../Data/QuizQuestions/mediaQuestions";
 import emergingModernCareersQuestions from "../Data/QuizQuestions/Emerging & Modern Careers";
 import entrepreneurshipFreelancingQuestions from "../Data/QuizQuestions/Entrepreneurship & Freelancing";
 
+// New Domain Imports (Adjust paths as per your project structure)
+import financeQuestions from "../Data/QuizQuestions/financeQuestions";
+import agricultureQuestions from "../Data/QuizQuestions/agricultureQuestions";
+import travelQuestions from "../Data/QuizQuestions/travelQuestions";
+import sportsQuestions from "../Data/QuizQuestions/sportsQuestions";
+
 function QuizPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,13 +25,16 @@ function QuizPage() {
     "1": STEM,
     "2": healthcareQuestions,
     "3": businessQuestions,
-   
     "5": lawQuestions,
     "6": artsQuestions,
     "7": mediaQuestions,
     "8": educationQuestions,
-    "16":emergingModernCareersQuestions,
-    "17":entrepreneurshipFreelancingQuestions,
+    "9": financeQuestions,       
+    "10": agricultureQuestions,  
+    "11": travelQuestions,       
+    "12": sportsQuestions,    
+    "16": emergingModernCareersQuestions,
+    "17": entrepreneurshipFreelancingQuestions,
   };
 
   const questions = questionMap[id] || [];
@@ -68,7 +77,6 @@ function QuizPage() {
     // ==========================
     // STEM DOMAIN
     // ==========================
-
     if (id === "1") {
       if (aCount >= bCount && aCount >= cCount) {
         careers = ["Software Engineer", "AI Engineer", "Machine Learning Engineer"];
@@ -104,76 +112,86 @@ function QuizPage() {
         careers = ["Business Analyst", "Operations Manager", "Entrepreneur"];
       }
     }
-  
-// ==========================
-// EMERGING & MODERN CAREERS
-// ==========================
-else if (id === "16") {
 
-  if (aCount >= bCount && aCount >= cCount) {
+    // ==========================
+    // FINANCE DOMAIN (ID: 9)
+    // ==========================
+    else if (id === "9") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["Investment Banker", "Portfolio Manager", "Stock Trader"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Financial Risk Analyst", "Actuary", "Auditor"];
+      } else {
+        careers = ["FinTech Developer", "Financial Consultant", "Wealth Manager"];
+      }
+    }
 
-    careers = [
-      "AI Prompt Engineer",
-      "Data Engineer",
-      "Ethical Hacker"
-    ];
+    // ==========================
+    // AGRICULTURE DOMAIN (ID: 10)
+    // ==========================
+    else if (id === "10") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["Agronomist", "Agricultural Engineer", "Precision Farming Specialist"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Environmental Scientist", "Sustainability Consultant", "Soil Conservator"];
+      } else {
+        careers = ["Agribusiness Manager", "Organic Farm Owner", "Supply Chain Manager"];
+      }
+    }
 
-  } else if (bCount >= aCount && bCount >= cCount) {
+    // ==========================
+    // TRAVEL & HOSPITALITY (ID: 11)
+    // ==========================
+    else if (id === "11") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["Hotel Manager", "Resort Operations Director", "Restaurant Entrepreneur"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Travel Consultant", "Tour Operations Manager", "Destination Marketer"];
+      } else {
+        careers = ["Event Planner", "Cruise Ship Coordinator", "Ecotourism Guide"];
+      }
+    }
 
-    careers = [
-      "Product Manager",
-      "UX Researcher",
-      "Digital Marketer"
-    ];
+    // ==========================
+    // SPORTS DOMAIN (ID: 12)
+    // ==========================
+    else if (id === "12") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["Professional Athlete", "Sports Coach", "Fitness Trainer"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Sports Analyst", "Sports Journalist", "Data Scout"];
+      } else {
+        careers = ["Sports Agent/Manager", "Athletic Director", "Event Coordinator"];
+      }
+    }
 
-  } else {
+    // ==========================
+    // EMERGING & MODERN CAREERS
+    // ==========================
+    else if (id === "16") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["AI Prompt Engineer", "Data Engineer", "Ethical Hacker"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Product Manager", "UX Researcher", "Digital Marketer"];
+      } else {
+        careers = ["YouTuber / Streamer", "Drone Operator", "Climate Tech Specialist"];
+      }
+    }
 
-    careers = [
-      "YouTuber / Streamer",
-      "Drone Operator",
-      "Climate Tech Specialist"
-    ];
-
-  }
-
-}
-// ==========================
-// ENTREPRENEURSHIP & FREELANCING
-// ==========================
-else if (id === "17") {
-
-  if (aCount >= bCount && aCount >= cCount) {
-
-    careers = [
-      "Startup Founder",
-      "Tech Entrepreneur",
-      "Venture Capitalist"
-    ];
-
-  } else if (bCount >= aCount && bCount >= cCount) {
-
-    careers = [
-      "Freelancer (Design, Writing, Coding)",
-      "Consultant",
-      "Small Business Owner"
-    ];
-
-  } else {
-
-    careers = [
-      "Influencer Business Owner",
-      "Social Entrepreneur",
-      "E-commerce Entrepreneur"
-    ];
-
-  }
-
-}
-
-
+    // ==========================
+    // ENTREPRENEURSHIP & FREELANCING
+    // ==========================
+    else if (id === "17") {
+      if (aCount >= bCount && aCount >= cCount) {
+        careers = ["Startup Founder", "Tech Entrepreneur", "Venture Capitalist"];
+      } else if (bCount >= aCount && bCount >= cCount) {
+        careers = ["Freelancer (Design, Writing, Coding)", "Consultant", "Small Business Owner"];
+      } else {
+        careers = ["Influencer Business Owner", "Social Entrepreneur", "E-commerce Entrepreneur"];
+      }
+    }
 
     else if (id === "5") {
-      // Career Scores
       const careerScores = {
         "Lawyer/Advocate": 0,
         Judge: 0,
@@ -183,54 +201,37 @@ else if (id === "17") {
         "Legal Analyst": 0,
       };
 
-      // Option Mapping
       answersByIndex.forEach((answer) => {
         switch (answer) {
-          // Option 0 → Courtroom & Advocacy
           case 0:
             careerScores["Lawyer/Advocate"] += 3;
             careerScores["Public Prosecutor"] += 3;
             break;
-
-          // Option 1 → Research & Analysis
           case 1:
             careerScores["Legal Advisor"] += 3;
             careerScores["Corporate Lawyer"] += 2;
             careerScores["Legal Analyst"] += 3;
             break;
-
-          // Option 2 → Judgment & Governance
           case 2:
             careerScores["Judge"] += 3;
             break;
-
           default:
             break;
         }
       });
 
-      // Additional Fine-Tuning (use question-order answers)
-      if (answersByIndex[6] === 1) {
-        careerScores["Corporate Lawyer"] += 3;
-      }
-
-      if (answersByIndex[7] === 2) {
-        careerScores["Judge"] += 2;
-      }
-
+      if (answersByIndex[6] === 1) careerScores["Corporate Lawyer"] += 3;
+      if (answersByIndex[7] === 2) careerScores["Judge"] += 2;
       if (answersByIndex[8] === 0) {
         careerScores["Public Prosecutor"] += 2;
         careerScores["Lawyer/Advocate"] += 2;
       }
-
       if (answersByIndex[8] === 1) {
         careerScores["Legal Analyst"] += 2;
         careerScores["Corporate Lawyer"] += 2;
       }
 
-      // Ranking
       const recommendations5 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      console.log(recommendations5);
       careers = recommendations5.slice(0, 3).map((r) => r[0]);
     }
 
@@ -248,7 +249,6 @@ else if (id === "17") {
         "Video Editor": 0,
       };
 
-      // Option Mapping
       answersByIndex.forEach((answer) => {
         switch (answer) {
           case 0:
@@ -272,41 +272,31 @@ else if (id === "17") {
         }
       });
 
-      // Fine-Tuning (question-order)
       if (answersByIndex[0] === 0) {
         careerScores["Graphic Designer"] += 2;
         careerScores["UI/UX Designer"] += 2;
       }
-
       if (answersByIndex[1] === 1) {
         careerScores["Animator"] += 2;
         careerScores["Filmmaker"] += 2;
       }
-
       if (answersByIndex[5] === 1) {
         careerScores["Photographer"] += 2;
         careerScores["Video Editor"] += 2;
       }
-
       if (answersByIndex[6] === 1) {
         careerScores["Writer/Author"] += 3;
         careerScores["Content Creator"] += 2;
       }
-
-      if (answersByIndex[7] === 0) {
-        careerScores["UI/UX Designer"] += 2;
-      }
-
+      if (answersByIndex[7] === 0) careerScores["UI/UX Designer"] += 2;
       if (answersByIndex[7] === 2) {
         careerScores["Fashion Designer"] += 2;
         careerScores["Interior Designer"] += 2;
       }
-
       if (answersByIndex[9] === 0) {
         careerScores["Graphic Designer"] += 3;
         careerScores["UI/UX Designer"] += 3;
       }
-
       if (answersByIndex[9] === 1) {
         careerScores["Animator"] += 2;
         careerScores["Photographer"] += 2;
@@ -315,14 +305,12 @@ else if (id === "17") {
         careerScores["Content Creator"] += 3;
         careerScores["Video Editor"] += 3;
       }
-
       if (answersByIndex[9] === 2) {
         careerScores["Fashion Designer"] += 3;
         careerScores["Interior Designer"] += 3;
       }
 
       const recommendations6 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      console.log(recommendations6);
       careers = recommendations6.slice(0, 3).map((r) => r[0]);
     }
 
@@ -361,25 +349,18 @@ else if (id === "17") {
         }
       });
 
-      // Fine-Tuning
       if (answersByIndex[0] === 0) careerScores["Journalist"] += 2;
       if (answersByIndex[0] === 1) careerScores["Influencer / YouTuber"] += 2;
       if (answersByIndex[0] === 2) careerScores["Advertising Executive"] += 2;
-
       if (answersByIndex[2] === 0) {
         careerScores["Journalist"] += 2;
         careerScores["News Anchor"] += 1;
       }
-
       if (answersByIndex[2] === 1) {
         careerScores["Actor"] += 2;
         careerScores["Radio Jockey"] += 2;
       }
-
-      if (answersByIndex[2] === 2) {
-        careerScores["Public Relations Specialist"] += 2;
-      }
-
+      if (answersByIndex[2] === 2) careerScores["Public Relations Specialist"] += 2;
       if (answersByIndex[5] === 0) careerScores["Journalist"] += 2;
       if (answersByIndex[5] === 1) {
         careerScores["Actor"] += 2;
@@ -390,36 +371,30 @@ else if (id === "17") {
         careerScores["Advertising Executive"] += 2;
         careerScores["Public Relations Specialist"] += 2;
       }
-
       if (answersByIndex[7] === 0) {
         careerScores["Journalist"] += 2;
         careerScores["News Anchor"] += 2;
       }
-
       if (answersByIndex[7] === 1) {
         careerScores["Actor"] += 2;
         careerScores["Musician"] += 2;
         careerScores["Influencer / YouTuber"] += 2;
       }
-
       if (answersByIndex[7] === 2) {
         careerScores["Advertising Executive"] += 2;
         careerScores["Public Relations Specialist"] += 2;
         careerScores["Social Media Manager"] += 2;
       }
-
       if (answersByIndex[9] === 0) {
         careerScores["Journalist"] += 3;
         careerScores["News Anchor"] += 3;
       }
-
       if (answersByIndex[9] === 1) {
         careerScores["Actor"] += 3;
         careerScores["Musician"] += 3;
         careerScores["Radio Jockey"] += 3;
         careerScores["Influencer / YouTuber"] += 3;
       }
-
       if (answersByIndex[9] === 2) {
         careerScores["Public Relations Specialist"] += 3;
         careerScores["Advertising Executive"] += 3;
@@ -427,7 +402,6 @@ else if (id === "17") {
       }
 
       const recommendations7 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      console.log(recommendations7);
       careers = recommendations7.slice(0, 3).map((r) => r[0]);
     }
 
@@ -460,84 +434,65 @@ else if (id === "17") {
         }
       });
 
-      // Fine-Tuning
       if (answersByIndex[0] === 0) careerScores["School Teacher"] += 2;
       if (answersByIndex[0] === 1) careerScores["Academic Researcher"] += 2;
       if (answersByIndex[0] === 2) careerScores["Curriculum Designer"] += 2;
-
       if (answersByIndex[2] === 0) {
         careerScores["School Teacher"] += 2;
         careerScores["Online Tutor"] += 2;
       }
-
       if (answersByIndex[2] === 1) {
         careerScores["Professor/Lecturer"] += 2;
         careerScores["Academic Researcher"] += 2;
       }
-
-      if (answersByIndex[2] === 2) {
-        careerScores["Curriculum Designer"] += 2;
-      }
-
+      if (answersByIndex[2] === 2) careerScores["Curriculum Designer"] += 2;
       if (answersByIndex[3] === 0) careerScores["School Teacher"] += 2;
       if (answersByIndex[3] === 1) careerScores["Academic Researcher"] += 3;
       if (answersByIndex[3] === 2) {
         careerScores["Education Consultant"] += 2;
         careerScores["Curriculum Designer"] += 2;
       }
-
       if (answersByIndex[5] === 0) {
         careerScores["School Teacher"] += 2;
         careerScores["Online Tutor"] += 2;
       }
-
       if (answersByIndex[5] === 1) {
         careerScores["Professor/Lecturer"] += 2;
         careerScores["Academic Researcher"] += 2;
       }
-
       if (answersByIndex[5] === 2) careerScores["Education Consultant"] += 2;
-
       if (answersByIndex[6] === 0) {
         careerScores["School Teacher"] += 2;
         careerScores["Online Tutor"] += 2;
       }
-
       if (answersByIndex[6] === 1) {
         careerScores["Academic Researcher"] += 2;
         careerScores["Professor/Lecturer"] += 1;
       }
-
       if (answersByIndex[6] === 2) careerScores["Curriculum Designer"] += 2;
-
       if (answersByIndex[7] === 0) {
         careerScores["Online Tutor"] += 3;
         careerScores["School Teacher"] += 1;
       }
-
       if (answersByIndex[7] === 1) careerScores["Academic Researcher"] += 3;
       if (answersByIndex[7] === 2) {
         careerScores["Curriculum Designer"] += 3;
         careerScores["Education Consultant"] += 2;
       }
-
       if (answersByIndex[9] === 0) {
         careerScores["School Teacher"] += 3;
         careerScores["Online Tutor"] += 3;
       }
-
       if (answersByIndex[9] === 1) {
         careerScores["Professor/Lecturer"] += 3;
         careerScores["Academic Researcher"] += 3;
       }
-
       if (answersByIndex[9] === 2) {
         careerScores["Education Consultant"] += 3;
         careerScores["Curriculum Designer"] += 3;
       }
 
       const recommendations8 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      console.log(recommendations8);
       careers = recommendations8.slice(0, 3).map((r) => r[0]);
     }
 
