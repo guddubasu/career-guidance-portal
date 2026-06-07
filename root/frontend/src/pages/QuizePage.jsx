@@ -9,6 +9,8 @@ import artsQuestions from "../Data/QuizQuestions/artsQuestions";
 import educationQuestions from "../Data/QuizQuestions/educationQuestions";
 import lawQuestions from "../Data/QuizQuestions/lawQuestions";
 import mediaQuestions from "../Data/QuizQuestions/mediaQuestions";
+import emergingModernCareersQuestions from "../Data/QuizQuestions/Emerging & Modern Careers";
+import entrepreneurshipFreelancingQuestions from "../Data/QuizQuestions/Entrepreneurship & Freelancing";
 
 function QuizPage() {
   const { id } = useParams();
@@ -17,10 +19,13 @@ function QuizPage() {
     "1": STEM,
     "2": healthcareQuestions,
     "3": businessQuestions,
+   
     "5": lawQuestions,
     "6": artsQuestions,
     "7": mediaQuestions,
     "8": educationQuestions,
+    "16":emergingModernCareersQuestions,
+    "17":entrepreneurshipFreelancingQuestions,
   };
 
   const questions = questionMap[id] || [];
@@ -99,6 +104,73 @@ function QuizPage() {
         careers = ["Business Analyst", "Operations Manager", "Entrepreneur"];
       }
     }
+  
+// ==========================
+// EMERGING & MODERN CAREERS
+// ==========================
+else if (id === "16") {
+
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "AI Prompt Engineer",
+      "Data Engineer",
+      "Ethical Hacker"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Product Manager",
+      "UX Researcher",
+      "Digital Marketer"
+    ];
+
+  } else {
+
+    careers = [
+      "YouTuber / Streamer",
+      "Drone Operator",
+      "Climate Tech Specialist"
+    ];
+
+  }
+
+}
+// ==========================
+// ENTREPRENEURSHIP & FREELANCING
+// ==========================
+else if (id === "17") {
+
+  if (aCount >= bCount && aCount >= cCount) {
+
+    careers = [
+      "Startup Founder",
+      "Tech Entrepreneur",
+      "Venture Capitalist"
+    ];
+
+  } else if (bCount >= aCount && bCount >= cCount) {
+
+    careers = [
+      "Freelancer (Design, Writing, Coding)",
+      "Consultant",
+      "Small Business Owner"
+    ];
+
+  } else {
+
+    careers = [
+      "Influencer Business Owner",
+      "Social Entrepreneur",
+      "E-commerce Entrepreneur"
+    ];
+
+  }
+
+}
+
+
 
     else if (id === "5") {
       // Career Scores
