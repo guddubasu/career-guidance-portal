@@ -20,6 +20,7 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 from career_roadmap.backend.prompt import ROADMAP_PROMPT_MARKDOWN
+from career_chatbot import create_career_chatbot_blueprint
 
 # =====================================
 # APP
@@ -37,6 +38,7 @@ CORS(
 )
 
 load_dotenv()
+app.register_blueprint(create_career_chatbot_blueprint())
 
 # =====================================
 # LOAD MODEL
@@ -618,5 +620,9 @@ if __name__ == "__main__":
 
         port=5000,
 
-        debug=True
+        debug=False,
+
+        use_reloader=False,
+
+        threaded=True
     )
