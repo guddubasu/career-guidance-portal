@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./QuizePage.css";
 
@@ -48,7 +48,21 @@ function QuizPage() {
   const [answers, setAnswers] = useState({});
   const [recommendedCareers, setRecommendedCareers] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+ useEffect(() => {
+  const saved = localStorage.getItem(`quizResult_${id}`);
 
+  if (saved) {
+    const data = JSON.parse(saved);
+    setRecommendedCareers(data.careers || []);
+    setAnswers(data.answers || {});
+    setSubmitted(true);
+  } else {
+    // reset if no saved result for this domain
+    setRecommendedCareers([]);
+    setAnswers({});
+    setSubmitted(false);
+  }
+}, [id]);
   const handleAnswer = (questionId, optionIndex) => {
     setAnswers({
       ...answers,
@@ -657,6 +671,15 @@ else if (id === "14") {
 
     setRecommendedCareers(careers);
     setSubmitted(true);
+    // SAVE RESULT TO LOCALSTORAGE (ADD HERE)
+localStorage.setItem(
+  `quizResult_${id}`,
+  JSON.stringify({
+    id,
+    careers,
+    answers
+  })
+);
   };
 
   const restartQuiz = () => {
@@ -704,9 +727,11 @@ else if (id === "14") {
 
           <div className="career-results">
             {recommendedCareers.map((career, index) => (
-              <div key={index} className="career-card">
+              <div key={index} className="career-card" onClick={() =>
+  navigate(`/career-detail/${id}/${encodeURIComponent(career.replace(/\s+/g, "_").toLowerCase())}`)
+}>
                 <h3>{career}</h3>
-              </div>
+              </div >
             ))}
           </div>
 
