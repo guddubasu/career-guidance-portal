@@ -289,54 +289,112 @@ else if (id === "14") {
     // ==========================
     // FINANCE DOMAIN (ID: 9)
     // ==========================
-    else if (id === "9") {
-      if (aCount >= bCount && aCount >= cCount) {
-        careers = ["Investment Banker", "Portfolio Manager", "Stock Trader"];
-      } else if (bCount >= aCount && bCount >= cCount) {
-        careers = ["Financial Risk Analyst", "Actuary", "Auditor"];
-      } else {
-        careers = ["FinTech Developer", "Financial Consultant", "Wealth Manager"];
-      }
-    }
+   
+else if (id === "9") {
+  if (aCount >= bCount && aCount >= cCount) {
+    careers = [
+      "investment_analyst",
+      "stock_broker",
+      "banker"
+    ];
+  } 
+  else if (bCount >= aCount && bCount >= cCount) {
+    careers = [
+      "risk_analyst",
+      "actuary",
+      "banker"
+    ];
+  } 
+  else {
+    careers = [
+      "insurance_advisor",
+      "investment_analyst",
+      "stock_broker"
+    ];
+  }
+}
 
     // ==========================
-    // AGRICULTURE DOMAIN (ID: 10)
-    // ==========================
-    else if (id === "10") {
-      if (aCount >= bCount && aCount >= cCount) {
-        careers = ["Agronomist", "Agricultural Engineer", "Precision Farming Specialist"];
-      } else if (bCount >= aCount && bCount >= cCount) {
-        careers = ["Environmental Scientist", "Sustainability Consultant", "Soil Conservator"];
-      } else {
-        careers = ["Agribusiness Manager", "Organic Farm Owner", "Supply Chain Manager"];
-      }
-    }
+// AGRICULTURE DOMAIN (ID: 10)
+// ==========================
+else if (id === "10") {
+  if (aCount >= bCount && aCount >= cCount) {
+    careers = [
+      "agriculturist",
+      "horticulturist",
+      "forestry_officer"
+    ];
+  } 
+  else if (bCount >= aCount && bCount >= cCount) {
+    careers = [
+      "environmental_scientist",
+      "sustainability_consultant",
+      "wildlife_biologist"
+    ];
+  } 
+  else {
+    careers = [
+      "sustainability_consultant",
+      "agriculturist",
+      "horticulturist"
+    ];
+  }
+}
 
-    // ==========================
-    // TRAVEL & HOSPITALITY (ID: 11)
-    // ==========================
-    else if (id === "11") {
-      if (aCount >= bCount && aCount >= cCount) {
-        careers = ["Hotel Manager", "Resort Operations Director", "Restaurant Entrepreneur"];
-      } else if (bCount >= aCount && bCount >= cCount) {
-        careers = ["Travel Consultant", "Tour Operations Manager", "Destination Marketer"];
-      } else {
-        careers = ["Event Planner", "Cruise Ship Coordinator", "Ecotourism Guide"];
-      }
-    }
+   // ==========================
+// TRAVEL & HOSPITALITY (ID: 11)
+// ==========================
+else if (id === "11") {
+  if (aCount >= bCount && aCount >= cCount) {
+    careers = [
+      "hotel_manager",
+      "chef",
+      "event_manager"
+    ];
+  } 
+  else if (bCount >= aCount && bCount >= cCount) {
+    careers = [
+      "travel_agent",
+      "tour_guide",
+      "hotel_manager"
+    ];
+  } 
+  else {
+    careers = [
+      "event_manager",
+      "tour_guide",
+      "travel_agent"
+    ];
+  }
+}
 
-    // ==========================
-    // SPORTS DOMAIN (ID: 12)
-    // ==========================
-    else if (id === "12") {
-      if (aCount >= bCount && aCount >= cCount) {
-        careers = ["Professional Athlete", "Sports Coach", "Fitness Trainer"];
-      } else if (bCount >= aCount && bCount >= cCount) {
-        careers = ["Sports Analyst", "Sports Journalist", "Data Scout"];
-      } else {
-        careers = ["Sports Agent/Manager", "Athletic Director", "Event Coordinator"];
-      }
-    }
+   // ==========================
+// SPORTS DOMAIN (ID: 12)
+// ==========================
+else if (id === "12") {
+  if (aCount >= bCount && aCount >= cCount) {
+    careers = [
+      "professional_athlete",
+      "coach_trainer",
+      "fitness_trainer"
+    ];
+  } 
+  else if (bCount >= aCount && bCount >= cCount) {
+    careers = [
+      "sports_analyst",
+      "physiologist",
+      "referee"
+    ];
+  } 
+  else {
+    careers = [
+      "coach_trainer",
+      "sports_analyst",
+      "referee"
+    ];
+  }
+}
+    
 
     // ==========================
     // EMERGING & MODERN CAREERS

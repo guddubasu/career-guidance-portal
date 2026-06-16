@@ -24,7 +24,17 @@ const AptitudeResults = () => {
     summary = "",
   } = state;
 
-  // Optimized 18-Domain Redirect Mapper with Flexible Keyword Matching
+  // Domain Code → Full Name Mapping
+  const domainNames = {
+    TC: "Technical Domain",
+    BM: "Business Management Domain",
+    HS: "Healthcare Domain",
+    CD: "Creative Design Domain",
+    ED: "Education Domain",
+    MC: "Media & Communication Domain",
+  };
+
+  // Domain Redirect Mapping
   const handleCardClick = (title) => {
     const name = title.toLowerCase();
 
@@ -47,6 +57,23 @@ const AptitudeResults = () => {
       "emerging modern careers": "15",
       "pure sciences": "1",
       "entrepreneurship": "16",
+      "core engineering": "2",
+      healthcare: "3",
+      "commerce & business management": "4",
+      "law & legal services": "5",
+      "arts & design": "6",
+      "media & communication": "7",
+      "education & teaching": "8",
+      "government services": "9",
+      "finance & banking": "10",
+      "agriculture & environment": "11",
+      "travel & tourism": "12",
+      "sports & fitness": "13",
+      "psychology & social work": "14",
+      "administrative support": "15",
+      "emerging modern careers": "16",
+      "pure sciences": "17",
+      entrepreneurship: "18",
     };
 
     let matchedKey = Object.keys(domainMap).find((key) =>
@@ -70,11 +97,16 @@ const AptitudeResults = () => {
         name.includes("commerce")
       )
         matchedKey = "commerce & business management";
-      else if (name.includes("finance") || name.includes("banking"))
+      else if (
+        name.includes("finance") ||
+        name.includes("banking")
+      )
         matchedKey = "finance & banking";
     }
 
-    const domainId = matchedKey ? domainMap[matchedKey] : null;
+    const domainId = matchedKey
+      ? domainMap[matchedKey]
+      : null;
 
     if (domainId) {
       navigate(`/domain/${domainId}`);
@@ -96,14 +128,16 @@ const AptitudeResults = () => {
         <p>{summary}</p>
       </div>
 
-      {/* Scores */}
+      {/* Domain Scores */}
       <div className="results-section">
         <h2>Your Domain Scores</h2>
 
         {Object.entries(scores).map(([domain, score]) => (
           <div key={domain} className="score-item">
             <div className="score-header">
-              <span>{domain}</span>
+              <span>
+                {domainNames[domain] || domain}
+              </span>
               <span>{score}/50</span>
             </div>
 
@@ -130,9 +164,13 @@ const AptitudeResults = () => {
               className="career-card clickable-result-card"
               role="button"
               tabIndex={0}
-              onClick={() => handleCardClick(career.title)}
+              onClick={() =>
+                handleCardClick(career.title)
+              }
               onKeyDown={(e) => {
-                if (e.key === "Enter") handleCardClick(career.title);
+                if (e.key === "Enter") {
+                  handleCardClick(career.title);
+                }
               }}
             >
               <h3>
