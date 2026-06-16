@@ -364,49 +364,106 @@ else if (id === "14") {
       }
     }
 
-    else if (id === "4") {
-      const careerScores = {
-        "Lawyer/Advocate": 0,
-        Judge: 0,
-        "Legal Advisor": 0,
-        "Corporate Lawyer": 0,
-        "Public Prosecutor": 0,
-        "Legal Analyst": 0,
-      };
+   else if (id === "4") {
+  const careerScores = {
+    "Lawyer/Advocate": 0,
+    "Judge": 0,
+    "Legal Advisor": 0,
+    "Corporate Lawyer": 0,
+    "Public Prosecutor": 0,
+    "Legal Analyst": 0,
+    "Cyber Lawyer": 0,
+    "Legal Consultant": 0,
+    "Intellectual Property (IP) Lawyer": 0,
+    "Legal Journalist": 0,
+    "Arbitrator/Mediator": 0,
+    "Company Secretary (CS)": 0,
+    "Law Professor": 0,
+    "Legal Compliance Officer": 0,
+  };
 
-      answersByIndex.forEach((answer) => {
-        switch (answer) {
-          case 0:
-            careerScores["Lawyer/Advocate"] += 3;
-            careerScores["Public Prosecutor"] += 3;
-            break;
-          case 1:
-            careerScores["Legal Advisor"] += 3;
-            careerScores["Corporate Lawyer"] += 2;
-            careerScores["Legal Analyst"] += 3;
-            break;
-          case 2:
-            careerScores["Judge"] += 3;
-            break;
-          default:
-            break;
-        }
-      });
+  answersByIndex.forEach((answer) => {
+    switch (answer) {
+      case 0: // Likes arguments, courtroom, public speaking
+        careerScores["Lawyer/Advocate"] += 3;
+        careerScores["Public Prosecutor"] += 3;
+        careerScores["Judge"] += 2;
+        careerScores["Arbitrator/Mediator"] += 2;
+        break;
 
-      if (answersByIndex[6] === 1) careerScores["Corporate Lawyer"] += 3;
-      if (answersByIndex[7] === 2) careerScores["Judge"] += 2;
-      if (answersByIndex[8] === 0) {
-        careerScores["Public Prosecutor"] += 2;
-        careerScores["Lawyer/Advocate"] += 2;
-      }
-      if (answersByIndex[8] === 1) {
-        careerScores["Legal Analyst"] += 2;
-        careerScores["Corporate Lawyer"] += 2;
-      }
+      case 1: // Likes research, analysis, documentation
+        careerScores["Legal Analyst"] += 3;
+        careerScores["Legal Consultant"] += 2;
+        careerScores["Legal Journalist"] += 2;
+        careerScores["Law Professor"] += 2;
+        break;
 
-      const recommendations5 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      careers = recommendations5.slice(0, 3).map((r) => r[0]);
+      case 2: // Likes corporate and business environment
+        careerScores["Corporate Lawyer"] += 3;
+        careerScores["Legal Advisor"] += 3;
+        careerScores["Company Secretary (CS)"] += 3;
+        careerScores["Legal Compliance Officer"] += 3;
+        break;
+
+      case 3: // Likes technology and innovation
+        careerScores["Cyber Lawyer"] += 3;
+        careerScores["Intellectual Property (IP) Lawyer"] += 3;
+        break;
+
+      default:
+        break;
     }
+  });
+
+  // Question-specific bonuses
+
+  // Interest in business and companies
+  if (answersByIndex[6] === 1) {
+    careerScores["Corporate Lawyer"] += 4;
+    careerScores["Legal Advisor"] += 2;
+    careerScores["Company Secretary (CS)"] += 3;
+    careerScores["Legal Compliance Officer"] += 3;
+  }
+
+  // Interest in judiciary and decision-making
+  if (answersByIndex[7] === 2) {
+    careerScores["Judge"] += 4;
+    careerScores["Lawyer/Advocate"] += 2;
+    careerScores["Public Prosecutor"] += 2;
+  }
+
+  // Preference for research and writing
+  if (answersByIndex[8] === 1) {
+    careerScores["Legal Analyst"] += 3;
+    careerScores["Legal Journalist"] += 3;
+    careerScores["Law Professor"] += 2;
+    careerScores["Intellectual Property (IP) Lawyer"] += 2;
+  }
+
+  // Preference for public speaking and debates
+  if (answersByIndex[8] === 0) {
+    careerScores["Lawyer/Advocate"] += 3;
+    careerScores["Public Prosecutor"] += 3;
+    careerScores["Arbitrator/Mediator"] += 2;
+  }
+
+  // Interest in technology
+  if (answersByIndex[9] === 2) {
+    careerScores["Cyber Lawyer"] += 4;
+    careerScores["Intellectual Property (IP) Lawyer"] += 2;
+  }
+
+  // Interest in teaching and mentoring
+  if (answersByIndex[10] === 1) {
+    careerScores["Law Professor"] += 4;
+    careerScores["Legal Consultant"] += 2;
+  }
+
+  const recommendations = Object.entries(careerScores)
+    .sort((a, b) => b[1] - a[1]);
+
+  careers = recommendations.slice(0, 3).map((r) => r[0]);
+}
 
     else if (id === "5") {
       const careerScores = {
@@ -489,185 +546,432 @@ else if (id === "14") {
 
     else if (id === "6") {
       const careerScores = {
-        Journalist: 0,
-        "News Anchor": 0,
-        "Public Relations Specialist": 0,
-        "Advertising Executive": 0,
-        "Social Media Manager": 0,
-        Actor: 0,
-        Musician: 0,
-        "Radio Jockey": 0,
-        "Influencer / YouTuber": 0,
-      };
+  Journalist: 0,
+  "News Anchor": 0,
+  "Public Relations Specialist": 0,
+  "Advertising Executive": 0,
+  "Social Media Manager": 0,
+  Actor: 0,
+  Musician: 0,
+  "Radio Jockey": 0,
+  "Influencer / YouTuber": 0,
+  "Film Director": 0,
+  Screenwriter: 0,
+  "Video Editor": 0,
+  Photographer: 0,
+  Cinematographer: 0,
+  "Content Writer": 0,
+  "Voice Artist / Dubbing Artist": 0,
+  "Event Manager": 0,
+  "Graphic Designer": 0,
+  Podcaster: 0,
+};
 
       answersByIndex.forEach((answer) => {
-        switch (answer) {
-          case 0:
-            careerScores["Journalist"] += 3;
-            careerScores["News Anchor"] += 3;
-            break;
-          case 1:
-            careerScores["Actor"] += 3;
-            careerScores["Musician"] += 2;
-            careerScores["Radio Jockey"] += 2;
-            careerScores["Influencer / YouTuber"] += 3;
-            break;
-          case 2:
-            careerScores["Public Relations Specialist"] += 3;
-            careerScores["Advertising Executive"] += 3;
-            careerScores["Social Media Manager"] += 3;
-            break;
-          default:
-            break;
-        }
-      });
+  switch (answer) {
+    case 0: // News, writing, research
+      careerScores["Journalist"] += 3;
+      careerScores["News Anchor"] += 3;
+      careerScores["Content Writer"] += 3;
+      careerScores["Podcaster"] += 2;
+      careerScores["Screenwriter"] += 2;
+      break;
 
-      if (answersByIndex[0] === 0) careerScores["Journalist"] += 2;
-      if (answersByIndex[0] === 1) careerScores["Influencer / YouTuber"] += 2;
-      if (answersByIndex[0] === 2) careerScores["Advertising Executive"] += 2;
-      if (answersByIndex[2] === 0) {
-        careerScores["Journalist"] += 2;
-        careerScores["News Anchor"] += 1;
-      }
-      if (answersByIndex[2] === 1) {
-        careerScores["Actor"] += 2;
-        careerScores["Radio Jockey"] += 2;
-      }
-      if (answersByIndex[2] === 2) careerScores["Public Relations Specialist"] += 2;
-      if (answersByIndex[5] === 0) careerScores["Journalist"] += 2;
-      if (answersByIndex[5] === 1) {
-        careerScores["Actor"] += 2;
-        careerScores["Musician"] += 2;
-        careerScores["Influencer / YouTuber"] += 2;
-      }
-      if (answersByIndex[5] === 2) {
-        careerScores["Advertising Executive"] += 2;
-        careerScores["Public Relations Specialist"] += 2;
-      }
-      if (answersByIndex[7] === 0) {
-        careerScores["Journalist"] += 2;
-        careerScores["News Anchor"] += 2;
-      }
-      if (answersByIndex[7] === 1) {
-        careerScores["Actor"] += 2;
-        careerScores["Musician"] += 2;
-        careerScores["Influencer / YouTuber"] += 2;
-      }
-      if (answersByIndex[7] === 2) {
-        careerScores["Advertising Executive"] += 2;
-        careerScores["Public Relations Specialist"] += 2;
-        careerScores["Social Media Manager"] += 2;
-      }
-      if (answersByIndex[9] === 0) {
-        careerScores["Journalist"] += 3;
-        careerScores["News Anchor"] += 3;
-      }
-      if (answersByIndex[9] === 1) {
-        careerScores["Actor"] += 3;
-        careerScores["Musician"] += 3;
-        careerScores["Radio Jockey"] += 3;
-        careerScores["Influencer / YouTuber"] += 3;
-      }
-      if (answersByIndex[9] === 2) {
-        careerScores["Public Relations Specialist"] += 3;
-        careerScores["Advertising Executive"] += 3;
-        careerScores["Social Media Manager"] += 3;
-      }
+    case 1: // Performing arts and entertainment
+      careerScores["Actor"] += 3;
+      careerScores["Musician"] += 3;
+      careerScores["Radio Jockey"] += 2;
+      careerScores["Influencer / YouTuber"] += 3;
+      careerScores["Voice Artist / Dubbing Artist"] += 3;
+      break;
 
-      const recommendations7 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      careers = recommendations7.slice(0, 3).map((r) => r[0]);
+    case 2: // Marketing and communication
+      careerScores["Public Relations Specialist"] += 3;
+      careerScores["Advertising Executive"] += 3;
+      careerScores["Social Media Manager"] += 3;
+      careerScores["Event Manager"] += 2;
+      break;
+
+    case 3: // Creative production and visual arts
+      careerScores["Film Director"] += 3;
+      careerScores["Video Editor"] += 3;
+      careerScores["Cinematographer"] += 3;
+      careerScores["Photographer"] += 3;
+      careerScores["Graphic Designer"] += 3;
+      break;
+
+    default:
+      break;
+  }
+});
+
+     // Q0: Preferred type of work
+if (answersByIndex[0] === 0) {
+  careerScores["Journalist"] += 3;
+  careerScores["News Anchor"] += 2;
+  careerScores["Content Writer"] += 2;
+}
+
+if (answersByIndex[0] === 1) {
+  careerScores["Influencer / YouTuber"] += 3;
+  careerScores["Podcaster"] += 2;
+  careerScores["Actor"] += 2;
+}
+
+if (answersByIndex[0] === 2) {
+  careerScores["Advertising Executive"] += 3;
+  careerScores["Social Media Manager"] += 2;
+  careerScores["Public Relations Specialist"] += 2;
+}
+
+// Q2: Communication preference
+if (answersByIndex[2] === 0) {
+  careerScores["Journalist"] += 2;
+  careerScores["News Anchor"] += 2;
+  careerScores["Podcaster"] += 2;
+}
+
+if (answersByIndex[2] === 1) {
+  careerScores["Actor"] += 2;
+  careerScores["Radio Jockey"] += 2;
+  careerScores["Voice Artist / Dubbing Artist"] += 3;
+  careerScores["Musician"] += 2;
+}
+
+if (answersByIndex[2] === 2) {
+  careerScores["Public Relations Specialist"] += 2;
+  careerScores["Advertising Executive"] += 2;
+  careerScores["Event Manager"] += 2;
+}
+
+// Q5: Creative interests
+if (answersByIndex[5] === 0) {
+  careerScores["Journalist"] += 2;
+  careerScores["Content Writer"] += 3;
+  careerScores["Screenwriter"] += 3;
+}
+
+if (answersByIndex[5] === 1) {
+  careerScores["Actor"] += 2;
+  careerScores["Musician"] += 2;
+  careerScores["Influencer / YouTuber"] += 2;
+  careerScores["Film Director"] += 2;
+}
+
+if (answersByIndex[5] === 2) {
+  careerScores["Advertising Executive"] += 2;
+  careerScores["Public Relations Specialist"] += 2;
+  careerScores["Graphic Designer"] += 2;
+}
+
+// Q7: Work environment preference
+if (answersByIndex[7] === 0) {
+  careerScores["Journalist"] += 2;
+  careerScores["News Anchor"] += 2;
+  careerScores["Podcaster"] += 2;
+}
+
+if (answersByIndex[7] === 1) {
+  careerScores["Actor"] += 2;
+  careerScores["Musician"] += 2;
+  careerScores["Influencer / YouTuber"] += 2;
+  careerScores["Film Director"] += 2;
+}
+
+if (answersByIndex[7] === 2) {
+  careerScores["Advertising Executive"] += 2;
+  careerScores["Public Relations Specialist"] += 2;
+  careerScores["Social Media Manager"] += 2;
+  careerScores["Event Manager"] += 2;
+}
+
+// Q9: Final interest area
+if (answersByIndex[9] === 0) {
+  careerScores["Journalist"] += 3;
+  careerScores["News Anchor"] += 3;
+  careerScores["Content Writer"] += 3;
+  careerScores["Podcaster"] += 2;
+}
+
+if (answersByIndex[9] === 1) {
+  careerScores["Actor"] += 3;
+  careerScores["Musician"] += 3;
+  careerScores["Radio Jockey"] += 3;
+  careerScores["Influencer / YouTuber"] += 3;
+  careerScores["Voice Artist / Dubbing Artist"] += 3;
+}
+
+if (answersByIndex[9] === 2) {
+  careerScores["Public Relations Specialist"] += 3;
+  careerScores["Advertising Executive"] += 3;
+  careerScores["Social Media Manager"] += 3;
+  careerScores["Event Manager"] += 2;
+}
+
+if (answersByIndex[9] === 3) {
+  careerScores["Film Director"] += 3;
+  careerScores["Video Editor"] += 3;
+  careerScores["Cinematographer"] += 3;
+  careerScores["Photographer"] += 3;
+  careerScores["Graphic Designer"] += 3;
+}
+
+      const recommendations7 = Object.entries(careerScores)
+  .sort((a, b) => b[1] - a[1]);
+
+careers = recommendations7.slice(0, 3).map((r) => r[0]);
     }
 
-    else if (id === "7") {
-      const careerScores = {
-        "School Teacher": 0,
-        "Professor/Lecturer": 0,
-        "Education Consultant": 0,
-        "Academic Researcher": 0,
-        "Curriculum Designer": 0,
-        "Online Tutor": 0,
-      };
+   else if (id === "7") {
+  const careerScores = {
+    "School Teacher": 0,
+    "Professor/Lecturer": 0,
+    "Education Consultant": 0,
+    "Academic Researcher": 0,
+    "Curriculum Designer": 0,
+    "Online Tutor": 0,
+    "Special Education Teacher": 0,
+    "Career Counselor": 0,
+    "Instructional Designer": 0,
+    "Education Administrator": 0,
+    "School Principal": 0,
+    "Educational Content Developer": 0,
+    "Corporate Trainer": 0,
+    "Education Policy Analyst": 0,
+    "Education Technology (EdTech) Specialist": 0,
+    Librarian: 0,
+  };
 
-      answersByIndex.forEach((answer) => {
-        switch (answer) {
-          case 0:
-            careerScores["School Teacher"] += 3;
-            careerScores["Online Tutor"] += 3;
-            break;
-          case 1:
-            careerScores["Professor/Lecturer"] += 3;
-            careerScores["Academic Researcher"] += 3;
-            break;
-          case 2:
-            careerScores["Education Consultant"] += 3;
-            careerScores["Curriculum Designer"] += 3;
-            break;
-          default:
-            break;
-        }
-      });
-
-      if (answersByIndex[0] === 0) careerScores["School Teacher"] += 2;
-      if (answersByIndex[0] === 1) careerScores["Academic Researcher"] += 2;
-      if (answersByIndex[0] === 2) careerScores["Curriculum Designer"] += 2;
-      if (answersByIndex[2] === 0) {
-        careerScores["School Teacher"] += 2;
-        careerScores["Online Tutor"] += 2;
-      }
-      if (answersByIndex[2] === 1) {
-        careerScores["Professor/Lecturer"] += 2;
-        careerScores["Academic Researcher"] += 2;
-      }
-      if (answersByIndex[2] === 2) careerScores["Curriculum Designer"] += 2;
-      if (answersByIndex[3] === 0) careerScores["School Teacher"] += 2;
-      if (answersByIndex[3] === 1) careerScores["Academic Researcher"] += 3;
-      if (answersByIndex[3] === 2) {
-        careerScores["Education Consultant"] += 2;
-        careerScores["Curriculum Designer"] += 2;
-      }
-      if (answersByIndex[5] === 0) {
-        careerScores["School Teacher"] += 2;
-        careerScores["Online Tutor"] += 2;
-      }
-      if (answersByIndex[5] === 1) {
-        careerScores["Professor/Lecturer"] += 2;
-        careerScores["Academic Researcher"] += 2;
-      }
-      if (answersByIndex[5] === 2) careerScores["Education Consultant"] += 2;
-      if (answersByIndex[6] === 0) {
-        careerScores["School Teacher"] += 2;
-        careerScores["Online Tutor"] += 2;
-      }
-      if (answersByIndex[6] === 1) {
-        careerScores["Academic Researcher"] += 2;
-        careerScores["Professor/Lecturer"] += 1;
-      }
-      if (answersByIndex[6] === 2) careerScores["Curriculum Designer"] += 2;
-      if (answersByIndex[7] === 0) {
-        careerScores["Online Tutor"] += 3;
-        careerScores["School Teacher"] += 1;
-      }
-      if (answersByIndex[7] === 1) careerScores["Academic Researcher"] += 3;
-      if (answersByIndex[7] === 2) {
-        careerScores["Curriculum Designer"] += 3;
-        careerScores["Education Consultant"] += 2;
-      }
-      if (answersByIndex[9] === 0) {
+  // General scoring
+  answersByIndex.forEach((answer) => {
+    switch (answer) {
+      case 0:
         careerScores["School Teacher"] += 3;
         careerScores["Online Tutor"] += 3;
-      }
-      if (answersByIndex[9] === 1) {
+        careerScores["Special Education Teacher"] += 3;
+        careerScores["Corporate Trainer"] += 2;
+        break;
+
+      case 1:
         careerScores["Professor/Lecturer"] += 3;
         careerScores["Academic Researcher"] += 3;
-      }
-      if (answersByIndex[9] === 2) {
+        careerScores["Education Policy Analyst"] += 2;
+        careerScores["Librarian"] += 2;
+        break;
+
+      case 2:
         careerScores["Education Consultant"] += 3;
         careerScores["Curriculum Designer"] += 3;
-      }
+        careerScores["Instructional Designer"] += 3;
+        careerScores["Educational Content Developer"] += 2;
+        break;
 
-      const recommendations8 = Object.entries(careerScores).sort((a, b) => b[1] - a[1]);
-      careers = recommendations8.slice(0, 3).map((r) => r[0]);
+      case 3:
+        careerScores["Education Administrator"] += 3;
+        careerScores["School Principal"] += 3;
+        careerScores["Education Technology (EdTech) Specialist"] += 3;
+        careerScores["Career Counselor"] += 2;
+        break;
+
+      default:
+        break;
     }
+  });
+
+  // Question 0
+  if (answersByIndex[0] === 0) {
+    careerScores["School Teacher"] += 3;
+    careerScores["Online Tutor"] += 2;
+    careerScores["Special Education Teacher"] += 2;
+  }
+
+  if (answersByIndex[0] === 1) {
+    careerScores["Academic Researcher"] += 3;
+    careerScores["Professor/Lecturer"] += 2;
+    careerScores["Education Policy Analyst"] += 2;
+  }
+
+  if (answersByIndex[0] === 2) {
+    careerScores["Curriculum Designer"] += 3;
+    careerScores["Instructional Designer"] += 3;
+    careerScores["Educational Content Developer"] += 2;
+  }
+
+  if (answersByIndex[0] === 3) {
+    careerScores["Education Administrator"] += 3;
+    careerScores["School Principal"] += 2;
+    careerScores["Career Counselor"] += 2;
+  }
+
+  // Question 1
+  if (answersByIndex[1] === 0) {
+    careerScores["School Teacher"] += 3;
+    careerScores["Online Tutor"] += 3;
+    careerScores["Special Education Teacher"] += 3;
+    careerScores["Corporate Trainer"] += 2;
+  }
+
+  if (answersByIndex[1] === 1) {
+    careerScores["Professor/Lecturer"] += 3;
+    careerScores["Academic Researcher"] += 3;
+    careerScores["Education Policy Analyst"] += 2;
+    careerScores["Librarian"] += 2;
+  }
+
+  if (answersByIndex[1] === 2) {
+    careerScores["Education Consultant"] += 3;
+    careerScores["Career Counselor"] += 3;
+    careerScores["Education Administrator"] += 2;
+    careerScores["School Principal"] += 2;
+  }
+
+  if (answersByIndex[1] === 3) {
+    careerScores["Instructional Designer"] += 3;
+    careerScores["Educational Content Developer"] += 3;
+    careerScores["Education Technology (EdTech) Specialist"] += 3;
+    careerScores["Curriculum Designer"] += 2;
+  }
+
+  // Question 2
+  if (answersByIndex[2] === 0) {
+    careerScores["School Teacher"] += 2;
+    careerScores["Online Tutor"] += 2;
+    careerScores["Corporate Trainer"] += 2;
+  }
+
+  if (answersByIndex[2] === 1) {
+    careerScores["Professor/Lecturer"] += 2;
+    careerScores["Academic Researcher"] += 2;
+    careerScores["Librarian"] += 2;
+  }
+
+  if (answersByIndex[2] === 2) {
+    careerScores["Curriculum Designer"] += 2;
+    careerScores["Instructional Designer"] += 2;
+    careerScores["Educational Content Developer"] += 2;
+  }
+
+  if (answersByIndex[2] === 3) {
+    careerScores["Education Administrator"] += 2;
+    careerScores["School Principal"] += 2;
+  }
+
+  // Question 3
+  if (answersByIndex[3] === 0) {
+    careerScores["School Teacher"] += 2;
+    careerScores["Special Education Teacher"] += 2;
+  }
+
+  if (answersByIndex[3] === 1) {
+    careerScores["Academic Researcher"] += 3;
+    careerScores["Professor/Lecturer"] += 2;
+    careerScores["Education Policy Analyst"] += 2;
+  }
+
+  if (answersByIndex[3] === 2) {
+    careerScores["Education Consultant"] += 2;
+    careerScores["Curriculum Designer"] += 2;
+    careerScores["Career Counselor"] += 2;
+  }
+
+  if (answersByIndex[3] === 3) {
+    careerScores["Education Administrator"] += 3;
+    careerScores["School Principal"] += 3;
+  }
+
+  // Question 5
+  if (answersByIndex[5] === 0) {
+    careerScores["School Teacher"] += 2;
+    careerScores["Online Tutor"] += 2;
+  }
+
+  if (answersByIndex[5] === 1) {
+    careerScores["Professor/Lecturer"] += 2;
+    careerScores["Academic Researcher"] += 2;
+  }
+
+  if (answersByIndex[5] === 2) {
+    careerScores["Education Consultant"] += 2;
+    careerScores["Career Counselor"] += 3;
+  }
+
+  if (answersByIndex[5] === 3) {
+    careerScores["Education Technology (EdTech) Specialist"] += 3;
+    careerScores["Instructional Designer"] += 2;
+  }
+
+  // Question 6
+  if (answersByIndex[6] === 0) {
+    careerScores["School Teacher"] += 2;
+    careerScores["Online Tutor"] += 2;
+  }
+
+  if (answersByIndex[6] === 1) {
+    careerScores["Academic Researcher"] += 2;
+    careerScores["Professor/Lecturer"] += 2;
+  }
+
+  if (answersByIndex[6] === 2) {
+    careerScores["Curriculum Designer"] += 2;
+    careerScores["Educational Content Developer"] += 2;
+  }
+
+  if (answersByIndex[6] === 3) {
+    careerScores["Education Administrator"] += 2;
+    careerScores["School Principal"] += 2;
+  }
+
+  // Question 7
+  if (answersByIndex[7] === 0) {
+    careerScores["Online Tutor"] += 3;
+    careerScores["School Teacher"] += 1;
+  }
+
+  if (answersByIndex[7] === 1) {
+    careerScores["Academic Researcher"] += 3;
+    careerScores["Professor/Lecturer"] += 2;
+  }
+
+  if (answersByIndex[7] === 2) {
+    careerScores["Curriculum Designer"] += 3;
+    careerScores["Instructional Designer"] += 3;
+  }
+
+  if (answersByIndex[7] === 3) {
+    careerScores["Education Technology (EdTech) Specialist"] += 3;
+    careerScores["Education Administrator"] += 2;
+  }
+
+  // Question 9
+  if (answersByIndex[9] === 0) {
+    careerScores["School Teacher"] += 3;
+    careerScores["Online Tutor"] += 3;
+    careerScores["Special Education Teacher"] += 3;
+  }
+
+  if (answersByIndex[9] === 1) {
+    careerScores["Professor/Lecturer"] += 3;
+    careerScores["Academic Researcher"] += 3;
+    careerScores["Education Policy Analyst"] += 3;
+  }
+
+  if (answersByIndex[9] === 2) {
+    careerScores["Education Consultant"] += 3;
+    careerScores["Career Counselor"] += 3;
+    careerScores["Curriculum Designer"] += 3;
+  }
+
+  if (answersByIndex[9] === 3) {
+    careerScores["Education Administrator"] += 3;
+    careerScores["School Principal"] += 3;
+    careerScores["Education Technology (EdTech) Specialist"] += 3;
+  }
+
+  const recommendations8 = Object.entries(careerScores)
+    .sort((a, b) => b[1] - a[1]);
+
+  careers = recommendations8.slice(0, 3).map((r) => r[0]);
+}
 
     setRecommendedCareers(careers);
     setSubmitted(true);
@@ -694,8 +998,6 @@ localStorage.setItem(
         ← Back
       </button>
       <h1>Career Domain Quiz</h1>
-      <h2>Domain ID: {id}</h2>
-      <p>Total Questions: {questions.length}</p>
       {!submitted ? (
         <>
           {questions.map((q) => (
