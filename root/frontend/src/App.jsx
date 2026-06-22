@@ -17,7 +17,7 @@ import SubCareerDetail from "./pages/SubCareerDetail";
 
 // AI Features
 import AICareerChat from "./pages/AICareerChat";
-import AIResumeAnalyser from "./pages/AIResumeAnalyser";
+import AIResumeAnalyser from "./pages/AIResumeAnalyserIntegrated";
 import CareerRoadmap from "./pages/CareerRoadmap";
 
 // Assessments
